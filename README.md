@@ -2,17 +2,17 @@
 
 # 1) Identificação do problema
 
-#### PROBLEMA
+#### A) PROBLEMA
 **Identifique um nome para o problema:**
 
 - Incomodidade.
 
-#### DESCRIÇÃO
+#### B) DESCRIÇÃO
 **Descreva brevemente o problema dando noção da dor que está sendo tratada:**
 
 A dificuldade de amigos, famílias e solteiros casais de se organizarem para sair, devido à ausência de facilitadores para encontrarem, escolherem e avaliarem as melhores opções de bares e restaurantes que atendam seus desejos.
 
-#### RELATOS DE CASOS DO PROBLEMA
+#### C) RELATOS DE CASOS DO PROBLEMA
 **Descreva situações e contextos em que o problema foi identificado ou que ele ocorre:**
 
 + **Situação 1:** Amigos decidem sair juntos, o bar escolhido é adorado por dois membros do grupo, entretanto ficou muito longe da casa da maioria dos outros membros. (Geolocalização + Distância média)
@@ -25,7 +25,7 @@ A dificuldade de amigos, famílias e solteiros casais de se organizarem para sai
 
 + **Situação 5:** Um grupo de amigos queria sair para se divertir, mas não faziam ideia de um bar para irem. (Recomendação de bares)
 
-#### QUAIS SÃO OS ENVOLVIDOS NESSE PROBLEMA
+#### D) QUAIS SÃO OS ENVOLVIDOS NESSE PROBLEMA
 **Identifique quem é afetado ou auxilia alguém nessa situação relacionada a este problema:**
 
 Grupos de amigos, famílias, solteiros.
