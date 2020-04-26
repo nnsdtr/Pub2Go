@@ -1,46 +1,46 @@
 
-.login-page .logo {
+.register-page .logo {
   background-color: rgb(49, 49, 49);
   margin-bottom: 20px;
   border-radius: 10px;
   color: white;
 }
 
-.login-page .logo img {
+.register-page .logo img {
   width: 150px;
   margin-left: auto;
   margin-right: auto;
 }
 
-.login-page .register-form {
+.register-page .register-form {
   background-color: rgb(31, 31, 31);
 }
 
-.login-page input,
-.login-page select {
+.register-page input,
+.register-page select {
   background-color: rgb(223, 223, 223);
   color: black;
 }
 
-.login-page label {
+.register-page label {
   color: #ffa64c;
   font-weight: 500;
 }
 
-.login-page .form-check {
+.register-page .form-check {
   margin-top: 15px;
 }
 
-.login-page .form-check-label {
+.register-page .form-check-label {
   color: white;
   font-weight: normal;
 }
 
-.login-page a {
+.register-page a {
   color: #ffa64c;
 }
 
-.login-page .form-group button{
+.register-page .form-group button{
   margin-top: 25px;
   font-size: larger;
   background-color: #ad7033;
