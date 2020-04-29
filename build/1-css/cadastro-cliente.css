@@ -1,0 +1,63 @@
+/*Corpo*/
+
+body {
+    background: rgb(49, 49, 49);
+}
+
+
+/*Cabecalho*/
+
+header {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    color: white;
+    text-align: center;
+}
+
+.items-cadastro {
+    align-items: center;
+}
+
+.a {
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.termos {
+    color: white;
+}
+
+.destaque {
+    color: #ffa64c;
+}
+
+.form-check {
+    color: white;
+}
+
+
+/*Rodape*/
+
+footer {
+    margin-top: 5px;
+    text-align: center;
+}
+
+.btn {
+    background-color: #ad7033;
+    width: 290px;
+    height: 40px;
+    color: white;
+}
+
+
+/*Media Q*/
+
+@media screen and (max-width:765px) {
+    footer {
+        margin-top: 20px;
+    }
+    .btn {
+        width: 100%;
+    }
+}
