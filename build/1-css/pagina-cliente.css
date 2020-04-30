@@ -1,6 +1,7 @@
 .container {
     max-width: 95%;
 }
+
 .logo img {
     width: 75px;
 }
@@ -25,12 +26,12 @@
 }
 
 .eventos-disponiveis .titulo,
-.categorias .titulo {
+.categorias .titulo,
+.estabelecimentos .titulo {
     color: white;
     font-size: 20px;
     padding: 25px 0px;
 }
-
 
 .eventos-disponiveis .card-footer,
 .categorias .card-footer {
@@ -39,18 +40,12 @@
     color: #ffa64c;
     padding-left: 0px;
     padding-right: 0px;
+    text-align: center;
 }
 
 .categorias .img-square-wrapper {
-    background-color: white;
-
+    background-color: black;
 }
-
-
-
-
-
-
 
 
 /* CSS-submenu */
@@ -66,7 +61,12 @@
     background-color: #ad7033;
 }
 
-
 .submenu .active {
-    background-color:  #ffa64c !important;
+    background-color: #ffa64c !important;
+}.submenu li #home-tab:hover{
+    background-color: rgb(224, 162, 100);
+}
+
+.submenu li #profile-tab:hover {
+    background-color: rgb(224, 162, 100);
 }
