@@ -1,16 +1,28 @@
 
-.register-page .logo {
+.register-page .head {
   background-color: rgb(49, 49, 49);
   margin-bottom: 20px;
   border-radius: 10px;
   color: white;
 }
 
-.register-page .logo img {
+.register-page .head img {
+  display: block;
   width: 150px;
   margin-left: auto;
   margin-right: auto;
 }
+
+.register-page .head .head-title {
+  display: none;
+  margin-top: auto;
+  margin-bottom: auto;
+  padding-top: 10px;
+  padding-left: 0px;
+  color: #ecce45;
+  font-size: 80px;
+}
+
 
 .register-page .register-form {
   background-color: rgb(31, 31, 31);
@@ -47,3 +59,47 @@
   border: 2px solid #ad7033;
 }
 
+
+
+@media screen and (min-width: 768px) and (max-width: 991px){
+  .register-page .head img {
+    margin: 0px;
+    padding-left: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .register-page .head .head-title {
+    display: block;
+  }
+}
+
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  .register-page .head img {
+    margin: 0px;
+    padding-left: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .register-page .head .head-title {
+    display: block;
+    padding-left: 18px;
+  }
+}
+
+
+@media screen and (min-width: 1200px) {
+  .register-page .head img {
+    margin: 0px;
+    padding-left: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .register-page .head .head-title {
+    display: block;
+    padding-left: 0px;
+  }
+}
