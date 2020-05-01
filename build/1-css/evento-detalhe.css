@@ -1,0 +1,53 @@
+/*Corpo*/
+body {
+    background: rgb(49, 49, 49);
+}
+/*Barra superior*/
+#icone-volta{
+    height: 25px;
+}
+#evento-nome{
+    margin: auto;
+    font-weight: bold;   
+}
+/*Img, icone e nome do evento*/
+.background{
+    max-height: 300px;
+}
+#imagem{
+    background: url("/build/0-imgs/icont/jaeh-pic.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-height: 250px;
+    height: 200px;
+}
+#icon{
+    border-radius: 100%;
+    position: absolute;
+    overflow: hidden;
+    height: 100px;
+    width: 100px;
+    top: 180px;
+    left: 20px;
+    background: white;
+}
+#icon img{
+    position: absolute;
+    top: 7px;
+    left: 12.5px;
+    width: 75%;
+}
+.bar-nome{
+    position: fixed;
+    color: white;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-left: 135px;
+}
+.evento-dia{
+    position: fixed;
+    color:rgb(240, 0, 0);
+    font-weight: bold;
+    padding-top: 35px;
+    padding-left: 135px;
+}
