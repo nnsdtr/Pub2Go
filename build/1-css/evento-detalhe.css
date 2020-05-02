@@ -12,7 +12,7 @@ body {
 }
 /*Img, icone e nome do evento*/
 .background{
-    max-height: 300px;
+    height: 300px;
 }
 #imagem{
     background: url("/build/0-imgs/icont/jaeh-pic.png");
@@ -50,4 +50,58 @@ body {
     font-weight: bold;
     padding-top: 35px;
     padding-left: 135px;
+}
+/*Botões*/
+.botoes{
+    text-align: center;
+    line-height: 50px;
+}
+.btn{
+    width: 90%;
+    border-radius: 8px;
+    border-width: 0.2px;
+    border-color: rgb(49, 49, 49);
+    height: 38px;
+}
+.btn-group{
+    position: relative;
+    width: 50%;
+    height: 38px;
+}
+#icon-loc{
+    position: absolute;
+    padding-inline: 50%;
+    //padding-top: 4px;
+    left: 31%;
+    height: 20px;
+}
+#icon-confirmed{
+    position: absolute;
+    top: 1px;
+    left: 20%;
+    height: 35px;
+}
+#pessoas-confirmadas{
+    position: absolute;
+    left: 60%;
+}
+#icon-noconfirmed{
+    position: absolute;
+    top: 5px;
+    left: 20%;
+    height: 28px;
+}
+#pessoas-naoconfirmadas{
+    position: absolute;
+    left: 60%;
+}
+/*Descrição do Evento*/
+.event-description{
+    color: white;
+    padding-top: 15px;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+.event-description h6{
+    font-weight: bold;
 }
