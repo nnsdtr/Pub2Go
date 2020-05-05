@@ -1,3 +1,6 @@
+body {
+  background: rgb(49, 49, 49);
+}
 
 .register-page .head {
   background-color: rgb(49, 49, 49);
@@ -19,13 +22,13 @@
   margin-bottom: auto;
   padding-top: 10px;
   padding-left: 0px;
-  color: #ecce45;
+  color: white;
   font-size: 80px;
 }
 
 
 .register-page .register-form {
-  background-color: rgb(31, 31, 31);
+  background-color: rgb(49, 49, 49);
 }
 
 .register-page input,
@@ -52,7 +55,7 @@
   color: #ffa64c;
 }
 
-.register-page .form-group button{
+.register-page .form-group button {
   margin-top: 25px;
   font-size: larger;
   background-color: #ad7033;
@@ -61,7 +64,7 @@
 
 
 
-@media screen and (min-width: 768px) and (max-width: 991px){
+@media screen and (min-width: 768px) and (max-width: 991px) {
   .register-page .head img {
     margin: 0px;
     padding-left: 15px;
