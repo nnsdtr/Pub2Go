@@ -61,10 +61,10 @@ body {
 }
 
 .register-page .form-group button {
-  margin-top: 25px;
-  font-size: larger;
   background-color: #ad7033;
-  border: 2px solid #ad7033;
+  color: white;
+  width: 290px;
+  height: 40px;
 }
 
 
