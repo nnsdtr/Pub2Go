@@ -32,7 +32,8 @@ body {
 
 .register-page input,
 .register-page select {
-  background-color: rgb(223, 223, 223);
+
+  background-color: white;
   color: black;
 }
 
@@ -64,44 +65,46 @@ body {
 
 
 @media screen and (max-width: 991px) {
-  .register-page .head img {
-    margin: 0px;
-    padding-left: 15px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+
+
+  @media screen and (min-width: 768px) and (max-width: 991px) {
+    .register-page .head img {
+      margin: 0px;
+      padding-left: 15px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+
+    .register-page .head .head-title {
+      display: block;
+    }
   }
 
-  .register-page .head .head-title {
-    display: block;
-  }
-}
 
+  @media screen and (min-width: 992px) and (max-width: 1199px) {
+    .register-page .head img {
+      margin: 0px;
+      padding-left: 15px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
 
-@media screen and (min-width: 992px) and (max-width: 1199px) {
-  .register-page .head img {
-    margin: 0px;
-    padding-left: 15px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-  }
-
-  .register-page .head .head-title {
-    display: block;
-    padding-left: 18px;
-  }
-}
-
-
-@media screen and (min-width: 1200px) {
-  .register-page .head img {
-    margin: 0px;
-    padding-left: 15px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    .register-page .head .head-title {
+      display: block;
+      padding-left: 18px;
+    }
   }
 
-  .register-page .head .head-title {
-    display: block;
-    padding-left: 0px;
-  }
-}
+
+  @media screen and (min-width: 1200px) {
+    .register-page .head img {
+      margin: 0px;
+      padding-left: 15px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+
+    .register-page .head .head-title {
+      display: block;
+      padding-left: 0px;
+    }
