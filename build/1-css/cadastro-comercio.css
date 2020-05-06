@@ -16,14 +16,14 @@ body {
   margin-right: auto;
 }
 
-.form-control{
+.form-control {
   margin-top: -15px;
   height: 50px;
   margin-bottom: -15px;
 }
 
 .register-page .head .head-title {
-  font-family: "-apple-system,BlinkMacSystemFont","Segoe UI","Roboto","Helvetica Neue","Arial","Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-family: "-apple-system,BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   margin-top: auto;
   margin-bottom: auto;
   padding-top: 10px;
@@ -43,13 +43,14 @@ body {
 }
 
 .register-page label {
-  color: #ffa64c;
+  color: white;
   font-weight: 500;
 }
 
 .register-page .form-check {
   margin-top: 15px;
 }
+
 
 .register-page .form-check-label {
   color: white;
@@ -60,16 +61,23 @@ body {
   color: #ffa64c;
 }
 
-.register-page .form-group button {
+footer {
+  margin-top: 5px;
+  text-align: center;
+}
+
+.btn {
   background-color: #ad7033;
-  color: white;
   width: 290px;
   height: 40px;
+  color: white;
 }
 
 
 
-@media screen and (min-width: 320px) and (max-width: 767px){
+
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
   .register-page .head .head-title {
     text-align: center;
     display: block;
@@ -77,48 +85,48 @@ body {
 }
 
 
-  @media screen and (min-width: 768px) and (max-width: 991px) {
-    .register-page .head img {
-      margin: 0px;
-      padding-left: 15px;
-      padding-top: 10px;
-      padding-bottom: 10px;
-   }
-
-    .register-page .head .head-title {
-      display: block;
-    }
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .register-page .head img {
+    margin: 0px;
+    padding-left: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
 
+  .register-page .head .head-title {
+    display: block;
+  }
+}
 
-  @media screen and (min-width: 992px) and (max-width: 1199px) {
-    .register-page .head img {
-      margin: 0px;
-      padding-left: 15px;
-      padding-top: 10px;
-      padding-bottom: 10px;
-    }
 
-    .register-page .head .head-title {
-      display: block;
-      padding-left: 18px;
-    }
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  .register-page .head img {
+    margin: 0px;
+    padding-left: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
 
-
-  @media screen and (min-width: 1200px) {
-    .register-page .head img {
-      margin: 0px;
-      padding-left: 15px;
-      padding-top: 10px;
-      padding-bottom: 10px;
-    }
-
-    .register-page .head .head-title {
-      margin-left: 100px;
-      text-align: center;
-     
-      display: block;
-      padding-left: 0px;
-    }
+  .register-page .head .head-title {
+    display: block;
+    padding-left: 18px;
   }
+}
+
+
+@media screen and (min-width: 1200px) {
+  .register-page .head img {
+    margin: 0px;
+    padding-left: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .register-page .head .head-title {
+    margin-left: 100px;
+    text-align: center;
+
+    display: block;
+    padding-left: 0px;
+  }
+}
