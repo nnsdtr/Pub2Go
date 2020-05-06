@@ -13,11 +13,16 @@ body {
 
 /*Cabecalho*/
 
+a{
+    color: #ffa64c;
+}
+
 header {
+    font-family: "-apple-system,BlinkMacSystemFont","Segoe UI","Roboto","Helvetica Neue","Arial","Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
     margin-top: 30px;
     margin-bottom: 30px;
     color: white;
-    text-align: left;
+    text-align: center;
 }
 
 .items-cadastro {
