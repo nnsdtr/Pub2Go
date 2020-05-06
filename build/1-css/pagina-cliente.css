@@ -1,3 +1,7 @@
+body {
+    background-color: white;
+}
+
 .container {
     max-width: 95%;
 }
@@ -8,7 +12,7 @@
 
 .eventos-disponiveis .card,
 .categorias .card {
-    background-color: black;
+    background-color: white;
     border-radius: 0px;
     border: none;
 }
@@ -22,29 +26,29 @@
 .categorias .wrapper {
     padding-left: 0px;
     padding-right: 0px;
-    background-color: black;
+    background-color: white;
 }
 
 .eventos-disponiveis .titulo,
 .categorias .titulo,
 .estabelecimentos .titulo {
-    color: white;
+    color: black;
     font-size: 20px;
     padding: 25px 0px;
 }
 
 .eventos-disponiveis .card-footer,
 .categorias .card-footer {
-    background-color: black;
+    background-color: white;
     border-radius: 0px;
-    color: #ffa64c;
+    color: black;
     padding-left: 0px;
     padding-right: 0px;
     text-align: center;
 }
 
 .categorias .img-square-wrapper {
-    background-color: black;
+    background-color: white;
 }
 
 
@@ -63,7 +67,9 @@
 
 .submenu .active {
     background-color: #ffa64c !important;
-}.submenu li #home-tab:hover{
+}
+
+.submenu li #home-tab:hover {
     background-color: rgb(224, 162, 100);
 }
 
