@@ -35,14 +35,18 @@ body {
     left: 12.5px;
     width: 75%;
 }
+.evento-dia{
+    color: white !important;
+}
 .bar-nome{
-    color: white;
+    color: #ffa64c;
     font-weight: bold;
     padding-top: 10px;
     padding-left: 135px;
 }
+
 .evento-dia{
-    color:rgb(240, 0, 0);
+    color:#ffa64c;
     font-weight: bold;
 
     padding-left: 135px;
@@ -52,6 +56,7 @@ body {
     text-align: center;
 }
 .botoes button{
+    color: grey;
     margin-bottom: 10px;
 }
 .btn{
@@ -87,11 +92,18 @@ body {
     left: 20%;
     height: 28px;
 }
+#pessoas-confirmadas{
+    color: green;
+}
 #pessoas-naoconfirmadas{
+    color: red;
     position: absolute;
     left: 60%;
 }
 /*Descrição do Evento*/
+.event-description h6{
+    color: #ffa64c;
+}
 .event-description{
     color: white;
     padding-top: 15px;
