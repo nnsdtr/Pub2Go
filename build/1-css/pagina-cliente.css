@@ -1,7 +1,28 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+header{
+    background: #ffffff;
+}
+
+#txtbusca{
+    margin-left: 325px;
+}
+
+/* main{
+    background: rgb(49, 49, 49);
+} */
+
+=======
+=======
+>>>>>>> c226215b875b38e47030e42116f2387e95fae926
 body {
     background-color: white;
 }
 
+<<<<<<< HEAD
+>>>>>>> c226215b875b38e47030e42116f2387e95fae926
+=======
+>>>>>>> c226215b875b38e47030e42116f2387e95fae926
 .container {
     max-width: 95%;
 }
@@ -15,6 +36,12 @@ body {
     background-color: white;
     border-radius: 0px;
     border: none;
+}
+
+.estabelecimentos .card {
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-right: 0px;
 }
 
 .eventos-disponiveis img {
@@ -35,6 +62,15 @@ body {
     color: black;
     font-size: 20px;
     padding: 25px 0px;
+    background-color: rgb(49, 49, 49);
+    border-radius: 10px;
+}
+
+.eventos-disponiveis .titulo .text,
+.categorias .titulo .text,
+.estabelecimentos .titulo .text {
+    padding-left: 10px;
+    margin-top: 0px;
 }
 
 .eventos-disponiveis .card-footer,
@@ -48,31 +84,69 @@ body {
 }
 
 .categorias .img-square-wrapper {
+<<<<<<< HEAD
+<<<<<<< HEAD
+    background-color: none;
+=======
     background-color: white;
+>>>>>>> c226215b875b38e47030e42116f2387e95fae926
+=======
+    background-color: white;
+>>>>>>> c226215b875b38e47030e42116f2387e95fae926
 }
 
 
-/* CSS-submenu */
+.eventos-disponiveis,
+.categorias,
+.estabelecimentos {
+    margin-top: 0px;
+}
 
-.submenu li #home-tab {
+
+.estabelecimentos .filtros .btn {
+    background-color: white;
     color: black;
-    text-decoration: none;
-    background-color: #ad7033;
+    border-radius: 0px;
+    margin-right: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    width: 100px;
 }
 
-.submenu li #profile-tab {
-    color: black;
-    background-color: #ad7033;
+.estabelecimentos .filtros .btn-1 {
+    width: 80px;
 }
 
+.estabelecimentos .filtros {
+    margin-bottom: 10px;
+    padding-left: 0px;
+
+}
+
+<<<<<<< HEAD
+.estabelecimentos .card .global-wrapper {
+    margin-right: 10px;
+=======
 .submenu .active {
     background-color: #ffa64c !important;
+<<<<<<< HEAD
+=======
 }
 
 .submenu li #home-tab:hover {
     background-color: rgb(224, 162, 100);
+>>>>>>> c226215b875b38e47030e42116f2387e95fae926
 }
 
-.submenu li #profile-tab:hover {
+.submenu li #home-tab:hover {
     background-color: rgb(224, 162, 100);
+>>>>>>> c226215b875b38e47030e42116f2387e95fae926
 }
+
+
+
+
+
+
+
+

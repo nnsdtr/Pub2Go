@@ -6,19 +6,19 @@ body {
 
 .register-page .head img {
     display: block;
-    width: 150px;
+    width: 135px;
     margin-left: auto;
     margin-right: auto;
 }
 
 /*Cabecalho*/
 
-a{
+a {
     color: #ffa64c;
 }
 
 header {
-    font-family: "-apple-system,BlinkMacSystemFont","Segoe UI","Roboto","Helvetica Neue","Arial","Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    font-family: "-apple-system,BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     margin-top: 30px;
     margin-bottom: 30px;
     color: white;
@@ -62,7 +62,15 @@ footer {
 }
 
 
-/*Media Q*/
+
+/*Media Querie*/
+
+@media screen and (max-width: 764px) {
+    #nome {
+        height: 50px;
+        margin-bottom: 10px;
+    }
+}
 
 @media screen and (max-width:765px) {
     footer {
