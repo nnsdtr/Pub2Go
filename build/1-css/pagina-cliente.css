@@ -1,10 +1,8 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-header{
+header {
     background: #ffffff;
 }
 
-#txtbusca{
+#txtbusca {
     margin-left: 325px;
 }
 
@@ -12,17 +10,12 @@ header{
     background: rgb(49, 49, 49);
 } */
 
-=======
-=======
->>>>>>> c226215b875b38e47030e42116f2387e95fae926
+
 body {
     background-color: white;
 }
 
-<<<<<<< HEAD
->>>>>>> c226215b875b38e47030e42116f2387e95fae926
-=======
->>>>>>> c226215b875b38e47030e42116f2387e95fae926
+
 .container {
     max-width: 95%;
 }
@@ -84,15 +77,10 @@ body {
 }
 
 .categorias .img-square-wrapper {
-<<<<<<< HEAD
-<<<<<<< HEAD
     background-color: none;
-=======
     background-color: white;
->>>>>>> c226215b875b38e47030e42116f2387e95fae926
-=======
     background-color: white;
->>>>>>> c226215b875b38e47030e42116f2387e95fae926
+
 }
 
 
@@ -123,30 +111,22 @@ body {
 
 }
 
-<<<<<<< HEAD
+
 .estabelecimentos .card .global-wrapper {
     margin-right: 10px;
-=======
+
+}
+
 .submenu .active {
-    background-color: #ffa64c !important;
-<<<<<<< HEAD
-=======
+    background-color: #ffa64c;
 }
 
 .submenu li #home-tab:hover {
     background-color: rgb(224, 162, 100);
->>>>>>> c226215b875b38e47030e42116f2387e95fae926
+
 }
 
 .submenu li #home-tab:hover {
     background-color: rgb(224, 162, 100);
->>>>>>> c226215b875b38e47030e42116f2387e95fae926
+
 }
-
-
-
-
-
-
-
-
