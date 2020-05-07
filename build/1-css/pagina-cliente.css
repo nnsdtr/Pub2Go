@@ -1,9 +1,18 @@
 header {
-    background: #ffffff;
+    background: rgb(49, 49, 49);
 }
 
 #txtbusca {
-    margin-left: 325px;
+    margin-left: 100%;
+    margin-bottom: 0px;
+}
+
+.menu-cabecalho .active{
+    color: #ffa64c;
+}
+
+.menu-cabecalho .active:hover{
+    color: #d38a41;
 }
 
 /* main{
@@ -12,7 +21,7 @@ header {
 
 
 body {
-    background-color: white;
+    background-color: rgb(49, 49, 49);
 }
 
 
@@ -26,7 +35,7 @@ body {
 
 .eventos-disponiveis .card,
 .categorias .card {
-    background-color: white;
+    background-color: rgb(49, 49, 49);
     border-radius: 0px;
     border: none;
 }
@@ -46,7 +55,7 @@ body {
 .categorias .wrapper {
     padding-left: 0px;
     padding-right: 0px;
-    background-color: white;
+    background-color: rgb(49, 49, 49);
 }
 
 .eventos-disponiveis .titulo,
@@ -55,7 +64,7 @@ body {
     color: black;
     font-size: 20px;
     padding: 25px 0px;
-    background-color: rgb(49, 49, 49);
+    background-color: rgb(233, 233, 233);
     border-radius: 10px;
 }
 
@@ -68,9 +77,9 @@ body {
 
 .eventos-disponiveis .card-footer,
 .categorias .card-footer {
-    background-color: white;
+    background-color: rgb(49, 49, 49);
     border-radius: 0px;
-    color: black;
+    color: white;
     padding-left: 0px;
     padding-right: 0px;
     text-align: center;
@@ -78,8 +87,8 @@ body {
 
 .categorias .img-square-wrapper {
     background-color: none;
-    background-color: white;
-    background-color: white;
+    background-color: rgb(49, 49, 49);
+    background-color: rgb(49, 49, 49);
 
 }
 
@@ -92,8 +101,8 @@ body {
 
 
 .estabelecimentos .filtros .btn {
-    background-color: white;
-    color: black;
+    background-color: rgb(49, 49, 49);
+    color: #ffa64c;
     border-radius: 0px;
     margin-right: 0px;
     padding-left: 0px;
