@@ -8,55 +8,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">    <link rel="stylesheet" href="1-css/evento-detalhe.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="1-css/evento-detalhe.css">
 </head>
 
 <body>
-    <header>
-        <div class="container">
+    <header class="container">
         <nav class="navbar fixed-top navbar-light bg-light">
             <img id="icone-volta" src="0-imgs/icont/back.webp" alt="">
             <div id="evento-nome">Aniversário da Maria</div>
         </nav>
-    </div>
     </header>
-
-    <div class="background">
-        <div id="imagem">
-            <div id="icon">
-                <img src="0-imgs/icont/bolo.png" alt="">
+    <main class="container">
+        <div class="background">
+            <div id="imagem">
+                <div id="icon">
+                    <img src="0-imgs/icont/bolo.png" alt="">
+                </div>
             </div>
+            <p><span class="bar-nome">Jaeh Bar e Restaurante</span>
+                <div class="evento-dia">HOJE 20:00</div>
+            </p>
         </div>
-        <span class="bar-nome">Jaeh Bar e Restaurante</span>
-        <span class="evento-dia">HOJE 20:00</span>
-    </div>
 
-    <div class="botoes">
-        <button type="button" class="btn btn-light" id="como-chegar">
-            <img id="icon-loc" src="0-imgs/icont/loc.svg" alt="">Como Chegar</button>
-        <button type="button" class="btn btn-light" id="bar-info">Informações do Local</button>
-        <button type="button" class="btn btn-light" id="presenca-confirmar">Confirmar Presença</button>
-        <div class="btn-group btn-group-toggle" data-toggle="buttons">
-            <label class="btn btn-light">
-                <input type="radio" name="options" id="confirmed" autocomplete="off" checked>
-                <img id="icon-confirmed" src="0-imgs/icont/mark.svg" alt="">
-                <div id="pessoas-confirmadas">
-                    10
+
+        <div class="botoes">
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <button type="button" class="btn btn-light" id="como-chegar">
+                        <img id="icon-loc" src="0-imgs/icont/loc.svg" alt="">Como Chegar</button>
                 </div>
-            </label>
-            <label class="btn btn-light">
-                <input type="radio" name="options" id="noconfirmed" autocomplete="off">
-                <img id="icon-noconfirmed" src="0-imgs/icont/cross.svg" alt="">
-                <div id="pessoas-naoconfirmadas">
-                8
+                <div class="col-12 col-md-6">
+                    <button type="button" class="btn btn-light" id="bar-info">Informações do Local</button>
                 </div>
-            </label>
             </div>
-    </div>
+            
+            <button type="button" class="btn btn-light " id="presenca-confirmar">Confirmar Presença</button>
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                <label class="btn btn-light">
+                    <input type="radio" name="options" id="confirmed" autocomplete="off" checked>
+                    <img id="icon-confirmed" src="0-imgs/icont/mark.svg" alt="">
+                    <div id="pessoas-confirmadas">
+                        10
+                    </div>
+                </label>
+                <label class="btn btn-light">
+                    <input type="radio" name="options" id="noconfirmed" autocomplete="off">
+                    <img id="icon-noconfirmed" src="0-imgs/icont/cross.svg" alt="">
+                    <div id="pessoas-naoconfirmadas">
+                        8
+                    </div>
+                </label>
+            </div>
+          
+        </div>
 
-    <div class="event-description">
-        <h6>Descrição</h6>
-        <span>Meu aniversário vai ser no jaeh, conto com a presença de vcs la</span>
-    </div> 
-    
+        <div class="event-description">
+            <h6>Descrição</h6>
+            <span>Meu aniversário vai ser no jaeh, conto com a presença de vcs la</span>
+        </div>
+    </main>
+
 </body>

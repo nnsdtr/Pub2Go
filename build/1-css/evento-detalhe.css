@@ -18,7 +18,6 @@ body {
     background: url("/build/0-imgs/icont/jaeh-pic.png");
     background-repeat: no-repeat;
     background-size: cover;
-    max-height: 250px;
     height: 200px;
 }
 #icon{
@@ -28,7 +27,6 @@ body {
     height: 100px;
     width: 100px;
     top: 180px;
-    left: 20px;
     background: white;
 }
 #icon img{
@@ -38,40 +36,38 @@ body {
     width: 75%;
 }
 .bar-nome{
-    position: fixed;
     color: white;
     font-weight: bold;
     padding-top: 10px;
     padding-left: 135px;
 }
 .evento-dia{
-    position: fixed;
     color:rgb(240, 0, 0);
     font-weight: bold;
-    padding-top: 35px;
+
     padding-left: 135px;
 }
 /*Botões*/
 .botoes{
     text-align: center;
-    line-height: 50px;
+}
+.botoes button{
+    margin-bottom: 10px;
 }
 .btn{
-    width: 90%;
+    width: 100%;
     border-radius: 8px;
     border-width: 0.2px;
     border-color: rgb(49, 49, 49);
-    height: 38px;
+  
 }
 .btn-group{
-    position: relative;
     width: 50%;
     height: 38px;
 }
 #icon-loc{
     position: absolute;
-    padding-inline: 50%;
-    //padding-top: 4px;
+    padding-top: 4px;
     left: 31%;
     height: 20px;
 }
@@ -104,4 +100,29 @@ body {
 }
 .event-description h6{
     font-weight: bold;
+}
+
+
+/* Media Queries */
+@media screen and (min-width:766px) and (max-width:960px){
+    .background{
+        height: 400px;
+    }
+    #imagem{
+        height: 300px;
+    }
+    #icon{
+        top: 280px;  
+    }
+}
+    @media screen and (min-width:961px){
+        .background{
+            height: 500px;
+        }
+        #imagem{
+            height: 400px;
+        }
+        #icon{
+            top: 380px;  
+        }
 }
