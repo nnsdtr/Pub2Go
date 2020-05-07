@@ -8,7 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
     <!--Font-awesome CSS-->
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -28,42 +29,37 @@
 <body>
     <header class="container">
         <div class="row logo">
-            <img src="0-imgs/pub2go-logo.png" alt="">
+            <section class="col-md-1">
+                <img src="0-imgs/pub2go-logo.png" alt="">
+            </section>
+            <section id="menu-cabecalho" class="row">
+                <div class="col-md-9">
+                    <nav class="nav menu-cabecalho">
+    
+                        <i id="icone-home" class="nav-link fas fa-home" href="#"></i>
+    
+                        <a class="nav-link active" href="#">Início</a>
+    
+                        <a class="nav-link active" href="#">Favoritos</a>
+    
+                        <a class="nav-link active" href="#">Amigos</a>
+    
+                      
+                        
+                    </nav>
+                </div>
+    
+                <div id="pesquisar" class="col-md-3 pesquisa justify-content-end">
+                    <input type="text" id="txtbusca" placeholder="Pesquisar...">
+                </div>
+            </section>
         </div>
 
-        <nav class="row">
-            <ul class="nav nav-tabs" id="myTab" role="tablist">
-                <li class="nav-item">
-                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Busca</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="amigos" aria-selected="false">Amigos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="amigos" aria-selected="false">Perfil</a>
-                </li>
-            </ul>
-            <div class="tab-content" id="myTabContent">
-                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div>
-                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
-                <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
-            </div>
-        </nav>
+
+
     </header>
 
-    <nav class="container submenu" id="corpo-submenu">
-        <ul class="nav nav-tabs row" id="myTab" role="tablist">
-            <li class="nav-item">
-                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Homepage</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Favoritos</a>
-            </li>
-        </ul>
-    </nav>
+
 
 
 
@@ -72,7 +68,7 @@
         <!--Eventos disponíveis-->
         <section class="eventos-disponiveis row">
             <div class="col-12 titulo">
-                <div><strong>Eventos disponíveis</strong></div>
+                 <div class="text"><strong>Eventos disponíveis</strong></div>
             </div>
             <div class="col-12 wrapper">
                 <div class="owl-carousel owl-theme">
@@ -93,21 +89,10 @@
                             <div class="img-square-wrapper">
                                 <img src="0-imgs/usuarios/eventos-disponiveis/evento-02.jpeg" alt="">
                             </div>
-                            <div class="card-footer">Aniversário da</div>
+                            <div class="card-footer">Aniversário da Di</div>
                         </div>
                     </div>
                     <!--Evento 02-->
-
-                    <!--Evento 03-->
-                    <div class="item">
-                        <div class="card">
-                            <div class="img-square-wrapper">
-                                <img src="0-imgs/usuarios/eventos-disponiveis/evento-03.jpeg" alt="">
-                            </div>
-                            <div class="card-footer"></div>
-                        </div>
-                    </div>
-                    <!--Evento 03-->
 
                     <!--Evento 04-->
                     <div class="item">
@@ -142,38 +127,6 @@
                     </div>
                     <!--Evento 06-->
 
-                    <!--Evento 07-->
-                    <div class="item">
-                        <div class="card">
-                            <div class="img-square-wrapper">
-                                <img src="0-imgs/usuarios/eventos-disponiveis/evento-07.jpeg" alt="">
-                            </div>
-                            <div class="card-footer"></div>
-                        </div>
-                    </div>
-                    <!--Evento 07-->
-
-                    <!--Evento 08-->
-                    <div class="item">
-                        <div class="card">
-                            <div class="img-square-wrapper">
-                                <img src="0-imgs/usuarios/eventos-disponiveis/evento-08.jpeg" alt="">
-                            </div>
-                            <div class="card-footer"></div>
-                        </div>
-                    </div>
-                    <!--Evento 08-->
-
-                    <!--Evento 09-->
-                    <div class="item">
-                        <div class="card">
-                            <div class="img-square-wrapper">
-                                <img src="0-imgs/usuarios/eventos-disponiveis/evento-09.jpeg" alt="">
-                            </div>
-                            <div class="card-footer"></div>
-                        </div>
-                    </div>
-                    <!--Evento 09-->
                 </div>
             </div>
         </section>
@@ -183,7 +136,7 @@
         <!--Categorias-->
         <section class="categorias row">
             <div class="col-12 titulo">
-                <div><strong>Categorias</strong></div>
+                <div class="text"><strong>Categorias</strong></div>
             </div>
             <div class="col-12 wrapper">
                 <div class="owl-carousel owl-theme">
@@ -191,7 +144,7 @@
                     <div class="item">
                         <div class="card">
                             <div class="img-square-wrapper">
-                                <img src="0-imgs/categorias/" alt="">
+                                <img src="0-imgs/categorias/boteco.png" alt="">
                             </div>
                             <div class="card-footer">Botecos</div>
                         </div>
@@ -224,7 +177,7 @@
                     <div class="item">
                         <div class="card">
                             <div class="img-square-wrapper">
-                                <img src="0-imgs/categorias/" alt="">
+                                <img src="0-imgs/categorias/balada.png" alt="">
                             </div>
                             <div class="card-footer">Baladas</div>
                         </div>
@@ -235,7 +188,7 @@
                     <div class="item">
                         <div class="card">
                             <div class="img-square-wrapper">
-                                <img src="0-imgs/categorias/" alt="">
+                                <img src="0-imgs/categorias/cafe.png" alt="">
                             </div>
                             <div class="card-footer">Cafés</div>
                         </div>
@@ -262,23 +215,70 @@
         <!--Estabelecimentos-->
         <section class="estabelecimentos row">
             <div class="col-12 titulo">
-                <div><strong>Estabelecimentos</strong></div>
+                <div class="text"><strong>Estabelecimentos</strong></div>
             </div>
 
-            <div class="card mb-3" style="max-width: 540px;">
-                <div class="row no-gutters">
-                  <div class="col-4">
-                    <img src="0-imgs/usuarios/eventos-disponiveis/evento-01.jpeg" class="card-img" alt="...">
-                  </div>
-                  <div class="col-8">
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            <div class="col-12 filtros">
+                <button type="button" class="btn btn-1 btn-outline-light">Filtros ☰</button>
+                <button type="button" class="btn btn-2 btn-outline-light">Ordenar ▼</button>
+                <button type="button" class="btn btn-3 btn-outline-light">Distância</button>
+            </div>
+
+            <div class="card mb-3 col-12 col-lg-4">
+                <div class="row no-gutters global-wrapper">
+                    <div class="col-4 img-square-wrapper">
+                        <img src="0-imgs/estabelecimentos/BarDoAntoniol.jpeg" class="card-img" alt="...">
                     </div>
-                  </div>
+                    <div class="col-8">
+                        <div class="card-body">
+                            <h5 class="card-title">Bar do Antônio</h5>
+                            <p class="card-text">
+                                <small class="text-muted">
+                                    ★ 4.5 • $$ • 3km
+                                </small>
+                            </p>
+                        </div>
+                    </div>
                 </div>
-              </div>
+            </div>
+
+            <div class="card mb-3 col-12 col-lg-4">
+                <div class="row no-gutters global-wrapper">
+                    <div class="col-4 img-square-wrapper">
+                        <img src="0-imgs/estabelecimentos/BarSaideira.jpeg" class="card-img" alt="...">
+                    </div>
+                    <div class="col-8">
+                        <div class="card-body">
+                            <h5 class="card-title">Bar Saideira</h5>
+                            <p class="card-text">
+                                <small class="text-muted">
+                                    ★ 4.2 • $ • 1.5km
+                                </small>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mb-3 col-12 col-lg-4">
+                <div class="row no-gutters global-wrapper">
+                    <div class="col-4 img-square-wrapper">
+                        <img src="0-imgs/estabelecimentos/SalumeriaCentral.jpg" class="card-img" alt="...">
+                    </div>
+                    <div class="col-8">
+                        <div class="card-body">
+                            <h5 class="card-title">Restaurante Salumeria Central</h5>
+                            <p class="card-text">
+                                <small class="text-muted">
+                                    ★ 4.9 • $$$$ • 12.4km
+                                </small>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
 
         </section>
         <!--/Estabelecimentos-->
@@ -289,10 +289,17 @@
 
 
 
-     <!--Bootstrap JavaScript-->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <!--Bootstrap JavaScript-->
+    <script src="https://kit.fontawesome.com/56ffed22e7.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
 
     <!--/Bootstrap JavaScript-->
 

@@ -1,6 +1,20 @@
+header {
+    background: #ffffff;
+}
+
+#txtbusca {
+    margin-left: 325px;
+}
+
+/* main{
+    background: rgb(49, 49, 49);
+} */
+
+
 body {
     background-color: white;
 }
+
 
 .container {
     max-width: 95%;
@@ -15,6 +29,12 @@ body {
     background-color: white;
     border-radius: 0px;
     border: none;
+}
+
+.estabelecimentos .card {
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-right: 0px;
 }
 
 .eventos-disponiveis img {
@@ -35,6 +55,15 @@ body {
     color: black;
     font-size: 20px;
     padding: 25px 0px;
+    background-color: rgb(49, 49, 49);
+    border-radius: 10px;
+}
+
+.eventos-disponiveis .titulo .text,
+.categorias .titulo .text,
+.estabelecimentos .titulo .text {
+    padding-left: 10px;
+    margin-top: 0px;
 }
 
 .eventos-disponiveis .card-footer,
@@ -48,31 +77,56 @@ body {
 }
 
 .categorias .img-square-wrapper {
+    background-color: none;
     background-color: white;
+    background-color: white;
+
 }
 
 
-/* CSS-submenu */
-
-.submenu li #home-tab {
-    color: black;
-    text-decoration: none;
-    background-color: #ad7033;
+.eventos-disponiveis,
+.categorias,
+.estabelecimentos {
+    margin-top: 0px;
 }
 
-.submenu li #profile-tab {
+
+.estabelecimentos .filtros .btn {
+    background-color: white;
     color: black;
-    background-color: #ad7033;
+    border-radius: 0px;
+    margin-right: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    width: 100px;
+}
+
+.estabelecimentos .filtros .btn-1 {
+    width: 80px;
+}
+
+.estabelecimentos .filtros {
+    margin-bottom: 10px;
+    padding-left: 0px;
+
+}
+
+
+.estabelecimentos .card .global-wrapper {
+    margin-right: 10px;
+
 }
 
 .submenu .active {
-    background-color: #ffa64c !important;
+    background-color: #ffa64c;
 }
 
 .submenu li #home-tab:hover {
     background-color: rgb(224, 162, 100);
+
 }
 
-.submenu li #profile-tab:hover {
+.submenu li #home-tab:hover {
     background-color: rgb(224, 162, 100);
+
 }
