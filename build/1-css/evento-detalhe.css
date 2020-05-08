@@ -1,56 +1,47 @@
-/*Corpo*/
+/*header*/
 body {
     background: rgb(49, 49, 49);
 }
-/*Barra superior*/
-#icone-volta{
-    height: 25px;
+
+.logo img {
+    width: 75px;
 }
-#evento-nome{
-    margin: auto;
-    font-weight: bold;   
+.menu-cabecalho {
+    flex-wrap: wrap;
 }
-/*Img, icone e nome do evento*/
-.background{
-    height: 300px;
+#txtbusca {
+    margin-bottom: 10px;
 }
-#imagem{
-    background: url("/build/0-imgs/icont/jaeh-pic.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 200px;
-}
-#icon{
-    border-radius: 100%;
-    position: absolute;
-    overflow: hidden;
-    height: 100px;
-    width: 100px;
-    top: 180px;
-    background: white;
-}
-#icon img{
-    position: absolute;
-    top: 7px;
-    left: 12.5px;
-    width: 75%;
-}
-.evento-dia{
-    color: white !important;
-}
-.bar-nome{
+
+.menu-cabecalho .active{
     color: #ffa64c;
-    font-weight: bold;
-    padding-top: 10px;
-    padding-left: 135px;
 }
 
-.evento-dia{
-    color:#ffa64c;
-    font-weight: bold;
-
-    padding-left: 135px;
+.menu-cabecalho .active:hover{
+    color: #d38a41;
 }
+
+/*Img, icone e nome do evento*/
+
+.imagem-center img{
+  max-width: 100%;
+    display: block;
+    margin: 0 auto ;
+}
+.inf-icon{
+    margin-top: 40px;
+    color: white;
+}
+.evento-hora{
+    color: #ffa64c;
+}
+
+#icon img {
+    max-width: 130px;
+    background-color: white;
+    margin-bottom: 20px;
+}
+
 /*Botões*/
 .botoes{
     text-align: center;
@@ -113,28 +104,8 @@ body {
 .event-description h6{
     font-weight: bold;
 }
+footer{
 
+    padding: 30px;
+}
 
-/* Media Queries */
-@media screen and (min-width:766px) and (max-width:960px){
-    .background{
-        height: 400px;
-    }
-    #imagem{
-        height: 300px;
-    }
-    #icon{
-        top: 280px;  
-    }
-}
-    @media screen and (min-width:961px){
-        .background{
-            height: 500px;
-        }
-        #imagem{
-            height: 400px;
-        }
-        #icon{
-            top: 380px;  
-        }
-}

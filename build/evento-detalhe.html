@@ -10,64 +10,98 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!--Font-awesome CSS-->
+    <script src="https://kit.fontawesome.com/73b02df156.js" crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="1-css/evento-detalhe.css">
 </head>
 
 <body>
     <header class="container">
-        <nav class="navbar fixed-top navbar-light bg-light">
-            <img id="icone-volta" src="0-imgs/icont/back.webp" alt="">
-            <div id="evento-nome">Aniversário da Maria</div>
-        </nav>
+        <div class="row logo">
+            <div class="col-2 ">
+                <img src="0-imgs/comp-pub2go-logo.png" alt="">
+            </div>
+                <div class="col-10 col-md-6 col-lg-6 menu-cabecalho">
+                    <nav class="nav menu-cabecalho">
+
+                        <a class="nav-link active" href="#"><i id="icone-home" class="nav-link fas fa-home"></i></a>
+                        <a class="nav-link active" href="#">Início</a>
+
+                        <a class="nav-link active" href="#">Favoritos</a>
+
+                        <a class="nav-link active" href="#">Amigos</a>
+
+
+
+                    </nav>
+                </div>
+
+                <div id="pesquisar" class="col-12 col-md-4 col-lg-4 pesquisa ">
+                    <input type="text" id="txtbusca" placeholder="Pesquisar...">
+                </div>
+            </section>
+        </div>
     </header>
-    <main class="container">
-        <div class="background">
-            <div id="imagem">
-                <div id="icon">
-                    <img src="0-imgs/icont/bolo.png" alt="">
-                </div>
-            </div>
-            <p><span class="bar-nome">Jaeh Bar e Restaurante</span>
-                <div class="evento-dia">HOJE 20:00</div>
-            </p>
-        </div>
-
-
-        <div class="botoes">
+        <main class="container">
             <div class="row">
-                <div class="col-12 col-md-6">
-                    <button type="button" class="btn btn-light" id="como-chegar">
-                        <img id="icon-loc" src="0-imgs/icont/loc.svg" alt="">Como Chegar</button>
-                </div>
-                <div class="col-12 col-md-6">
-                    <button type="button" class="btn btn-light" id="bar-info">Informações do Local</button>
+                <div class="col-12 imagem-center">
+                    <img src="/build/0-imgs/bar/jaeh.jpg" alt="...">
                 </div>
             </div>
-
-            <button type="button" class="btn btn-light " id="presenca-confirmar">Confirmar Presença</button>
-            <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                <label class="btn btn-light">
-                    <input type="radio" name="options" id="confirmed" autocomplete="off" checked>
-                    <img id="icon-confirmed" src="0-imgs/icont/mark.svg" alt="">
-                    <div id="pessoas-confirmadas">
-                        10
+                <div class="row">
+                    <div class="col-6 col-md-3 col-lg-2" id="icon">
+                        <img src="0-imgs/icont/bolo.png"" alt=" icon" class="rounded-circle">
                     </div>
-                </label>
-                <label class="btn btn-light">
-                    <input type="radio" name="options" id="noconfirmed" autocomplete="off">
-                    <img id="icon-noconfirmed" src="0-imgs/icont/cross.svg" alt="">
-                    <div id="pessoas-naoconfirmadas">
-                        8
+                    <div class="col-6 col-md-9 col-lg-10 inf-icon">
+                        <p>Aniversário da Maria</p>
+                        <p class="evento-hora">Hoje as 14:00</p>
                     </div>
-                </label>
-            </div>
+                </div>
 
-        </div>
 
-        <div class="event-description">
-            <h6>Descrição</h6>
-            <span>Meu aniversário vai ser no jaeh, conto com a presença de vcs la</span>
-        </div>
-    </main>
+
+
+                <div class="botoes">
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+                            <button type="button" class="btn btn-light" id="como-chegar">
+                                <img id="icon-loc" src="0-imgs/icont/loc.svg" alt="">Como Chegar</button>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <button type="button" class="btn btn-light" id="bar-info">Informações do
+                                Local</button>
+                        </div>
+                    </div>
+
+                    <button type="button" class="btn btn-light " id="presenca-confirmar">Confirmar
+                        Presença</button>
+                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                        <label class="btn btn-light">
+                            <input type="radio" name="options" id="confirmed" autocomplete="off" checked>
+                            <img id="icon-confirmed" src="0-imgs/icont/mark.svg" alt="">
+                            <div id="pessoas-confirmadas">
+                                10
+                            </div>
+                        </label>
+                        <label class="btn btn-light">
+                            <input type="radio" name="options" id="noconfirmed" autocomplete="off">
+                            <img id="icon-noconfirmed" src="0-imgs/icont/cross.svg" alt="">
+                            <div id="pessoas-naoconfirmadas">
+                                8
+                            </div>
+                        </label>
+                    </div>
+
+                </div>
+
+                <div class="event-description">
+                    <h6>Descrição</h6>
+                    <p>Meu aniversário vai ser no jaeh, conto com a presença de vcs la</p>
+                </div>
+        </main>
+        <footer class="container">
+           
+        </footer>
 
 </body>
