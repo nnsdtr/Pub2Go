@@ -1,42 +1,47 @@
-header {
-    background: rgb(49, 49, 49);
-}
-
-#txtbusca {
-    margin-left: 100%;
-    margin-bottom: 0px;
-}
-
-.menu-cabecalho .active{
-    color: #ffa64c;
-}
-
-.menu-cabecalho .active:hover{
-    color: #d38a41;
-}
-
-/* main{
-    background: rgb(49, 49, 49);
-} */
-
-
+/* gerais */
 body {
     background-color: rgb(49, 49, 49);
 }
-
-
-.container {
-    max-width: 95%;
+/* Cabecalho */
+header {
+    margin-bottom: 10px;
+}
+.menu-cab li{
+    margin-top: 10px;
+    margin-right: 2px;
 }
 
-.logo img {
-    width: 75px;
+.pesquisa {
+    margin-top: 10px;
 }
+.logo {
+    display:block;
+    margin: 0 auto;
+    max-width: 100px;
+}
+.menu-cab a{
+    color: #ffa64c;
+    background-color:rgb(68, 67, 67);
+}
+.menu-cab a:hover{
+    color:  rgb(49, 49, 49);
+    background-color: #d38a41 ;
+}
+
+/* main*/
+.conteudo{
+    border-radius: 10px;
+    background-color: #fff;
+    padding: 30px;
+    position: relative;
+    box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.5);
+}
+
 
 .eventos-disponiveis .card,
 .categorias .card {
-    background-color: rgb(49, 49, 49);
-    border-radius: 0px;
+    background-color: white;
+    border-radius: 10px;
     border: none;
 }
 
@@ -47,7 +52,7 @@ body {
 }
 
 .eventos-disponiveis img {
-    border-radius: 25%;
+    max-width: 100%;
     border: none;
 }
 
@@ -55,7 +60,7 @@ body {
 .categorias .wrapper {
     padding-left: 0px;
     padding-right: 0px;
-    background-color: rgb(49, 49, 49);
+    background-color: white;
 }
 
 .eventos-disponiveis .titulo,
@@ -77,21 +82,13 @@ body {
 
 .eventos-disponiveis .card-footer,
 .categorias .card-footer {
-    background-color: rgb(49, 49, 49);
+    background-color: white;
     border-radius: 0px;
-    color: white;
+    color: black;
     padding-left: 0px;
     padding-right: 0px;
     text-align: center;
 }
-
-.categorias .img-square-wrapper {
-    background-color: none;
-    background-color: rgb(49, 49, 49);
-    background-color: rgb(49, 49, 49);
-
-}
-
 
 .eventos-disponiveis,
 .categorias,
@@ -117,9 +114,10 @@ body {
 .estabelecimentos .filtros {
     margin-bottom: 10px;
     padding-left: 0px;
-
 }
-
+.filtros button {
+    margin-right: -3px !important;
+}
 
 .estabelecimentos .card .global-wrapper {
     margin-right: 10px;
@@ -139,15 +137,12 @@ body {
     background-color: rgb(224, 162, 100);
 
 }
-
-@media screen and (min-width: 320px) and (max-width: 768px){
-        #txtbusca {
-            margin-left: 100%;
-            margin-bottom: 0px;
-            margin-left: -160px;
-        }
-
-        .logo{
-            text-align: center;
-        }
+/* footer */
+footer{
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+.img-square-wrapper {
+    margin: auto 0;
 }
