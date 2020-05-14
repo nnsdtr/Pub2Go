@@ -10,10 +10,12 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="1-css/reset.css">
+ <link rel="stylesheet" href="1-css/reset.css">
     <link rel="stylesheet" href="1-css/global.css">
-    <link rel="stylesheet" href="1-css/fontes.css">
+    <link rel="stylesheet" href="1-css/fontes.css">  
     <link rel="stylesheet" href="1-css/cadastro-cliente.css">
+    <script src="2-js/cadastro-cliente.js"></script>
+
 </head>
 
 <body>
@@ -30,69 +32,74 @@
                 </div>
             </section>
         </header>
+        <form id="cadastro" method="post" action="https://postman-echo.com/post">
+            <main class="container">
 
-        <main class="container">
-            <section class="row items-cadastro">
-                <div class="col-md-6" id="nome">
-                    <label for="inputCEP"></label>
-                    <input type="name" class="form-control a" id="item-nome" placeholder="Nome">
-                </div>
-                <div class="col-md-6">
-                    <label for="inputCEP"></label>
-                    <input type="name" class="form-control a" id="item-nome" placeholder="Sobrenome">
-                </div>
-                <div class="col-md-6">
-                    <input type="email" class="form-control a" id="item-email" placeholder="E-mail">
-                </div>
-                <div class="col-md-6">
-                    <input type="password" class="form-control a" id="item-senha" placeholder="Senha">
-                </div>
-                <div class="col-md-6">
-                    <input type="password" class="form-control a" id="item-cnfsenha" placeholder="DDD">
-                </div>
-                <div class="col-md-6">
-                    <input type="number" class="form-control a" id="item-telefone" placeholder="Confirme sua senha">
-                </div>
-                <div class="col-md-6">
-                    <input type="number" class="form-control a" id="item-telefone" placeholder="Telefone">
-                </div>
-                <div class="col-md-6">
-                    <div class="input-group">
-                        <input type="date" class="custom-select a" id="tNasc" name="cNasc"></input>
+                <section class="row items-cadastro">
+                    <div class="col-md-6">
+                        <input type="text" class="form-control a" id="nome" name="nome" placeholder="Nome">
                     </div>
-                </div>
-            </section>
-        </main>
+                    <div class="col-md-6">
+                        <input type="text" class="form-control a" id="sobrenome" name="sobrenome"
+                            placeholder="Sobrenome">
+                    </div>
+                    <div class="col-md-6">
+                        <input type="password" class="form-control a" id="senha" name="senha" placeholder="Senha">
+                    </div>
+                    <div class="col-md-6">
+                        <input type="password" class="form-control a" id="confirmsenha" name="confirmsenha"
+                            placeholder="Confirme sua senha">
+                    </div>
+                    <div class="col-md-6">
+                        <input type="text" class="form-control a" id="email" name="email" placeholder="E-mail">
+                    </div>
+                    <div class="col-md-6">
+                        <input type="text" class="form-control a" id="confirmemail" name="confirmemail" placeholder="Confirme seu E-mail">
+                    </div>
+                    <div class="col-md-6">
+                        <input type="number" class="form-control a" id="telefone" name="telefone"
+                            placeholder="Telefone">
+                    </div>
+                    <div class="col-md-6">
+                        <input type="date" class="form-control a" id="anonascimento" name="anonascimento"
+                            placeholder="Ano de Nascimento">
+                    </div>
+                </section>
+                <span id="alerta"></span>
 
-        <footer class="container">
+            </main>
 
-            <section class="row d-flex justify-content-center">
-                <div class="col-md-12 termos">
-                    <label>Ao se cadastrar você aceita nossos</label>
-                    <label class="destaque"><a href="#">Termos de uso </a></label>
-                    <label>e</label>
-                    <label class="destaque"><a href="">Política de Privacidade.</a></label>
-                </div>
-                <div class="col-md-12">
-                    <div class="form-group">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-                            <label class="form-check-label" for="invalidCheck">
-                                Concordo com os termos e condições
-                            </label>
-                            <div class="invalid-feedback">
-                                Você deve concordar, antes de continuar.
+            <footer class="container">
+
+                <section class="row d-flex justify-content-center">
+                    <div class="col-md-12 termos">
+                        <label>Ao se cadastrar você aceita nossos</label>
+                        <label class="destaque"><a href="#">Termos de uso </a></label>
+                        <label>e</label>
+                        <label class="destaque"><a href="">Política de Privacidade.</a></label>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                                <label class="form-check-label" for="invalidCheck">
+                                    Concordo com os termos e condições
+                                </label>
+                                <div class="invalid-feedback">
+                                    Você deve concordar, antes de continuar.
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="col-md-12">
-                    <button class="btn" type="submit">Cadastrar e Continuar</button>
-                </div>
-            </section>
+                    <div class="col-md-12">
+                        <button id="btn_submit" onclick="return validar()" class="btn" type="submit">Cadastrar e
+                            Continuar</button>
+                    </div>
+                </section>
 
-        </footer>
+            </footer>
+        </form>
 
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
