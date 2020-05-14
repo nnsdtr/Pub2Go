@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link rel="stylesheet" href="1-css/login.css">
+    <script src="2-js/login.js"></script>
 </head>
 
 <body>
@@ -35,20 +36,29 @@
                         </div>
 
                         <!-- Login Form -->
-                        <div class="form-group">
-                            <label class="text-login">Digite seu e-mail</label>
-                            <div class="col-md-12">
-                                <input type="name" class="form-control a" id="item-nome" placeholder="E-mail">
+                        <form id="loginForm" action="https://postman-echo.com/post" method="POST">
+                            <div class="form-group">
+                                <label for="email" class="text-login">Digite seu e-mail</label>
+                                <div class="col-md-12">
+                                    <input id="email" name="email" type="email" class="form-control a" placeholder="Ex. joaodasilva@gmail.com">
+                                </div>
+                                <div class="col-md-12">
+                                    <span id="instrucaoEmail"></span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="text-login">Digite sua senha</label>
-                            <div class="col-md-12">
-                                <input type="password" class="form-control a" id="item-nome" placeholder="Senha">
-                            </div>
-                        </div>
 
-                        <input type="submit" class="fadeIn fourth" value="Entrar">
+                            <div class="form-group">
+                                <label for="senha" class="text-login">Digite sua senha</label>
+                                <div class="col-md-12">
+                                    <input id="senha" name="senha" type="password" class="form-control a" placeholder="Senha">
+                                </div>
+                                <div class="col-md-12">
+                                    <span id="instrucaoSenha"></span>
+                                </div>
+                            </div>
+                            <input id="btnSubmit" type="submit" class="fadeIn fourth" value="Entrar">
+                        </form>
+                    
 
 
                         <!-- Remind Passowrd / Cadastrar  -->
@@ -59,7 +69,7 @@
                                 <a class="underlineHover" href="#">Esqueceu a senha?</a>
                             </div>
                             <div class="col-md-6">
-                                <a class="underlineHover" href="#">Cadastrar</a>
+                                <a class="underlineHover" href="cadastro-cliente.html">Cadastrar</a>
                             </div>
 
                         </div>

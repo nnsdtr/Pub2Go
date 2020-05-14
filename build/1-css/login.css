@@ -101,8 +101,8 @@ input[type=reset] {
     display: inline-block;
     text-transform: uppercase;
     font-size: 13px;
-    -webkit-box-shadow: 0 10px 30px 0 #ad7033;
-    box-shadow: 0 10px 30px 0 #ad7033;
+    /* -webkit-box-shadow: 0 10px 30px 0 #ad7033; */
+    /* box-shadow: 0 10px 30px 0 #ad7033; */
     -webkit-border-radius: 5px 5px 5px 5px;
     border-radius: 5px 5px 5px 5px;
     margin: 5px 20px 40px 20px;
@@ -116,9 +116,10 @@ input[type=reset] {
 input[type=button]:hover,
 input[type=submit]:hover,
 input[type=reset]:hover {
-    border: 2px solid #ad7033;
-    background-color: #cccccc;
-    color: #ad7033;
+    border: 2px solid #dfa563;
+    background-color: #dfa563;
+    color: #70471a;
+    font-weight: bold;
 }
 
 input[type=button]:active,
@@ -134,6 +135,7 @@ input[type=reset]:active {
 input[type=text]:focus {
     background-color: #fff;
     border-bottom: 2px solid #5fbae9;
+    border-bottom: 2px solid #fcfaf9;
 }
 
 input[type=text]:placeholder {
