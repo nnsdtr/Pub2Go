@@ -25,7 +25,7 @@ header {
 }
 .menu-cab a:hover{
     color:  rgb(49, 49, 49);
-    background-color: #d38a41 ;
+    background-color: #ffa64c ;
 }
 
 /* main*/
@@ -137,12 +137,13 @@ header {
     background-color: rgb(224, 162, 100);
 
 }
+.img-square-wrapper {
+    margin: auto 0;
+}
+
 /* footer */
 footer{
     color: white;
     padding: 20px;
     text-align: center;
-}
-.img-square-wrapper {
-    margin: auto 0;
 }

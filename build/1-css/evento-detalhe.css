@@ -1,24 +1,41 @@
-/*header*/
+/* gerais */
 body {
-    background: rgb(49, 49, 49);
+    background-color: rgb(49, 49, 49);
 }
 
-.logo img {
-    width: 75px;
-}
-.menu-cabecalho {
-    flex-wrap: wrap;
-}
-#txtbusca {
+/* Cabecalho */
+header {
     margin-bottom: 10px;
 }
-
-.menu-cabecalho .active{
-    color: #ffa64c;
+.menu-cab li{
+    margin-top: 10px;
+    margin-right: 2px;
 }
 
-.menu-cabecalho .active:hover{
-    color: #d38a41;
+.pesquisa {
+    margin-top: 10px;
+}
+.logo {
+    display:block;
+    margin: 0 auto;
+    max-width: 100px;
+}
+.menu-cab a{
+    color: #ffa64c;
+    background-color:rgb(68, 67, 67);
+}
+.menu-cab a:hover{
+    color:  rgb(49, 49, 49);
+    background-color: #ffa64c ;
+}
+
+/* main*/
+.conteudo{
+    border-radius: 10px;
+    background-color: #fff;
+    padding: 30px;
+    position: relative;
+    box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.5);
 }
 
 /*Img, icone e nome do evento*/
@@ -27,19 +44,33 @@ body {
   max-width: 100%;
     display: block;
     margin: 0 auto ;
+    border-radius: 10px;
+    background-color: black;
+}
+.imagem-center{
+    background-color:rgb(243, 241, 241);
+    border-radius: 10px;
 }
 .inf-icon{
-    margin-top: 40px;
-    color: white;
+    text-align: left;
+    margin-top: 10px;
+    color: black;
+    margin-bottom: 40px;
 }
 .evento-hora{
+    margin-top: -20px;
     color: #ffa64c;
+    font-weight: bold;
 }
 
 #icon img {
+    margin-top: -50px;
     max-width: 130px;
-    background-color: white;
+    background-color:white;
     margin-bottom: 20px;
+    border-style: solid;
+    border-width: 0.5px;
+    border-color: rgb(204, 195, 195);
 }
 
 /*Botões*/
@@ -47,30 +78,23 @@ body {
     text-align: center;
 }
 .botoes button{
-    color: grey;
-    margin-bottom: 10px;
+    color: black;
+    margin-bottom: 15px;
 }
 .btn{
     width: 100%;
     border-radius: 8px;
     border-width: 0.2px;
-    border-color: rgb(49, 49, 49);
-  
+    background-color: rgb(243, 241, 241);
 }
 .btn-group{
-    width: 50%;
+    width: 65%;
     height: 38px;
-}
-#icon-loc{
-    position: absolute;
-    padding-top: 4px;
-    left: 31%;
-    height: 20px;
 }
 #icon-confirmed{
     position: absolute;
     top: 1px;
-    left: 20%;
+    left: 10%;
     height: 35px;
 }
 #pessoas-confirmadas{
@@ -80,8 +104,8 @@ body {
 #icon-noconfirmed{
     position: absolute;
     top: 5px;
-    left: 20%;
-    height: 28px;
+    left: 10%;
+    height: 25px;
 }
 #pessoas-confirmadas{
     color: green;
@@ -91,32 +115,33 @@ body {
     position: absolute;
     left: 60%;
 }
+
 /*Descrição do Evento*/
 .event-description h6{
     color: #ffa64c;
+    margin-bottom: 20px;
 }
 .event-description{
+    background-color: rgb(49, 49, 49);
     color: white;
-    padding-top: 15px;
-    padding-left: 5%;
-    padding-right: 5%;
+    margin-top: 50px;
+    border-radius: 10px;
+    padding: 20px;
 }
 .event-description h6{
     font-weight: bold;
 }
-footer{
 
-    padding: 30px;
+/* footer */
+footer{
+    color: white;
+    padding: 20px;
+    text-align: center;
 }
 
-@media screen and (min-width: 320px) and (max-width: 767px){
-    .menu-cabecalho .esconder{
-        display:none;
+@media screen and (max-width: 480px){
+    #icon img {
+       max-width: 100px;
     }
-    #pesquisar{
-        display: none;
-    }
-    .logo section{
-        text-align: center;
-    }
+
 }

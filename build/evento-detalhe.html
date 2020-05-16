@@ -18,89 +18,102 @@
 
 <body>
     <header class="container">
-        <div class="row logo">
-            <section class="col-md-1">
-                <img src="0-imgs/comp-pub2go-logo.png" alt="">
-            </section>
-                <div class="col-md-7 menu-cabecalho">
-                    <nav class="nav menu-cabecalho">
-
-                        <a class="nav-link active inicio" href="#">Início</a>
-
-                        <a class="nav-link active esconder favoritos" href="#">Favoritos</a>
-
-                        <a class="nav-link active esconder amigos" href="#">Amigos</a>
-
-                        <a class="nav-link active esconder perfil" href="#">Perfil</a>
-
-
-                    </nav>
+        <div class="row">
+            <div class="col-12 col-md-2">
+                <img class="logo" src="/build/0-imgs/comp-pub2go-logo.png" alt="logo">
+            </div>
+            <div class="menu-cab col-md-7 col-12">
+                <ul class="nav nav-pills nav-fill">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Perfil </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Favoritos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Amigos</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-3 col-12 pesquisa">
+                <div class="input-group">
+                    <input class="form-control" type="search" placeholder="Pesquisar..." aria-label="Search">
                 </div>
-
-                <div id="pesquisar" class="col-12 col-md-4 col-lg-4 pesquisa ">
-                    <input type="text" id="txtbusca" placeholder="Pesquisar...">
-                </div>
+            </div>
         </div>
     </header>
-        <main class="container">
+
+    <main class="container">
+        <div class="conteudo">
             <div class="row">
                 <div class="col-12 imagem-center">
                     <img src="/build/0-imgs/bar/jaeh.jpg" alt="...">
                 </div>
             </div>
+            <div class="row">
+                <div class="col-5 col-md-3 col-lg-2" id="icon">
+                    <img src="0-imgs/icont/bolo.png"" alt=" icon" class="rounded-circle">
+                </div>
+                <div class="col-7 col-md-9 col-lg-10 inf-icon">
+                    <p>Aniversário da Maria</p>
+                    <p class="evento-hora">Hoje as 14:00</p>
+                </div>
+            </div>
+
+
+
+
+            <div class="botoes">
                 <div class="row">
-                    <div class="col-6 col-md-3 col-lg-2" id="icon">
-                        <img src="0-imgs/icont/bolo.png"" alt=" icon" class="rounded-circle">
+
+                    <div class="col-12 col-md-6">
+                        <button type="button" class="btn btn-light"><i class="fas fa-map-marker-alt"></i>&nbsp Como
+                            Chegar</button>
                     </div>
-                    <div class="col-6 col-md-9 col-lg-10 inf-icon">
-                        <p>Aniversário da Maria</p>
-                        <p class="evento-hora">Hoje as 14:00</p>
+
+                    <div class="col-12 col-md-6">
+                        <button type="button" class="btn btn-light" id="bar-info">Informações do
+                            Local</button>
                     </div>
                 </div>
 
-
-
-
-                <div class="botoes">
-                    <div class="row">
-                        <div class="col-12 col-md-6">
-                            <button type="button" class="btn btn-light" id="como-chegar">
-                                <img id="icon-loc" src="0-imgs/icont/loc.svg" alt="">Como Chegar</button>
+                <button type="button" class="btn btn-light " id="presenca-confirmar">Confirmar
+                    Presença</button>
+                    
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <label class="btn btn-light">
+                        <input type="radio" name="options" id="confirmed" autocomplete="off" checked>
+                        <img id="icon-confirmed" src="0-imgs/icont/mark.svg" alt="">
+                        <div id="pessoas-confirmadas">
+                            10
                         </div>
-                        <div class="col-12 col-md-6">
-                            <button type="button" class="btn btn-light" id="bar-info">Informações do
-                                Local</button>
+                    </label>
+                    <label class="btn btn-light">
+                        <input type="radio" name="options" id="noconfirmed" autocomplete="off">
+                        <img id="icon-noconfirmed" src="0-imgs/icont/cross.svg" alt="">
+                        <div id="pessoas-naoconfirmadas">
+                            8
                         </div>
-                    </div>
-
-                    <button type="button" class="btn btn-light " id="presenca-confirmar">Confirmar
-                        Presença</button>
-                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                        <label class="btn btn-light">
-                            <input type="radio" name="options" id="confirmed" autocomplete="off" checked>
-                            <img id="icon-confirmed" src="0-imgs/icont/mark.svg" alt="">
-                            <div id="pessoas-confirmadas">
-                                10
-                            </div>
-                        </label>
-                        <label class="btn btn-light">
-                            <input type="radio" name="options" id="noconfirmed" autocomplete="off">
-                            <img id="icon-noconfirmed" src="0-imgs/icont/cross.svg" alt="">
-                            <div id="pessoas-naoconfirmadas">
-                                8
-                            </div>
-                        </label>
-                    </div>
-
+                    </label>
                 </div>
 
-                <div class="event-description">
-                    <h6>Descrição</h6>
-                    <p>Meu aniversário vai ser no jaeh, conto com a presença de vcs la</p>
-                </div>
-        </main>
-        <footer class="container">
-           
-        </footer>
+            </div>
+
+            <div class="event-description">
+                <h6>Descrição</h6>
+                <p>Meu aniversário vai ser no jaeh, conto com a presença de vcs la</p>
+            </div>
+        </div>
+    </main>
+
+
+    <footer class="container">
+        Copyright 2020 - Todos os direitos reservados - Pub2go
+
+    </footer>
+
 
 </body>
