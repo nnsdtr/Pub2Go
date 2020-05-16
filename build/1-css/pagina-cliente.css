@@ -44,7 +44,10 @@ header {
     border-radius: 10px;
     border: none;
 }
-
+.wrapper .item img{
+    margin-top: 10px;
+    border-radius: 20px;
+}
 .estabelecimentos .card {
     padding-right: 0px;
     padding-left: 0px;
