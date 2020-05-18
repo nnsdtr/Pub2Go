@@ -30,7 +30,7 @@ header {
 
 /* main*/
 .conteudo{
-    border-radius: 10px;
+    border-radius: 5px;
     background-color: #fff;
     padding: 30px;
     position: relative;
@@ -77,7 +77,7 @@ header {
     font-size: 20px;
     padding: 10px 0px;
     background-color: rgb(233, 233, 233);
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 .eventos-disponiveis .titulo .text,
