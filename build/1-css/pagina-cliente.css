@@ -25,12 +25,12 @@ header {
 }
 .menu-cab a:hover{
     color:  rgb(49, 49, 49);
-    background-color: #d38a41 ;
+    background-color: #ffa64c ;
 }
 
 /* main*/
 .conteudo{
-    border-radius: 10px;
+    border-radius: 5px;
     background-color: #fff;
     padding: 30px;
     position: relative;
@@ -44,7 +44,14 @@ header {
     border-radius: 10px;
     border: none;
 }
-
+.wrapper .item img{
+    margin-top: 10px;
+    border-radius: 5px;
+}
+.item-categoria{
+    margin-top: 10px;
+    max-width: 110px;
+}
 .estabelecimentos .card {
     padding-right: 0px;
     padding-left: 0px;
@@ -68,9 +75,9 @@ header {
 .estabelecimentos .titulo {
     color: black;
     font-size: 20px;
-    padding: 25px 0px;
+    padding: 10px 0px;
     background-color: rgb(233, 233, 233);
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 .eventos-disponiveis .titulo .text,
@@ -98,6 +105,7 @@ header {
 
 
 .estabelecimentos .filtros .btn {
+    margin-top: 10px;
     background-color: rgb(49, 49, 49);
     color: #ffa64c;
     border-radius: 0px;
@@ -137,12 +145,13 @@ header {
     background-color: rgb(224, 162, 100);
 
 }
+.img-square-wrapper {
+    margin: auto 0;
+}
+
 /* footer */
 footer{
     color: white;
     padding: 20px;
     text-align: center;
-}
-.img-square-wrapper {
-    margin: auto 0;
 }
