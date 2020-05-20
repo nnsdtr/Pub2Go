@@ -1,0 +1,153 @@
+/* gerais */
+body {
+    background-color: rgb(49, 49, 49);
+}
+
+/* Cabecalho */
+header {
+    margin-bottom: 10px;
+}
+.menu-cab li{
+    margin-top: 10px;
+    margin-right: 2px;
+}
+
+.pesquisa {
+    margin-top: 10px;
+}
+.logo {
+    display:block;
+    margin: 0 auto;
+    max-width: 100px;
+}
+.menu-cab a{
+    color: #ffa64c;
+    background-color:rgb(68, 67, 67);
+}
+.menu-cab a:hover{
+    color:  rgb(49, 49, 49);
+    background-color: #ffa64c ;
+}
+
+/* main*/
+.conteudo{
+    border-radius: 10px;
+    background-color: #fff;
+    padding: 30px;
+    position: relative;
+    box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.5);
+}
+
+/*Img, icone e nome do evento*/
+
+.imagem-center img{
+  max-width: 100%;
+    display: block;
+    margin: 0 auto ;
+    border-radius: 10px;
+    background-color: black;
+}
+.imagem-center{
+    background-color:rgb(243, 241, 241);
+    border-radius: 10px;
+}
+.inf-icon{
+    text-align: left;
+    margin-top: 10px;
+    color: black;
+    margin-bottom: 40px;
+}
+.evento-hora{
+    margin-top: -20px;
+    color: #ffa64c;
+    font-weight: bold;
+}
+
+#icon img {
+    margin-top: -40px;
+    max-width: 130px;
+    background-color:white;
+    margin-bottom: 20px;
+    border-style: solid;
+    border-width: 0.5px;
+    border-color: rgb(204, 195, 195);
+}
+
+/*Botões*/
+.botoes{
+    text-align: center;
+}
+.botoes button{
+    color: black;
+    margin-bottom: 15px;
+}
+.btn{
+    width: 100%;
+    border-radius: 8px;
+    border-width: 0.2px;
+    background-color: rgb(243, 241, 241);
+}
+.btn-group{
+    width: 65%;
+    height: 38px;
+}
+#icon-confirmed{
+    position: absolute;
+    top: 1px;
+    left: 10%;
+    height: 35px;
+}
+#pessoas-confirmadas{
+    position: absolute;
+    left: 60%;
+}
+#icon-noconfirmed{
+    position: absolute;
+    top: 5px;
+    left: 10%;
+    height: 25px;
+}
+#pessoas-confirmadas{
+    color: green;
+}
+#pessoas-naoconfirmadas{
+    color: red;
+    position: absolute;
+    left: 60%;
+}
+
+/*Descrição do Evento*/
+.event-description h6{
+    color: #ffa64c;
+    margin-bottom: 20px;
+}
+.event-description{
+    background-color: rgb(49, 49, 49);
+    color: white;
+    margin-top: 50px;
+    border-radius: 10px;
+    padding: 20px;
+}
+.event-description h6{
+    font-weight: bold;
+}
+
+/* footer */
+footer{
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+@media screen and (max-width: 480px){
+    #icon img {
+       max-width: 100px;
+    }
+
+}
+
+/**/
+
+.segunda-coluna img{
+    max-width: 100%;
+}
