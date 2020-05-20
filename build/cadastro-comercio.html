@@ -25,21 +25,25 @@
 </head>
 
 <body>
-    <div class="container register-page">
-        <div class="row head">
-            <div class="col-12 col-md-3 col-lg-2">
-                <img src="0-imgs/pub2go-logo.png" alt="">
-            </div>
-            <div class="col-md-9 col-lg-10 head-title">
-                <h5>CADASTRE-SE PARA CONTINUAR</h5>
-            </div>
 
-        </div>
+    <header class="container">
+        <div class="container register-page">
+            <div class="row head">
+                <div class="col-12 col-md-3 col-lg-2">
+                    <img src="0-imgs/pub2go-logo.png" alt="">
+                </div>
+                <div class="col-md-9 col-lg-10 head-title">
+                    <h5>CADASTRE-SE PARA CONTINUAR</h5>
+                </div>
 
+            </div>
+    </header>
+
+    <main class="container register-page">
         <div class="row register-form">
-            <form class="col">
+            <form class="col-md-12">
                 <div class="form-row">
-                    <div class="form-group col-md-6">
+                    <div class="form-group col-md-12">
                         <label for="inputName"></label>
                         <input type="text" class="form-control " id="inputName" placeholder="Nome do estabelecimento">
                     </div>
@@ -48,13 +52,19 @@
                         <input type="text" class="form-control" id="inputLastname" placeholder="CNPJ">
                     </div>
                     <div class="form-group col-md-6">
+                        <label for="inputTelefone"></label>
+                        <input type="tel" class="form-control" id="inputTelefone" placeholder="Telefone para contato"
+                            pattern="\d{4,5}-\d{4}">
+                    </div>
+                    <div class="form-group col-md-6">
                         <label for="inputCNPJ"></label>
                         <input type="text" class="form-control" id="inputCNPJ" placeholder="Seu endereço de email"
                             pattern="\d{3}\.\d{3}\.\d{3}-\d{2}">
                     </div>
                     <div class="form-group col-md-6">
                         <label for="inputEmail"></label>
-                        <input type="email" class="form-control" id="inputEmail" placeholder="Confrime seu endereço de email">
+                        <input type="email" class="form-control" id="inputEmail"
+                            placeholder="Confrime seu endereço de email">
                     </div>
                     <div class="form-group col-md-6">
                         <label for="inputPassword"></label>
@@ -82,19 +92,11 @@
                         <label for="inputCEP"></label>
                         <input type="text" class="form-control" id="inputCEP" placeholder="CEP" pattern="\d{5}-\d{3}">
                     </div>
-                    <div class="form-group col-md-3">
-                        <label for="inputDDD"></label>
-                        <input type="tel" class="form-control" id="inputDDD" placeholder="DDD" pattern="\d{2}">
-                    </div>
-                    <div class="form-group col-md-9">
-                        <label for="inputTelefone"></label>
-                        <input type="tel" class="form-control" id="inputTelefone" placeholder="Telefone para contato"
-                            pattern="\d{4,5}-\d{4}">
-                    </div>
-                </div>
-                <footer class="container">
 
-                    <section class="row d-flex justify-content-center">
+                </div>
+                <section class="container formFooter">
+
+                    <div class="row d-flex justify-content-center">
                         <div class="col-md-12 termos">
                             <label>Ao se cadastrar você aceita nossos</label>
                             <label class="destaque"><a href="#">Termos de uso </a></label>
@@ -118,25 +120,30 @@
                         <div class="col-md-12">
                             <button class="btn" type="submit">Cadastrar e Continuar</button>
                         </div>
-                    </section>
+                    </div>
 
-                </footer>
+                </section>
 
         </div>
+    </main>
+
+    <footer class="container">
+
+    </footer>
 
 
 
-        <!--Bootstrap JavaScript-->
-        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    <!--Bootstrap JavaScript-->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
         </script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
         </script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
         </script>
-        <!--/Bootstrap JavaScript-->
+    <!--/Bootstrap JavaScript-->
 </body>
 
 </html>

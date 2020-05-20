@@ -2,6 +2,22 @@ body {
   background: rgb(49, 49, 49);
 }
 
+.register-form{
+  -webkit-border-radius: 10px 10px 10px 10px;
+    border-radius: 10px 10px 10px 10px;
+    margin-bottom: 20px;
+    background:rgb(49, 49, 49);
+    padding: 30px;
+    width: 1+0%;
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+    padding: 0px;
+    -webkit-box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
+    box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
 .register-page .head {
   background-color: rgb(49, 49, 49);
   margin-bottom: 20px;
@@ -31,15 +47,11 @@ body {
   color: white;
 }
 
-.register-page .register-form {
-  background-color: rgb(49, 49, 49);
-}
-
 .register-page input,
 .register-page select {
 
   background-color: white;
-  color: black;
+  color: grey;
 }
 
 .register-page label {
@@ -67,14 +79,21 @@ footer {
   margin-bottom: 15px;
 }
 
+.formFooter{
+  padding: 20px;
+  margin-left: -15px;
+  margin-right: 100px;
+  text-align: center;
+  -webkit-border-radius: 0 0 10px 10px;
+  border-radius: 0 0 x;
+}
+
 .btn {
   background-color: #ad7033;
   width: 290px;
   height: 40px;
   color: white;
 }
-
-
 
 
 
