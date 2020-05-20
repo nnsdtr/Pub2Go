@@ -48,13 +48,29 @@ header {
     color: white;
 }
 
+.cadastro-form{
+    -webkit-border-radius: 10px 10px 10px 10px;
+      border-radius: 10px 10px 10px 10px;
+      margin-bottom: 20px;
+      background:rgb(49, 49, 49);
+      padding: 30px;
+      width: 1+0%;
+      width: 100%;
+      max-width: 100%;
+      position: relative;
+      padding: 20px;
+      -webkit-box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
+      box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
+      text-align: center;
+  }
 
-/*Rodape*/
-
-footer {
+.finalpage{
     margin-top: 5px;
     text-align: center;
 }
+
+/*Rodape*/
+
 
 .btn {
     background-color: #ad7033;
