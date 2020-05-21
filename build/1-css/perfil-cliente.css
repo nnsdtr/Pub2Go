@@ -80,6 +80,7 @@ header {
     border-color: rgb(204, 195, 195);
 
   }
+
   
 .perfil-img:hover::after{
     visibility: visible;
@@ -104,6 +105,11 @@ header {
     opacity: 0.7;
     background-size: contain;
     
+}
+
+.amigos img{
+    width: 100px;
+    height: 100px;
 }
 /*Botões*/
 
@@ -204,3 +210,5 @@ footer{
 .cards-cliente  img{
     max-width: 100%;
 }
+
+
