@@ -22,9 +22,11 @@
     <link rel="stylesheet" href="1-css/perfil-cliente.css">
 
     <link rel="shortcut icon" href="0-imgs/favicon3.png" />
+
 </head>
 
 <body>
+
     <header class="container">
         <div class="row">
             <div class="col-12 col-md-2">
@@ -33,10 +35,10 @@
             <div class="menu-cab col-md-7 col-12">
                 <ul class="nav nav-pills nav-fill">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Início</a>
+                        <a class="nav-link" href="pagina-cliente.html">Início</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Perfil </a>
+                        <a class="nav-link" href="perfil-cliente.html">Perfil </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Favoritos</a>
@@ -57,15 +59,26 @@
     <main class="container">
         <div class="conteudo">
             <div class="row">
-                    <a class="bolo col-5 col-md-3 col-lg-2 rounded-circle">
-                        <img src="/build/0-imgs/icont/bolo.png" alt="">
-                    </a>
-                
+                <a class="bolo col-5 col-md-3 col-lg-2 rounded-circle">
+                    <img src="/build/0-imgs/icont/bolo.png" alt="">
+                </a>
+
                 <div class="col-7 col-md-9 col-lg-10 inf-icon">
                     <p class="evento-hora">Perfil do cliente</p>
                     <p>Aqui você poderá visualizar e editar suas informações pessoais.</p>
+
+                </div>
+
+                <!-- Exemplo para poder adicionar imagens -->
+                <div>
+                    <div class="file-upload">
+                        <input type="file" id="upload-1">
+                        <p class="file-name">Please select a file.</p>
+                    </div>
                 </div>
             </div>
+
+            <!-- Fim do exemplo -->
 
             <section class="row">
                 <div class="col-md-6 informacoes">
@@ -96,12 +109,13 @@
 
                             <div class="row">
                                 <div class="col-md-10 pr-0">
-                                    <input type="text" class="form-control a" id="nome" name="nome"
-                                        placeholder="João" disabled>
+                                    <input type="text" class="form-control a" id="nome" name="nome" placeholder="João"
+                                        disabled>
                                 </div>
                                 <div class="col-md-2">
                                     <button id="clicavel" class="clicavel">
-                                        Editar
+                                        <img src="0-imgs/icont/editar.png">
+
                                     </button>
                                 </div>
                             </div>
@@ -118,12 +132,13 @@
 
                             <div class="row">
                                 <div class="col-md-10 pr-0">
-                                    <input type="text" class="form-control a" id="nome" name="nome"
-                                        placeholder="Silva" disabled>
+                                    <input type="text" class="form-control a" id="nome" name="nome" placeholder="Silva"
+                                        disabled>
                                 </div>
                                 <div class="col-md-2">
                                     <button id="clicavel" class="clicavel">
-                                        Editar
+                                        <img src="0-imgs/icont/editar.png">
+
                                     </button>
                                 </div>
                             </div>
@@ -145,7 +160,8 @@
 
                                 <div class="col-md-2">
                                     <button id="clicavel" class="clicavel">
-                                        Editar
+                                        <img src="0-imgs/icont/editar.png">
+
                                     </button>
                                 </div>
                             </div>
@@ -167,7 +183,8 @@
 
                                 <div class="col-md-2">
                                     <button id="clicavel" class="clicavel">
-                                        Editar
+                                        <img src="0-imgs/icont/editar.png">
+
                                     </button>
                                 </div>
                             </div>
@@ -183,12 +200,13 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-10 pr-0">
-                                    <input type="text" class="form-control a" id="nome" name="nome" placeholder="10/05/2002"
-                                    onfocus="(this.type='date')" disabled>
+                                    <input type="text" class="form-control a" id="nome" name="nome"
+                                        placeholder="10/05/2002" onfocus="(this.type='date')" disabled>
                                 </div>
                                 <div class="col-md-2">
                                     <button id="clicavel" class="clicavel">
-                                        Editar
+                                        <img src="0-imgs/icont/editar.png">
+
                                     </button>
                                 </div>
                             </div>
@@ -270,6 +288,7 @@
 
     </footer>
 
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 </body>
+
 </html>
