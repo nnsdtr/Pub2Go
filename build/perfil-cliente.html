@@ -13,6 +13,12 @@
     <!--Font-awesome CSS-->
     <script src="https://kit.fontawesome.com/73b02df156.js" crossorigin="anonymous"></script>
 
+
+    <!--Custom JavaScript-->
+    <script src="2-js/perfil-cliente.js"></script>
+
+
+
     <link rel="stylesheet" href="1-css/perfil-cliente.css">
 
     <link rel="shortcut icon" href="0-imgs/favicon3.png" />
@@ -50,145 +56,214 @@
 
     <main class="container">
         <div class="conteudo">
-
             <div class="row">
-                <div class="col-5 col-md-3 col-lg-2" id="icon">
-                    <img src="0-imgs/icont/bolo.png" alt=" icon" class="rounded-circle">
-                </div>
+                    <a class="bolo col-5 col-md-3 col-lg-2 rounded-circle">
+                        <img src="/build/0-imgs/icont/bolo.png" alt="">
+                    </a>
+                
                 <div class="col-7 col-md-9 col-lg-10 inf-icon">
-                    <p class="evento-hora">Perfil Cliente</p>
-                    <p>Aqui você poderá visualizar suas informações pessoais, tanto quanto altera-las.</p>
+                    <p class="evento-hora">Perfil do cliente</p>
+                    <p>Aqui você poderá visualizar e editar suas informações pessoais.</p>
                 </div>
             </div>
 
             <section class="row">
-                
-                <div class="col-md-6">
-                    <div class="row">
+                <div class="col-md-6 informacoes">
+                    <div class="row campo">
                         <div class="col-md-12">
-                            <label>Nome:</label>
+                            <div class="row">
+                                <div class="col-md-12 mt-md-2">
+                                    <p>Email:</p>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-10 pr-0">
+                                    <input type="email" class="form-control a" id="nome" name="nome"
+                                        placeholder="joaosilva@gmail.com" disabled>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="row">
-                        <div class="col-md-10">
-                           
-                            <input type="text" class="form-control a" id="nome" name="nome" placeholder="Roberto" disabled>
-                        </div>
-                        <div class="col-md-2">                           
-                            Editar 
-                        </div>
-                    </div>
-
-                    <div class="row">
+                    <div class="row campo">
                         <div class="col-md-12">
-                            <label>Sobrenome:</label>
+                            <div class="row">
+                                <div class="col-md-12 mt-md-2">
+                                    <p>Nome:</p>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-10 pr-0">
+                                    <input type="text" class="form-control a" id="nome" name="nome"
+                                        placeholder="João" disabled>
+                                </div>
+                                <div class="col-md-2">
+                                    <button id="clicavel" class="clicavel">
+                                        Editar
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="row">
-                        <div class="col-md-10">
-                           
-                            <input type="text" class="form-control a" id="nome" name="nome" placeholder="Roberto" disabled>
-                        </div>
-                        <div class="col-md-2">                           
-                            Editar 
-                        </div>
-                    </div>
-
-                    <div class="row">
+                    <div class="row campo">
                         <div class="col-md-12">
-                            <label>Nome:</label>
+                            <div class="row">
+                                <div class="col-md-12 mt-md-2">
+                                    <p>Sobrenome:</p>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-10 pr-0">
+                                    <input type="text" class="form-control a" id="nome" name="nome"
+                                        placeholder="Silva" disabled>
+                                </div>
+                                <div class="col-md-2">
+                                    <button id="clicavel" class="clicavel">
+                                        Editar
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="row">
-                        <div class="col-md-10">
-                           
-                            <input type="text" class="form-control a" id="nome" name="nome" placeholder="Roberto" disabled>
-                        </div>
-                        <div class="col-md-2">                           
-                            Editar 
-                        </div>
-                    </div>
-
-                    <div class="row">
+                    <div class="row campo">
                         <div class="col-md-12">
-                            <label>Nome:</label>
+                            <div class="row">
+                                <div class="col-md-12 mt-md-2">
+                                    <p>Telefone:</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-10 pr-0">
+                                    <input type="text" class="form-control a" id="nome" name="nome"
+                                        placeholder="(31) 99999-9999" disabled>
+                                </div>
+
+                                <div class="col-md-2">
+                                    <button id="clicavel" class="clicavel">
+                                        Editar
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="row">
-                        <div class="col-md-10">
-                           
-                            <input type="text" class="form-control a" id="nome" name="nome" placeholder="Roberto" disabled>
-                        </div>
-                        <div class="col-md-2">                           
-                            Editar 
+                    <div class="row campo">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-12 mt-md-2">
+                                    <p>Senha:</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-10 pr-0">
+                                    <input type="password" class="form-control a" id="nome" name="nome"
+                                        placeholder="*******" disabled>
+                                </div>
+
+                                <div class="col-md-2">
+                                    <button id="clicavel" class="clicavel">
+                                        Editar
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                       
-                    
-                    
-                    
+
+                    <div class="row campo">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-12 mt-md-2">
+                                    <p>Data de nascimento:</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-10 pr-0">
+                                    <input type="text" class="form-control a" id="nome" name="nome" placeholder="10/05/2002"
+                                    onfocus="(this.type='date')" disabled>
+                                </div>
+                                <div class="col-md-2">
+                                    <button id="clicavel" class="clicavel">
+                                        Editar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="col-md-3 segunda-coluna">
-                    <div class="card-header">Eventos disponíveis:</div>
-                    <div class="col-md-12  card">
-                        
-                        <div class="row card-body">
-                            <div class="col-md-6">
-                                <img src="0-imgs/bar/bar01.jpg">
-                                <a>Bar1</a>
-                            </div>
-                            <div class="col-md-6">
-                                <img src="0-imgs/bar/bar02.jpg">
-                                <a>Bar1</a>
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <div class="col-md-3 segunda-coluna">
-                    <div class="card-header">Favoritos:</div>
-                    <div class="col-md-12  card">
-                        
-                        <div class="row card-body">
-                            <div class="col-md-6">
-                                <img src="0-imgs/bar/bar01.jpg">
-                                <a>Bar1</a>
-                            </div>
-                            <div class="col-md-6">
-                                <img src="0-imgs/bar/bar02.jpg">
-                                <a>Bar1</a>
+                <div class="col-md-3 pl-md-5 cards-cliente">
+                    <div class="row">
+                        <div class="col-md-12 card">
+                            <div class="row card-header">
+                                Eventos disponíveis:
                             </div>
                             <div class="row card-body">
-                            <div class="col-md-6">
-                                <img src="0-imgs/bar/bar01.jpg">
-                                <a>Bar1</a>
-                            </div>
-                            <div class="col-md-6">
-                                <img src="0-imgs/bar/bar02.jpg">
-                                <a>Bar1</a>
+                                <div class="col-md-6 card-imagens">
+                                    <img src="0-imgs/bar/bar01.jpg" alt="">
+                                    <a href="">Evento A</a>
+                                </div>
+                                <div class="col-md-6 card-imagens">
+                                    <img src="0-imgs/bar/bar02.jpg" alt="">
+                                    <a href="">Evento B</a>
+                                </div>
+                                <div class="col-md-6 card-imagens">
+                                    <img src="0-imgs/bar/bar03.jpg" alt="">
+                                    <a href="">Evento C</a>
+                                </div>
+                                <div class="col-md-6 card-imagens">
+                                    <img src="0-imgs/bar/bar05.jpg" alt="">
+                                    <a href="">Evento D</a>
+                                </div>
                             </div>
                         </div>
-
                     </div>
-
                 </div>
 
-            </section>
 
-            <div class="event-description">
-                <h6>Descrição</h6>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, at cumque deserunt fuga quasi ducimus reprehenderit id sint aspernatur animi laborum similique odio, optio, voluptates explicabo porro vitae officia. Excepturi.</p>
-            </div>
+                <div class="col-md-3 pl-md-5 cards-cliente">
+                    <div class="row">
+                        <div class="col-md-12 card">
+                            <div class="row card-header">
+                                Favoritos:
+                            </div>
+                            <div class="row card-body">
+                                <div class="col-md-6 card-imagens">
+                                    <img src="0-imgs/bar/bar01.jpg">
+                                    <a href="">Bar1</a>
+                                </div>
+                                <div class="col-md-6 card-imagens">
+                                    <img src="0-imgs/bar/bar02.jpg">
+                                    <a href="">Bar2</a>
+                                </div>
+                                <div class="col-md-6 card-imagens">
+                                    <img src="0-imgs/bar/bar01.jpg">
+                                    <a href="">Bar1</a>
+                                </div>
+                                <div class="col-md-6 card-imagens">
+                                    <img src="0-imgs/bar/bar02.jpg">
+                                    <a href="">Bar2</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        </div>
+        </section>
+
+        <div class="event-description">
+            <h6>Descrição</h6>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, at cumque deserunt fuga quasi ducimus
+                reprehenderit id sint aspernatur animi laborum similique odio, optio, voluptates explicabo porro
+                vitae officia. Excepturi.</p>
+        </div>
         </div>
     </main>
-
 
     <footer class="container">
         Copyright 2020 - Todos os direitos reservados - Pub2go
@@ -197,3 +272,4 @@
 
 
 </body>
+</html>
