@@ -8,7 +8,7 @@ window.onload = () => {
         localStorage.setItem('email', email.value);
         localStorage.setItem('checkEmail', checkEmail.value);
         localStorage.setItem('senha', senha.value);
-        localStorage.setItem('confirmeS', confirmeS.value);
+        localStorage.setItem('confirmesenha', confirmesenha.value);
         localStorage.setItem('cidade', cidade.value);
         localStorage.setItem('estado', estado.value);
         localStorage.setItem('cep', cep.value);
@@ -35,26 +35,46 @@ function validar() {
         alerta.style.textAlign = 'left';
         cadastro.nome.focus();
         return false;
-    }else{
+    } else {
         alerta.innerHTML = '';
     }
 
-    var sobrenome = cadastro.sobrenome.value;
-    if (sobrenome == "" || sobrenome == null) {
-        alerta.innerHTML = '* Digite um Sobrenome';
+    var cnpj = cadastro.cnpj.value;
+    if (cnpj == "" || cnpj == null) {
+        alerta.innerHTML = '* Digite um Cnpj';
         alerta.style.color = '#D01';
         alerta.style.display = 'block';
         alerta.style.textAlign = 'left';
-        cadastro.sobrenome.focus();
+        cadastro.cnpj.focus();
         return false;
-    } else if (sobrenome.length < 3) {
-        alerta.innerHTML = '* Digite um Sobrenome válido';
+
+    } else if (cnpj.length < 5) {
+        alerta.innerHTML = '* Digite um Cnpj válido';
         alerta.style.color = '#D01';
         alerta.style.display = 'block';
         alerta.style.textAlign = 'left';
-        cadastro.sobrenome.focus();
+        cadastro.cnpj.focus();
         return false;
-    }else{
+    } else {
+        alerta.innerHTML = '';
+    }
+
+    var telefone = cadastro.telefone.value;
+    if (telefone == "" || telefone == null) {
+        alerta.innerHTML = '* Digite um Telefone';
+        alerta.style.color = '#D01';
+        alerta.style.display = 'block';
+        alerta.style.textAlign = 'left';
+        cadastro.telefone.focus();
+        return false;
+    } else if (telefone.value.length <= 7) {
+        alerta.innerHTML = '* Digite um telefone válido';
+        alerta.style.color = '#D01';
+        alerta.style.display = 'block';
+        alerta.style.textAlign = 'left';
+        cadastro.telefone.focus();
+        return false;
+    } else {
         alerta.innerHTML = '';
     }
 
@@ -73,94 +93,19 @@ function validar() {
         alerta.style.textAlign = 'left';
         cadastro.senha.focus();
         return false;
-    }else{
+    } else {
         alerta.innerHTML = '';
     }
 
-    var confirmsenha = cadastro.confirmsenha.value;
-    if (confirmsenha != senha) {
+    var confirmesenha = cadastro.confirmesenha.value;
+    if (confirmeS != senha) {
         alerta.innerHTML = '* As senhas devem ser iguais';
         alerta.style.color = '#D01';
         alerta.style.display = 'block';
         alerta.style.textAlign = 'left';
-        cadastro.confirmsenha.focus();
+        cadastro.confirmeS.focus();
         return false;
-    }else{
+    } else {
         alerta.innerHTML = '';
-    }
-
-var email = cadastro.email.value;
-if (email == "" || email == null) {
-    alerta.innerHTML = '* Digite um Email';
-    alerta.style.color = '#D01';
-    alerta.style.display = 'block';
-    alerta.style.textAlign = 'left';
-    cadastro.email.focus();
-    return false;
-} else if (email.length < 3) {
-    alerta.innerHTML = '* Digite um Email válido';
-    alerta.style.color = '#D01';
-    alerta.style.display = 'block';
-    alerta.style.textAlign = 'left';
-    cadastro.email.focus();
-    return false;
-}else{
-    alerta.innerHTML = '';
-}
-
-var telefone = cadastro.telefone.value;
-if (telefone == "" || telefone == null) {
-    alerta.innerHTML = '* Digite um Telefone';
-    alerta.style.color = '#D01';
-    alerta.style.display = 'block';
-    alerta.style.textAlign = 'left';
-    cadastro.telefone.focus();
-    return false;
-} else if (telefone.value.length <= 7) {
-    alerta.innerHTML = '* Digite um telefone válido';
-    alerta.style.color = '#D01';
-    alerta.style.display = 'block';
-    alerta.style.textAlign = 'left';
-    cadastro.telefone.focus();
-    return false;
-}else{
-    alerta.innerHTML = '';
-}
-
-var ddd = cadastro.ddd.value;
-if (ddd == "" || ddd == null) {
-    alerta.innerHTML = '* Digite um DDD';
-    alerta.style.color = '#D01';
-    alerta.style.display = 'block';
-    alerta.style.textAlign = 'left';
-    cadastro.telefone.focus();
-    return false;
-} else if (telefone.value.length > 4) {
-    alerta.innerHTML = '* Digite um DDD válido';
-    alerta.style.color = '#D01';
-    alerta.style.display = 'block';
-    cadastro.telefone.focus();
-    return false;
-}else{
-    alerta.innerHTML = '';
-}
-
-var anonascimento = cadastro.anonascimento.value;
-if (anonascimento == "" || anonascimento == null) {
-    alerta.innerHTML = '* Digite um Ano de nascimento';
-    alerta.style.color = '#D01';
-    alerta.style.display = 'block';
-    alerta.style.textAlign = 'left';
-    cadastro.telefone.focus();
-    return false;
-} else if (telefone.value.length != 4) {
-    alerta.innerHTML = '* Digite um ano de nascimento válido';
-    alerta.style.color = '#D01';
-    alerta.style.display = 'block';
-    cadastro.telefone.focus();
-    return false;
-}else{
-    alerta.innerHTML = '';
+    };
 };
-};
->>>>>>> b80f45603b93ac3fd658fc084ac45340d222089c
