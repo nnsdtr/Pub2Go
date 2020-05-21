@@ -163,3 +163,4 @@ if (anonascimento == "" || anonascimento == null) {
     alerta.innerHTML = '';
 };
 };
+>>>>>>> b80f45603b93ac3fd658fc084ac45340d222089c
