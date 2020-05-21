@@ -19,6 +19,8 @@
     <link rel="stylesheet" href="1-css/fontes.css">
     <link rel="stylesheet" href="1-css/cadastro-comercio.css">
 
+    <script src="2-js/cadastro-comercio.js"></script>
+
     <link rel="shortcut icon" href="0-imgs/favicon3.png" />
 
     <title>Pub2Go - Cadastro Comércio</title>
@@ -42,54 +44,61 @@
             </div>
     </header>
 
+
     <main class="container register-page">
 
         <div class="row cadastro-form">
 
-            <form class="col-md-12">
+            <form class="col-md-12" id="cadastro" method="post" action="https://postman-echo.com/post">
 
                 <div class="form-row">
                     <div class="form-group col-md-12">
                         <label for="inputName"></label>
-                        <input type="text" class="form-control " id="inputName" placeholder="Nome do estabelecimento">
+                        <input type="text" class="form-control " id="nome" name="nome"
+                            placeholder="Nome do estabelecimento">
                     </div>
                     <div class="form-group col-md-6">
                         <label for="inputLastname"></label>
-                        <input type="text" class="form-control" id="inputCNPJ" placeholder="CNPJ">
+                        <input type="text" class="form-control" id="cnpj" name="cnpj" placeholder="CNPJ">
                     </div>
                     <div class="form-group col-md-6">
                         <label for="inputTelefone"></label>
-                        <input type="tel" class="form-control" id="inputTelefone" placeholder="Telefone para contato"
-                            pattern="\d{4,5}-\d{4}">
+                        <input type="tel" class="form-control" id="telefone" name="telefone"
+                            placeholder="Telefone para contato">
                     </div>
                     <div class="form-group col-md-6">
                         <label for="inputCNPJ"></label>
-                        <input type="text" class="form-control" id="inputEmail" placeholder="Seu endereço de email"
-                            pattern="\d{3}\.\d{3}\.\d{3}-\d{2}">
+                        <input type="text" class="form-control" id="email" name="email"
+                            placeholder="Seu endereço de email">
                     </div>
                     <div class="form-group col-md-6">
                         <label for="inputEmail"></label>
+<<<<<<< HEAD
                         <input type="email" class="form-control" id="inputCheckEmail"
                             placeholder="Confirme seu endereço de email">
+=======
+                        <input type="email" class="form-control" id="checkEmail" name="checkEmail"
+                            placeholder="Confrime seu endereço de email">
+>>>>>>> 1ca0d53afd4a878c0b81ec4290364566576d99fd
                     </div>
                     <div class="form-group col-md-6">
                         <label for="inputPassword"></label>
-                        <input type="Password" class="form-control" id="inputPassword" placeholder="Senha">
+                        <input type="Password" class="form-control" id="senha" name="senha" placeholder="Senha">
                     </div>
                     <div class="form-group col-md-6">
                         <label for="confirmPassword"></label>
-                        <input type="password" class="form-control" id="confirmPassword"
+                        <input type="password" class="form-control" id="confirmesenha" name="confirmesenha"
                             placeholder="Confirme sua senha">
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="inputCity"></label>
-                        <input type="text" class="form-control" id="inputCity" placeholder="Cidade">
+                        <input type="text" class="form-control" id="cidade" name="cidade" placeholder="Cidade">
                     </div>
                     <div class="form-group col-md-4">
                         <label for="inputState"></label>
-                        <select id="inputState" class="form-control">
+                        <select id="estado" name="estado" class="form-control">
                             <option selected>Estado</option>
                             <option>Acre</option>
                             <option>Alagoas</option>
@@ -122,9 +131,9 @@
                     </div>
                     <div class="form-group col-md-2">
                         <label for="inputCEP"></label>
-                        <input type="text" class="form-control" id="inputCEP" placeholder="CEP" pattern="\d{5}-\d{3}">
+                        <input type="text" class="form-control" id="cep" name="cep" placeholder="CEP">
                     </div>
-
+                    <span id="alerta"></span>
                 </div>
                 <section class="container formFooter">
 
@@ -150,7 +159,8 @@
                         </div>
 
                         <div class="col-md-12">
-                            <button class="btn" type="submit">Cadastrar e Continuar</button>
+                            <button id="btn_submit" onclick="return validar()" class="btn" type="submit">Cadastrar e
+                                Continuar</button>
                         </div>
                     </div>
 
@@ -168,13 +178,13 @@
     <!--Bootstrap JavaScript-->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
-    </script>
+        </script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-    </script>
+        </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
-    </script>
+        </script>
     <!--/Bootstrap JavaScript-->
 </body>
 
