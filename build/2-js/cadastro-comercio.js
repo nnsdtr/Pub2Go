@@ -2,16 +2,16 @@
 
 window.onload = () => {
     cadastro.onsubmit = (evento) => {
-        localStorage.setItem('inputName', nome.value);
-        localStorage.setItem('inputLastname', sobrenome.value);
-        localStorage.setItem('inputTelefone', telefone.value);
-        localStorage.setItem('inputEmail', email.value);
-        localStorage.setItem('inputCheckEmail', checkemail.value);
-        localStorage.setItem('inputPassword', password.value);
-        localStorage.setItem('confirmPassword', checkpassword.value);
-        localStorage.setItem('inputCity', city.value);
-        localStorage.setItem('inputState', state.value);
-        localStorage.setItem('inputCEP', cep.value);
+        localStorage.setItem('nome', nome.value);
+        localStorage.setItem('cnpj', cnpj.value);
+        localStorage.setItem('telefone', telefone.value);
+        localStorage.setItem('email', email.value);
+        localStorage.setItem('checkEmail', checkEmail.value);
+        localStorage.setItem('senha', senha.value);
+        localStorage.setItem('confirmeS', confirmeS.value);
+        localStorage.setItem('cidade', cidade.value);
+        localStorage.setItem('estado', estado.value);
+        localStorage.setItem('cep', cep.value);
     }
 
     /* Função para validar se campos estão corretos */
