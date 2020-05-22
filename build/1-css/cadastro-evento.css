@@ -1,0 +1,59 @@
+/* gerais */
+body {
+    background-color: rgb(49, 49, 49);
+}
+
+/* Cabecalho */
+header {
+    margin-bottom: 10px;
+}
+.menu-cab li{
+    margin-top: 10px;
+    margin-right: 2px;
+}
+
+.pesquisa {
+    margin-top: 10px;
+}
+.logo {
+    display:block;
+    margin: 0 auto;
+    max-width: 100px;
+}
+.menu-cab a{
+    color: #ffa64c;
+    background-color:rgb(68, 67, 67);
+}
+.menu-cab a:hover{
+    color:  rgb(49, 49, 49);
+    background-color: #ffa64c ;
+}
+
+/* main*/
+.conteudo{
+    border-radius: 10px;
+    background-color: #fff;
+    padding: 30px;
+    position: relative;
+    box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.5);
+}
+
+
+
+/* footer */
+footer{
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+@media screen and (max-width: 480px){
+    #icon img {
+       max-width: 100px;
+    }
+
+}
+
+/**/
+
+
