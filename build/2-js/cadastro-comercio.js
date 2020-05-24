@@ -58,7 +58,6 @@ function validar() {
     } else {
         alerta.innerHTML = '';
     }
-
     var telefone = cadastro.telefone.value;
     if (telefone == "" || telefone == null) {
         alerta.innerHTML = '* Digite um telefone';
@@ -67,7 +66,7 @@ function validar() {
         alerta.style.textAlign = 'left';
         cadastro.telefone.focus();
         return false;
-    } else if (telefone.value.length <= 7) {
+    } else if (telefone.length <= 7) {
         alerta.innerHTML = '* Digite um telefone válido';
         alerta.style.color = '#D01';
         alerta.style.display = 'block';
@@ -128,8 +127,8 @@ function validar() {
         alerta.innerHTML = '';
     }
 
-    var confirmesenha = cadastro.confirmesenha.value;
-    if (confirmeS != senha) {
+    var confirmsenha = cadastro.confirmesenha.value;
+    if (confirmsenha != senha) {
         alerta.innerHTML = '* As senhas devem ser iguais';
         alerta.style.color = '#D01';
         alerta.style.display = 'block';
