@@ -66,6 +66,7 @@ function validar() {
         alerta.style.textAlign = 'left';
         cadastro.telefone.focus();
         return false;
+
     } else if (telefone.length <= 7) {
         alerta.innerHTML = '* Digite um telefone válido';
         alerta.style.color = '#D01';
@@ -77,6 +78,7 @@ function validar() {
         alerta.innerHTML = '';
     }
 
+    
     var email = cadastro.email.value;
     if (email == "" || email == null) {
         alerta.innerHTML = '* Digite um e-mail!';
@@ -102,7 +104,7 @@ function validar() {
         alerta.style.color = '#D01';
         alerta.style.display = 'block';
         alerta.style.textAlign = 'left';
-        cadastro.confirmsenha.focus();
+        cadastro.confirmemail.focus();
         return false;
     } else {
         alerta.innerHTML = '';
@@ -127,13 +129,13 @@ function validar() {
         alerta.innerHTML = '';
     }
 
-    var confirmsenha = cadastro.confirmesenha.value;
-    if (confirmsenha != senha) {
+    var confirmesenha = cadastro.confirmesenha.value;
+    if (confirmesenha != senha) {
         alerta.innerHTML = '* As senhas devem ser iguais';
         alerta.style.color = '#D01';
         alerta.style.display = 'block';
         alerta.style.textAlign = 'left';
-        cadastro.confirmeS.focus();
+        cadastro.confirmesenha.focus();
         return false;
     } else {
         alerta.innerHTML = '';
