@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="1-css/fontes.css">
     <link rel="stylesheet" href="1-css/cadastro-cliente.css">
     <script src="2-js/cadastro-cliente.js"></script>
+    <script src="2-js/jquery.mask.min.js"></script>
 
     <link rel="shortcut icon" href="0-imgs/favicon3.png" />
 </head>
@@ -34,7 +35,7 @@
             </section>
         </header>
         <form id="cadastro" method="post" action="https://postman-echo.com/post">
-            
+
             <main class="container register-page">
 
                 <div class="row cadastro-form">
@@ -58,19 +59,20 @@
                                     placeholder="Confirme sua senha">
                             </div>
                             <div class="col-md-6">
-                                <input type="text" class="form-control a" id="email" name="email" placeholder="E-mail">
+                                <input type="email" class="form-control a" id="email" name="email" placeholder="E-mail"
+                                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
                             </div>
                             <div class="col-md-6">
-                                <input type="text" class="form-control a" id="confirmemail" name="confirmemail"
-                                    placeholder="Confirme seu E-mail">
+                                <input type="email" class="form-control a" id="confirmemail" name="confirmemail"
+                                    placeholder="Confirme seu e-mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
                             </div>
                             <div class="col-md-6">
-                                <input type="number" class="form-control a" id="telefone" name="telefone"
+                                <input type="text" class="form-control a" id="telefone" name="telefone"
                                     placeholder="Telefone">
                             </div>
                             <div class="col-md-6">
                                 <input type="text" class="form-control a" id="anonascimento" name="anonascimento"
-                                    placeholder="Data de Nascimento">
+                                    placeholder="Insira sua data de nascimento" required>
                             </div>
                         </section>
                         <span id="alerta"></span>
@@ -120,13 +122,22 @@
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
             integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-            </script>
+        </script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
             integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-            </script>
+        </script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
             integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-            </script>
+        </script>
+        <script src="2-js/jquery.mask.min.js"></script>
+
+        <!-- Máscara do formulário -->
+        <script>
+            $(document).ready(function () {
+                $('#anonascimento').mask('00/00/0000');
+                $('#telefone').mask('(00) 00000-0000');
+            })
+        </script>
 </body>
 
 </html>

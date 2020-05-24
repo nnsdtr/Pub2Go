@@ -7,6 +7,7 @@ window.onload = () => {
         localStorage.setItem('senha', senha.value);
         localStorage.setItem('confirmsenha', confirmsenha.value);
         localStorage.setItem('email', email.value);
+        localStorage.setItem('confirmemail', confirmemail)
         localStorage.setItem('telefone', telefone.value);
         localStorage.setItem('ddd', ddd.value);
         localStorage.setItem('anonascimento', anonascimento.value);
@@ -36,14 +37,14 @@ window.onload = () => {
 function validar() {
     var nome = cadastro.nome.value;
     if (nome == "" || nome == null) {
-        alerta.innerHTML = '* Digite um Nome ';
+        alerta.innerHTML = '* Digite um nome!';
         alerta.style.color = '#D01';
         alerta.style.display = 'block';
         alerta.style.textAlign = 'left';
         cadastro.nome.focus();
         return false;
     } else if (nome.length < 3) {
-        alerta.innerHTML = '* Digite um nome válido';
+        alerta.innerHTML = '* Digite um nome válido!';
         alerta.style.color = '#D01';
         alerta.style.display = 'block';
         alerta.style.textAlign = 'left';
@@ -55,14 +56,14 @@ function validar() {
 
     var sobrenome = cadastro.sobrenome.value;
     if (sobrenome == "" || sobrenome == null) {
-        alerta.innerHTML = '* Digite um Sobrenome';
+        alerta.innerHTML = '* Digite um sobrenome!';
         alerta.style.color = '#D01';
         alerta.style.display = 'block';
         alerta.style.textAlign = 'left';
         cadastro.sobrenome.focus();
         return false;
     } else if (sobrenome.length < 3) {
-        alerta.innerHTML = '* Digite um Sobrenome válido';
+        alerta.innerHTML = '* Digite um sobrenome válido!';
         alerta.style.color = '#D01';
         alerta.style.display = 'block';
         alerta.style.textAlign = 'left';
@@ -74,7 +75,7 @@ function validar() {
 
     var senha = cadastro.senha.value;
     if (senha == "" || senha == null) {
-        alerta.innerHTML = '* Digite uma Senha';
+        alerta.innerHTML = '* Digite uma senha';
         alerta.style.color = '#D01';
         alerta.style.display = 'block';
         alerta.style.textAlign = 'left';
@@ -105,14 +106,14 @@ function validar() {
 
     var email = cadastro.email.value;
     if (email == "" || email == null) {
-        alerta.innerHTML = '* Digite um Email';
+        alerta.innerHTML = '* Digite um e-mail!';
         alerta.style.color = '#D01';
         alerta.style.display = 'block';
         alerta.style.textAlign = 'left';
         cadastro.email.focus();
         return false;
-    } else if (email.length < 3) {
-        alerta.innerHTML = '* Digite um Email válido';
+    } else if (email.length < 8 || email.indexOf('@') == -1 || email.indexOf('.') == -1) {
+        alerta.innerHTML = '* Digite um e-mail válido!';
         alerta.style.color = '#D01';
         alerta.style.display = 'block';
         alerta.style.textAlign = 'left';
@@ -124,7 +125,7 @@ function validar() {
 
     var confirmemail = cadastro.confirmemail.value;
     if (email != confirmemail) {
-        alerta.innerHTML = '* Os e-emails devem ser iguais';
+        alerta.innerHTML = '* Os e-mails devem ser iguais!';
         alerta.style.color = '#D01';
         alerta.style.display = 'block';
         alerta.style.textAlign = 'left';
@@ -136,14 +137,14 @@ function validar() {
 
     var telefone = cadastro.telefone.value;
     if (telefone == "" || telefone == null) {
-        alerta.innerHTML = '* Digite um Telefone';
+        alerta.innerHTML = '* Digite um telefone!';
         alerta.style.color = '#D01';
         alerta.style.display = 'block';
         alerta.style.textAlign = 'left';
         cadastro.telefone.focus();
         return false;
     } else if (telefone.value.length <= 7) {
-        alerta.innerHTML = '* Digite um telefone válido';
+        alerta.innerHTML = '* Digite um telefone válido!';
         alerta.style.color = '#D01';
         alerta.style.display = 'block';
         alerta.style.textAlign = 'left';
@@ -179,15 +180,8 @@ function validar() {
         alerta.style.textAlign = 'left';
         cadastro.telefone.focus();
         return false;
-    } else if (telefone.value.length != 4) {
-        alerta.innerHTML = '* Digite um ano de nascimento válido';
-        alerta.style.color = '#D01';
-        alerta.style.display = 'block';
-        cadastro.telefone.focus();
-        return false;
     } else {
         alerta.innerHTML = '';
     }
-
 
 };
