@@ -7,9 +7,8 @@ window.onload = () => {
         localStorage.setItem('senha', senha.value);
         localStorage.setItem('confirmesenha', confirmesenha.value);
         localStorage.setItem('email', email.value);
-        localStorage.setItem('confirmemail', confirmemail)
+        localStorage.setItem('confirmemail', confirmemail.value)
         localStorage.setItem('telefone', telefone.value);
-        localStorage.setItem('ddd', ddd.value);
         localStorage.setItem('anonascimento', anonascimento.value);
 
 
@@ -157,7 +156,7 @@ function validar() {
         alerta.style.textAlign = 'left';
         cadastro.telefone.focus();
         return false;
-    } else if (telefone.value.length <= 7) {
+    } else if (telefone.length < 15) {
         alerta.innerHTML = '* Digite um telefone válido!';
         alerta.style.color = '#D01';
         alerta.style.display = 'block';
@@ -169,8 +168,15 @@ function validar() {
     }
 
     var anonascimento = cadastro.anonascimento.value;
-    if (anonascimento == "" || anonascimento == null || anonascimento.length < 7) {
+    if (anonascimento == "" || anonascimento == null) {
         alerta.innerHTML = '* Informe a sua data de nascimento!';
+        alerta.style.color = '#D01';
+        alerta.style.display = 'block';
+        alerta.style.textAlign = 'left';
+        cadastro.anonascimento.focus();
+        return false;
+    } else if (anonascimento.length < 10){
+        alerta.innerHTML = '* Data de nascimento inválida!';
         alerta.style.color = '#D01';
         alerta.style.display = 'block';
         alerta.style.textAlign = 'left';
