@@ -14,6 +14,12 @@
     <script src="https://kit.fontawesome.com/73b02df156.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="1-css/evento-detalhe.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css"
+        integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+        crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"
+        integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw=="
+        crossorigin=""></script>
 
     <link rel="shortcut icon" href="0-imgs/favicon3.png" />
 </head>
@@ -71,6 +77,80 @@
             <div class="botoes">
                 <div class="row">
 
+                    <!--Google Maps-->
+
+                    <!-- Tamanho do Mapa -->
+                    <style>
+                        #map {
+                            height: 400px;
+                            width: 100%
+                        }
+                    </style>
+                    <div id="map"></div>
+
+
+                    <script>
+                        function initMap() {
+
+                            // Quanto maior o zoom, mais detalhado o local
+                            // Lat(Latitude) Lng (Longitude) do local
+                            var options = {
+                                zoom: 13,
+                                center: {
+                                    lat: -19.8157,
+                                    lng: -43.9542
+                                }
+                            }
+                            var map = new
+                            google.maps.Map(document.getElementById('map'), options);
+
+                            //Marcador 
+
+                            var marker = new google.maps.Marker({
+                                position: {
+                                    lat: -19.8157,
+                                    lng: -43.9542,
+                                },
+                                map: map,
+
+                            });
+
+                        }
+                    </script>
+
+                    <!-- Chave API -->
+                    <script async defer
+                        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC2epVXs8TDfvZyRyn-j_WvCjYZIjP4X8o&callback=initMap">
+                    </script>
+
+                    <!--Fim do Google Maps -->
+
+
+                    <!-- Inicio do OpenStreetMap -->
+
+                    <div id="mapDiv" style="width: 100%; height: 500px"></div>
+                    <script>
+                        // Posição, latitude e longitude
+                        var lat = -19.8157;
+                        var lon = -43.9542;
+
+                        map = L.map('mapDiv').setView([lat, lon], 13);
+
+                        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
+                            maxZoom: 18,
+                        }).addTo(map);
+                        // Marcador
+                        marker = L.marker([lat, lon]).addTo(map);
+                        // POP-UP do Marcador
+                        marker.bindPopup(
+                                "<b>Aniversário da Maria.</b><br />Putaria vai ser aqui mesmo<br />Venda Nova.")
+                            .openPopup();
+                    </script>
+
+                    <!-- Fim do OpenStreetMap -->
+
+
                     <div class="col-12 col-md-6">
                         <button type="button" class="btn btn-light"><i class="fas fa-map-marker-alt"></i>&nbsp Como
                             Chegar</button>
@@ -84,7 +164,7 @@
 
                 <button type="button" class="btn btn-light " id="presenca-confirmar">Confirmar
                     Presença</button>
-                    
+
                 <div class="btn-group btn-group-toggle" data-toggle="buttons">
                     <label class="btn btn-light">
                         <input type="radio" name="options" id="confirmed" autocomplete="off" checked>
