@@ -56,138 +56,146 @@
 
     <main class="container">
         <div class="conteudo">
+
             <div class="row">
-                <div class="col-12 imagem-center card">
-                    <img src="/build/0-imgs/bar/jaeh.jpg" alt="...">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-5 col-md-3 col-lg-2" id="icon">
+                <div class="col-md-3 col-lg-2" id="icon">
                     <img src="0-imgs/icont/bolo.png" alt=" icon" class="rounded-circle">
                 </div>
-                <div class="col-7 col-md-9 col-lg-10 inf-icon">
-                    <p>Aniversário da Maria</p>
-                    <p class="evento-hora">Hoje as 14:00</p>
+                <div class="col-md-7 inf-icon">
+                    <h1>
+                        <p>Aniversário da Maria</p>
+                    </h1>
+                    <h4>
+                        <p class="evento-hora">Sábado as 14:00</p>
+                    </h4>
                 </div>
+
+                <div class="col-md-3">
+                    <div class="row">
+                        <button class="btn">Confirmar Presença</button>
+                    </div>
+                    <p></p>
+
+                    <div class="row">
+                        <div class="btn-group btn-group-toggle col-md-12" data-toggle="buttons">
+
+                            <label class="btn btn-light conf">
+                                <input type="radio" name="options" id="confirmed" autocomplete="off" checked>
+                                <img id="icon-confirmed" src="0-imgs/icont/mark.svg" alt="">
+                                <div id="pessoas-confirmadas">
+                                    24
+                                </div>
+                            </label>
+
+                            <label class="btn btn-light non">
+                                <input type="radio" name="options" id="noconfirmed" autocomplete="off">
+                                <img id="icon-noconfirmed" src="0-imgs/icont/cross.svg" alt="">
+                                <div id="pessoas-naoconfirmadas">
+                                    8
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+
+
             </div>
 
 
+            <!-- Fotos do local-->
+
+            <div class="event-description">
+                <h6>Descrição do Evento</h6>
+                <p>Meu aniversário vai ser no Chico do Peixe, conto com a presença de todos vocês lá!!</p>
+                <p>De 14:00 as 22:00 - Levar só cash!</p>
+            </div>
+            <p>
+            <section class="row">
+                <div class="col-md-12 cards-cliente">
+                    <div class="row">
+                        <div class="col-md-12 card">
+                            <div class="row card-header">
+                                Fotos do Estabelecimento:
+                            </div>
+                            <div class="row card-body">
+                                <div class="col-md-3 card-imagens">
+                                    <img src="0-imgs/bar/bar01.jpg" alt="">
+                                </div>
+                                <div class="col-md-3 card-imagens">
+                                    <img src="0-imgs/bar/bar02.jpg" alt="">
+                                </div>
+                                <div class="col-md-3 card-imagens">
+                                    <img src="0-imgs/bar/bar03.jpg" alt="">
+                                </div>
+                                <div class="col-md-3 card-imagens">
+                                    <img src="0-imgs/bar/bar05.jpg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Fim fotos do local-->
+
+            <!-- Mapa -->
+            <!-- Inicio do OpenStreetMap -->
+            <section class="row">
+
+                <div class="col-md-3 card localidades">
+                    <div class="row card-header">
+                        Informações Estabelecimento
+                    </div>
+                    <div class="col-md-12">
+                        <p></p>
+                        <b>Local:</b>
+                        <p>Rua Contagem, 2165 - Santa Ines, Belo Horizonte - MG, 31080-255
+                        <p>
+                            <b>Website:</b>
+                            <a href="https://www.chicodopeixe.com.br/">chicodopeixe.com.br</a>
+                        <p></p>
+                        <b>Telefone:</b>
+                        <p>(31) 3485-0258
+                        <p></p>
+                        <b>Horário Funcionamento</b>
+                        segunda a sexta: 11:00–00:00
+
+                    </div>
+                </div>
+
+                <div class="card col-md-9 card">
+                    <div class="row card-header">
+                        Localização
+                    </div>
+
+                    <div id="mapDiv" style="width: 100%; height: 350px"></div>
 
 
-            <div class="botoes">
-                <div class="row">
-
-                    <!--Google Maps-->
-
-                    <!-- Tamanho do Mapa -->
-                    <style>
-                        #map {
-                            height: 400px;
-                            width: 100%
-                        }
-                    </style>
-                    <div id="map"></div>
-
-
-                    <script>
-                        function initMap() {
-
-                            // Quanto maior o zoom, mais detalhado o local
-                            // Lat(Latitude) Lng (Longitude) do local
-                            var options = {
-                                zoom: 13,
-                                center: {
-                                    lat: -19.8157,
-                                    lng: -43.9542
-                                }
-                            }
-                            var map = new
-                            google.maps.Map(document.getElementById('map'), options);
-
-                            //Marcador 
-
-                            var marker = new google.maps.Marker({
-                                position: {
-                                    lat: -19.8157,
-                                    lng: -43.9542,
-                                },
-                                map: map,
-
-                            });
-
-                        }
-                    </script>
-
-                    <!-- Chave API -->
-                    <script async defer
-                        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC2epVXs8TDfvZyRyn-j_WvCjYZIjP4X8o&callback=initMap">
-                    </script>
-
-                    <!--Fim do Google Maps -->
-
-
-                    <!-- Inicio do OpenStreetMap -->
-
-                    <div id="mapDiv" style="width: 100%; height: 500px"></div>
                     <script>
                         // Posição, latitude e longitude
-                        var lat = -19.8157;
-                        var lon = -43.9542;
+                        var lat = -19.872519;
+                        var lon = -43.9883394;
 
-                        map = L.map('mapDiv').setView([lat, lon], 13);
+                        map = L.map('mapDiv').setView([lat, lon], 16);
 
                         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
                             attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
-                            maxZoom: 18,
+                            maxZoom: 20,
                         }).addTo(map);
                         // Marcador
                         marker = L.marker([lat, lon]).addTo(map);
                         // POP-UP do Marcador
                         marker.bindPopup(
-                                "<b>Aniversário da Maria.</b><br />Putaria vai ser aqui mesmo<br />Venda Nova.")
+                            "<b>Aniversário da Maria</b><br />Chico do Peixe.")
                             .openPopup();
                     </script>
-
-                    <!-- Fim do OpenStreetMap -->
-
-
-                    <div class="col-12 col-md-6">
-                        <button type="button" class="btn btn-light"><i class="fas fa-map-marker-alt"></i>&nbsp Como
-                            Chegar</button>
-                    </div>
-
-                    <div class="col-12 col-md-6">
-                        <button type="button" class="btn btn-light" id="bar-info">Informações do
-                            Local</button>
-                    </div>
                 </div>
+            </section>
 
-                <button type="button" class="btn btn-light " id="presenca-confirmar">Confirmar
-                    Presença</button>
+            <!-- Fim do OpenStreetMap -->
+            <!-- Fim mapa -->
 
-                <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                    <label class="btn btn-light">
-                        <input type="radio" name="options" id="confirmed" autocomplete="off" checked>
-                        <img id="icon-confirmed" src="0-imgs/icont/mark.svg" alt="">
-                        <div id="pessoas-confirmadas">
-                            10
-                        </div>
-                    </label>
-                    <label class="btn btn-light">
-                        <input type="radio" name="options" id="noconfirmed" autocomplete="off">
-                        <img id="icon-noconfirmed" src="0-imgs/icont/cross.svg" alt="">
-                        <div id="pessoas-naoconfirmadas">
-                            8
-                        </div>
-                    </label>
-                </div>
 
-            </div>
-
-            <div class="event-description">
-                <h6>Descrição</h6>
-                <p>Meu aniversário vai ser no jaeh, conto com a presença de vcs la</p>
-            </div>
         </div>
     </main>
 

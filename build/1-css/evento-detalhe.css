@@ -64,16 +64,27 @@ header {
 }
 
 #icon img {
-    margin-top: -40px;
-    max-width: 130px;
+    margin-top: -20px;
+    max-width: 120px;
     background-color:white;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
     border-style: solid;
     border-width: 0.5px;
     border-color: rgb(204, 195, 195);
 }
 
+
+.card-imagens {
+    padding: 0px 5px 10px 5px;
+}
+
+.cards-cliente  img{
+    max-width: 100%;
+}
+
+
 /*Botões*/
+
 .botoes{
     text-align: center;
 }
@@ -83,7 +94,7 @@ header {
 }
 .btn{
     width: 100%;
-    border-radius: 8px;
+    border-radius: 5px;
     border-width: 0.2px;
     background-color: rgb(243, 241, 241);
 }
@@ -124,9 +135,9 @@ header {
 .event-description{
     background-color: rgb(49, 49, 49);
     color: white;
-    margin-top: 50px;
+    margin-top: 20px;
     border-radius: 10px;
-    padding: 20px;
+    padding: 10px;
 }
 .event-description h6{
     font-weight: bold;
