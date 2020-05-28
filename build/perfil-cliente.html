@@ -65,7 +65,7 @@
                     <span class="close">&times;</span>
                 </div>
             </div>
-            
+
             <div class="row">
                 <div class="avatar col-md-2"><img id="avatar01" src="0-imgs/usuarios/perfil/avatar-1.png" alt=""></div>
                 <div class="avatar col-md-2"><img id="avatar02" src="0-imgs/usuarios/perfil/avatar-2.png" alt=""></div>
@@ -96,7 +96,8 @@
                 <div class="avatar col-md-2"><img id="avatar27" src="0-imgs/usuarios/perfil/punk-1.png" alt=""></div>
                 <div class="avatar col-md-2"><img id="avatar28" src="0-imgs/usuarios/perfil/punk.png" alt=""></div>
                 <div class="avatar col-md-2"><img id="avatar29" src="0-imgs/usuarios/perfil/samurai.png" alt=""></div>
-                <div class="avatar col-md-2"><img id="avatar30" src="0-imgs/usuarios/perfil/santa-claus.png" alt=""></div>
+                <div class="avatar col-md-2"><img id="avatar30" src="0-imgs/usuarios/perfil/santa-claus.png" alt="">
+                </div>
                 <div class="avatar col-md-2"><img id="avatar31" src="0-imgs/usuarios/perfil/woman-1.png" alt=""></div>
                 <div class="avatar col-md-2"><img id="avatar32" src="0-imgs/usuarios/perfil/woman-2.png" alt=""></div>
                 <div class="avatar col-md-2"><img id="avatar33" src="0-imgs/usuarios/perfil/woman-3.png" alt=""></div>
@@ -116,7 +117,8 @@
                 <div class="avatar col-md-2"><img id="avatar47" src="0-imgs/usuarios/perfil/woman-18.png" alt=""></div>
                 <div class="avatar col-md-2"><img id="avatar48" src="0-imgs/usuarios/perfil/woman-19.png" alt=""></div>
                 <div class="avatar col-md-2"><img id="avatar49" src="0-imgs/usuarios/perfil/woman.png" alt=""></div>
-                <div class="avatar col-md-2"><img id="avatar50" src="0-imgs/usuarios/perfil/wood-cutter.png" alt=""></div>
+                <div class="avatar col-md-2"><img id="avatar50" src="0-imgs/usuarios/perfil/wood-cutter.png" alt="">
+                </div>
             </div>
         </div>
     </div>
@@ -131,297 +133,353 @@
                     <p class="evento-hora">Perfil do cliente</p>
                     <p>Aqui você poderá visualizar e editar suas informações pessoais.</p>
                 </div>
-            
-            <div class="col-md-3">
-                <button id="imageBtn" class="imageBtn">Trocar avatar</button>
+
+                <div class="col-md-3">
+                    <button id="imageBtn" class="imageBtn">Trocar avatar</button>
+                </div>
+
+                <section class="row">
+                    <div class="col-md-6 informacoes">
+                        <div class="row campo">
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-md-12 mt-md-2">
+                                        <p class="nome-campo">Email:</p>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-10 pr-0">
+                                        <input type="email" class="form-control a" id="email" name="nome" disabled>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row campo">
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-md-12 mt-md-2">
+                                        <p class="nome-campo">Nome:</p>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-10 pr-0">
+                                        <input type="text" class="form-control a" id="nome" name="nome" disabled>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <button id="btnNome" class="clicavel">
+                                            <img id="btnNomeImg" src="0-imgs/icont/editar.png">
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row campo">
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-md-12 mt-md-2">
+                                        <p class="nome-campo">Sobrenome:</p>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-10 pr-0">
+                                        <input type="text" class="form-control a" id="sobrenome" name="nome" disabled>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <button id="btnSobrenome" class="clicavel">
+                                            <img id="btnSobrenomeImg" src="0-imgs/icont/editar.png">
+
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row campo">
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-md-12 mt-md-2">
+                                        <p class="nome-campo" p>Telefone:</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-10 pr-0">
+                                        <input type="text" class="form-control a" id="telefone" name="telefone"
+                                            disabled>
+                                    </div>
+
+                                    <div class="col-md-2">
+                                        <button id="btnTelefone" class="clicavel">
+                                            <img id="btnTelefoneImg" src="0-imgs/icont/editar.png">
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row campo">
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-md-12 mt-md-2">
+                                        <p class="nome-campo">Senha:</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-10 pr-0">
+                                        <input type="password" class="form-control a" id="senha" name="nome" disabled>
+                                    </div>
+
+                                    <div class="col-md-2">
+                                        <button id="btnSenha" class="clicavel">
+                                            <img id="btnSenhaImg" src="0-imgs/icont/editar.png">
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row campo">
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-md-12 mt-md-2">
+                                        <p class="nome-campo">Data de nascimento:</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-10 pr-0">
+                                        <input type="text" class="form-control a" id="anonascimento" name="nome"
+                                            onfocus="(this.type='date')" disabled>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <button id="btnNascimento" class="clicavel">
+                                            <img id="btnNascimentoImg" src="0-imgs/icont/editar.png">
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row campo">
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-md-12 mt-md-2">
+                                        <p class="nome-campo">Endereço:</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-10 pr-0">
+                                        <input type="text" class="form-control a" id="endereco" name="nome" disabled>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <button id="btnEndereco" class="clicavel">
+                                            <img id="btnEnderecoImg" src="0-imgs/icont/editar.png">
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row campo">
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-md-12 mt-md-2">
+                                        <p class="nome-campo">Cidade:</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-10 pr-0">
+                                        <input type="text" class="form-control a" id="cidade" name="nome" disabled>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <button id="btnCidade" class="clicavel">
+                                            <img id="btnCidadeImg" src="0-imgs/icont/editar.png">
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row campo">
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-md-12 mt-md-2">
+                                        <p class="nome-campo">Estado:</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-10 pr-0">
+                                        <input type="text" class="form-control a" id="estado" name="nome" disabled>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <button id="btnEstado" class="clicavel">
+                                            <img id="btnEstadoImg" src="0-imgs/icont/editar.png">
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="row menu-lateral">
+                            <div class="col-md-6 pb-md-4 pt-md-4 pr-md-4 cards-cliente">
+                                <div class="row">
+                                    <div class="col-md-12 card">
+                                        <div class="row card-header">Categorias preferidas:</div>
+                                        <div class="col-md-6">
+                                            <div class="custom-control custom-checkbox pt-md-2">
+                                                <input type="checkbox" class="custom-control-input" id="boate">
+                                                <label class="custom-control-label" for="boate">Boate</label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox pt-md-2">
+                                                <input type="checkbox" class="custom-control-input" id="buteco">
+                                                <label class="custom-control-label" for="buteco">Buteco</label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox pt-md-2">
+                                                <input type="checkbox" class="custom-control-input" id="churrascaria">
+                                                <label class="custom-control-label"
+                                                    for="churrascaria">Churrascaria</label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox pt-md-2">
+                                                <input type="checkbox" class="custom-control-input" id="restaurante">
+                                                <label class="custom-control-label"
+                                                    for="restaurante">Restaurante</label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox pt-md-2 pb-md-2">
+                                                <input type="checkbox" class="custom-control-input" id="burgueria">
+                                                <label class="custom-control-label" for="burgueria">Burgueria</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 pb-md-4 pt-md-4 pl-md-4 cards-cliente">
+                                <div class="row">
+                                    <div class="col-md-12 card">
+                                        <div class="row card-header">Culinárias preferidas:</div>
+                                        <div class="col-md-6">
+                                            <div class="custom-control custom-checkbox pt-md-2">
+                                                <input type="checkbox" class="custom-control-input" value="0"
+                                                    id="brasileira">
+                                                <label class="custom-control-label" for="brasileira">Brasileira</label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox pt-md-2">
+                                                <input type="checkbox" class="custom-control-input" value="1"
+                                                    id="italiana">
+                                                <label class="custom-control-label" for="italiana">Italiana</label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox pt-md-2">
+                                                <input type="checkbox" class="custom-control-input" value="2"
+                                                    id="alema">
+                                                <label class="custom-control-label" for="alema">Alemã</label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox pt-md-2">
+                                                <input type="checkbox" class="custom-control-input" value="3"
+                                                    id="japonesa">
+                                                <label class="custom-control-label" for="japonesa">Japonesa</label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox pt-md-2 pb-md-2">
+                                                <input type="checkbox" class="custom-control-input" value="4"
+                                                    id="pizza">
+                                                <label class="custom-control-label" for="pizza">Pizza</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="amigos col-md-12 card">
+                                        <div class="row card-header">
+                                            <h5>Amigos:</h5>
+                                        </div>
+                                        <div class="row card-body">
+                                            <div class="col-md-3">
+                                                <img src="0-imgs/usuarios/perfil/pessoa1.png" alt="">
+                                                <span>Roberta</span>
+                                            </div>
+
+                                            <div class="col-md-3">
+                                                <img src="0-imgs/usuarios/perfil/woman-18.png" alt="">
+                                                <span>Larissa</span>
+                                            </div>
+
+                                            <div class="col-md-3">
+                                                <img src="0-imgs/usuarios/perfil/woman-4.png" alt="">
+                                                <span>Vanessa</span>
+                                            </div>
+
+                                            <div class="col-md-3">
+                                                <img src="0-imgs/usuarios/perfil/pessoa5.png" alt="">
+                                                <span>Marcos</span>
+                                            </div>
+
+                                            <div class="col-md-3">
+                                                <img src="0-imgs/usuarios/perfil/man-4.png" alt="">
+                                                <span>Pedro</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="historico col-md-12 card">
+                                        <div class="row card-header">
+                                            <h5>Histórico Eventos:</h5>
+                                        </div>
+                                        <div class="row card-body">
+
+                                            <table class="table">
+                                                <thead>
+                                                  <tr>
+                                                    <th scope="col">#</th>
+                                                    <th scope="col">Detalhes</th>
+                                                    <th scope="col">Horário</th>
+                                                    <th scope="col">Estabelecimento</th>
+                                                  </tr>
+                                                </thead>
+                                                <tbody>
+                                                  <tr>
+                                                    <th scope="row">1</th>
+                                                    <td><a href="#">Aniversário da Maria</a></td>
+                                                    <td>14:00</td>
+                                                    <td>Chico do Peixe</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <th scope="row">2</th>
+                                                    <td><a href="#">Comemoração da galera</a></td>
+                                                    <td>12:00</td>
+                                                    <td>Hay Salsa</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <th scope="row">3</th>
+                                                    <td><a href="#">Cervejada</a></td>
+                                                    <td>12:00</td>
+                                                    <td>Cervejaria Wals</td>
+                                                  </tr>
+                                                </tbody>
+                                              </table>
+
+
+
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
-
-            <section class="row">
-                <div class="col-md-6 informacoes">
-                    <div class="row campo">
-                        <div class="col-md-12">
-                            <div class="row">
-                                <div class="col-md-12 mt-md-2">
-                                    <p class="nome-campo">Email:</p>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-10 pr-0">
-                                    <input type="email" class="form-control a" id="email" name="nome" disabled>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row campo">
-                        <div class="col-md-12">
-                            <div class="row">
-                                <div class="col-md-12 mt-md-2">
-                                    <p class="nome-campo">Nome:</p>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-10 pr-0">
-                                    <input type="text" class="form-control a" id="nome" name="nome" disabled>
-                                </div>
-                                <div class="col-md-2">
-                                    <button id="btnNome" class="clicavel">
-                                        <img id="btnNomeImg" src="0-imgs/icont/editar.png">
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row campo">
-                        <div class="col-md-12">
-                            <div class="row">
-                                <div class="col-md-12 mt-md-2">
-                                    <p class="nome-campo">Sobrenome:</p>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-10 pr-0">
-                                    <input type="text" class="form-control a" id="sobrenome" name="nome" disabled>
-                                </div>
-                                <div class="col-md-2">
-                                    <button id="btnSobrenome" class="clicavel">
-                                        <img id="btnSobrenomeImg" src="0-imgs/icont/editar.png">
-
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row campo">
-                        <div class="col-md-12">
-                            <div class="row">
-                                <div class="col-md-12 mt-md-2">
-                                    <p class="nome-campo"p>Telefone:</p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-10 pr-0">
-                                    <input type="text" class="form-control a" id="telefone" name="telefone" disabled>
-                                </div>
-
-                                <div class="col-md-2">
-                                    <button id="btnTelefone" class="clicavel">
-                                        <img id="btnTelefoneImg" src="0-imgs/icont/editar.png">
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row campo">
-                        <div class="col-md-12">
-                            <div class="row">
-                                <div class="col-md-12 mt-md-2">
-                                    <p class="nome-campo">Senha:</p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-10 pr-0">
-                                    <input type="password" class="form-control a" id="senha" name="nome" disabled>
-                                </div>
-
-                                <div class="col-md-2">
-                                    <button id="btnSenha" class="clicavel">
-                                        <img id="btnSenhaImg" src="0-imgs/icont/editar.png">
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row campo">
-                        <div class="col-md-12">
-                            <div class="row">
-                                <div class="col-md-12 mt-md-2">
-                                    <p class="nome-campo">Data de nascimento:</p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-10 pr-0">
-                                    <input type="text" class="form-control a" id="anonascimento" name="nome"
-                                        onfocus="(this.type='date')" disabled>
-                                </div>
-                                <div class="col-md-2">
-                                    <button id="btnNascimento" class="clicavel">
-                                        <img id="btnNascimentoImg" src="0-imgs/icont/editar.png">
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row campo">
-                        <div class="col-md-12">
-                            <div class="row">
-                                <div class="col-md-12 mt-md-2">
-                                    <p class="nome-campo">Endereço:</p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-10 pr-0">
-                                    <input type="text" class="form-control a" id="endereco" name="nome" disabled>
-                                </div>
-                                <div class="col-md-2">
-                                    <button id="btnEndereco" class="clicavel">
-                                        <img id="btnEnderecoImg" src="0-imgs/icont/editar.png">
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row campo">
-                        <div class="col-md-12">
-                            <div class="row">
-                                <div class="col-md-12 mt-md-2">
-                                    <p class="nome-campo">Cidade:</p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-10 pr-0">
-                                    <input type="text" class="form-control a" id="cidade" name="nome" disabled>
-                                </div>
-                                <div class="col-md-2">
-                                    <button id="btnCidade" class="clicavel">
-                                        <img id="btnCidadeImg" src="0-imgs/icont/editar.png">
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row campo">
-                        <div class="col-md-12">
-                            <div class="row">
-                                <div class="col-md-12 mt-md-2">
-                                    <p class="nome-campo">Estado:</p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-10 pr-0">
-                                    <input type="text" class="form-control a" id="estado" name="nome" disabled>
-                                </div>
-                                <div class="col-md-2">
-                                    <button id="btnEstado" class="clicavel">
-                                        <img id="btnEstadoImg" src="0-imgs/icont/editar.png">
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="row menu-lateral">
-                        <div class="col-md-6 pb-md-4 pt-md-4 pr-md-4 cards-cliente">
-                            <div class="row">
-                                <div class="col-md-12 card">
-                                    <div class="row card-header">Categorias preferidas:</div>
-                                    <div class="col-md-6">
-                                        <div class="custom-control custom-checkbox pt-md-2">
-                                            <input type="checkbox" class="custom-control-input" id="boate">
-                                            <label class="custom-control-label" for="boate">Boate</label>
-                                        </div>
-                                        <div class="custom-control custom-checkbox pt-md-2">
-                                            <input type="checkbox" class="custom-control-input" id="buteco">
-                                            <label class="custom-control-label" for="buteco">Buteco</label>
-                                        </div>
-                                        <div class="custom-control custom-checkbox pt-md-2">
-                                            <input type="checkbox" class="custom-control-input" id="churrascaria">
-                                            <label class="custom-control-label" for="churrascaria">Churrascaria</label>
-                                        </div>
-                                        <div class="custom-control custom-checkbox pt-md-2">
-                                            <input type="checkbox" class="custom-control-input" id="restaurante">
-                                            <label class="custom-control-label" for="restaurante">Restaurante</label>
-                                        </div>
-                                        <div class="custom-control custom-checkbox pt-md-2 pb-md-2">
-                                            <input type="checkbox" class="custom-control-input" id="burgueria">
-                                            <label class="custom-control-label" for="burgueria">Burgueria</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6 pb-md-4 pt-md-4 pl-md-4 cards-cliente">
-                            <div class="row">
-                                <div class="col-md-12 card">
-                                    <div class="row card-header">Culinárias preferidas:</div>
-                                    <div class="col-md-6">
-                                        <div class="custom-control custom-checkbox pt-md-2">
-                                            <input type="checkbox" class="custom-control-input" value="0" id="brasileira">
-                                            <label class="custom-control-label" for="brasileira">Brasileira</label>
-                                        </div>
-                                        <div class="custom-control custom-checkbox pt-md-2">
-                                            <input type="checkbox" class="custom-control-input" value="1" id="italiana">
-                                            <label class="custom-control-label" for="italiana">Italiana</label>
-                                        </div>
-                                        <div class="custom-control custom-checkbox pt-md-2">
-                                            <input type="checkbox" class="custom-control-input" value="2" id="alema">
-                                            <label class="custom-control-label" for="alema">Alemã</label>
-                                        </div>
-                                        <div class="custom-control custom-checkbox pt-md-2">
-                                            <input type="checkbox" class="custom-control-input" value="3" id="japonesa">
-                                            <label class="custom-control-label" for="japonesa">Japonesa</label>
-                                        </div>
-                                        <div class="custom-control custom-checkbox pt-md-2 pb-md-2">
-                                            <input type="checkbox" class="custom-control-input" value="4" id="pizza">
-                                            <label class="custom-control-label" for="pizza">Pizza</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-12">
-                            <div class="row">
-                                <div class="amigos col-md-12 card">
-                                    <div class="row card-header">
-                                        <h5>Amigos:</h5>
-                                    </div>
-                                    <div class="row card-body">
-                                        <div class="col-md-3">
-                                            <img src="0-imgs/usuarios/perfil/pessoa1.png" alt="">
-                                            <span>Roberta</span>
-                                        </div>
-            
-                                        <div class="col-md-3">
-                                            <img src="0-imgs/usuarios/perfil/woman-18.png" alt="">
-                                            <span>Larissa</span>
-                                        </div>
-            
-                                        <div class="col-md-3">
-                                            <img src="0-imgs/usuarios/perfil/woman-4.png" alt="">
-                                            <span>Vanessa</span>
-                                        </div>
-            
-                                        <div class="col-md-3">
-                                            <img src="0-imgs/usuarios/perfil/pessoa5.png" alt="">
-                                            <span>Marcos</span>
-                                        </div>
-            
-                                        <div class="col-md-3">
-                                            <img src="0-imgs/usuarios/perfil/man-4.png" alt="">
-                                            <span>Pedro</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                     </div>
-                </div>
-            </section>
-        </div>
     </main>
 
     <div class="container event-description">
@@ -439,8 +497,9 @@
 
     <script>
         $(document).ready(function () {
-		    $('#telefone').mask('(00) 00000-0000');
-	    })
+            $('#telefone').mask('(00) 00000-0000');
+        })
     </script>
 </body>
+
 </html>
