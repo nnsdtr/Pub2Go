@@ -10,12 +10,21 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
     <!--Font-awesome CSS-->
     <script src="https://kit.fontawesome.com/73b02df156.js" crossorigin="anonymous"></script>
 
+    <!--Custom CSS-->
+    <link rel="stylesheet" href="1-css/perfil-cliente.css">
+
+    <!-- jQuery -->
+    <script src="../ext-source/scripts/jquery.3.5.0.min.js"></script>
+    <script src="2-js/jquery.mask.min.js"></script>
+
     <!--Custom JavaScript-->
     <script src="2-js/perfil-cliente.js"></script>
-    <link rel="stylesheet" href="1-css/perfil-cliente.css">
+
+
     <link rel="shortcut icon" href="0-imgs/favicon3.png" />
 </head>
 
@@ -31,7 +40,7 @@
                         <a class="nav-link" href="pagina-cliente.html">Início</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="perfil-cliente.html">Perfil </a>
+                        <a class="nav-link" href="perfil-cliente.html">Perfil</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Amigos</a>
@@ -46,28 +55,86 @@
         </div>
     </header>
 
+    <div id="myModal" class="modal">
+        <div class="container modal-content">
+            <div class="row">
+                <div class="col-md-11">
+                    <h4>Selecione um avatar</h4>
+                </div>
+                <div id="closeBtn" class="col-md-1">
+                    <span class="close">&times;</span>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="avatar col-md-2"><img id="avatar01" src="0-imgs/usuarios/perfil/avatar-1.png" alt=""></div>
+                <div class="avatar col-md-2"><img id="avatar02" src="0-imgs/usuarios/perfil/avatar-2.png" alt=""></div>
+                <div class="avatar col-md-2"><img id="avatar03" src="0-imgs/usuarios/perfil/avatar.png" alt=""></div>
+                <div class="avatar col-md-2"><img id="avatar04" src="0-imgs/usuarios/perfil/boy-1.png" alt=""></div>
+                <div class="avatar col-md-2"><img id="avatar05" src="0-imgs/usuarios/perfil/boy-2.png" alt=""></div>
+                <div class="avatar col-md-2"><img id="avatar06" src="0-imgs/usuarios/perfil/boy-3.png" alt=""></div>
+                <div class="avatar col-md-2"><img id="avatar07" src="0-imgs/usuarios/perfil/boy-4.png" alt=""></div>
+                <div class="avatar col-md-2"><img id="avatar08" src="0-imgs/usuarios/perfil/boy.png" alt=""></div>
+                <div class="avatar col-md-2"><img id="avatar09" src="0-imgs/usuarios/perfil/hindu-1.png" alt=""></div>
+                <div class="avatar col-md-2"><img id="avatar10" src="0-imgs/usuarios/perfil/hindu.png" alt=""></div>
+                <div class="avatar col-md-2"><img id="avatar11" src="0-imgs/usuarios/perfil/hood.png" alt=""></div>
+                <div class="avatar col-md-2"><img id="avatar12" src="0-imgs/usuarios/perfil/japanese.png" alt=""></div>
+                <div class="avatar col-md-2"><img id="avatar13" src="0-imgs/usuarios/perfil/knight.png" alt=""></div>
+                <div class="avatar col-md-2"><img id="avatar14" src="0-imgs/usuarios/perfil/kung-fu.png" alt=""></div>
+                <div class="avatar col-md-2"><img id="avatar15" src="0-imgs/usuarios/perfil/man-1.png" alt=""></div>
+                <div class="avatar col-md-2"><img id="avatar16" src="0-imgs/usuarios/perfil/man-2.png" alt=""></div>
+                <div class="avatar col-md-2"><img id="avatar17" src="0-imgs/usuarios/perfil/man-3.png" alt=""></div>
+                <div class="avatar col-md-2"><img id="avatar18" src="0-imgs/usuarios/perfil/man-4.png" alt=""></div>
+                <div class="avatar col-md-2"><img id="avatar19" src="0-imgs/usuarios/perfil/man-5.png" alt=""></div>
+                <div class="avatar col-md-2"><img id="avatar20" src="0-imgs/usuarios/perfil/man.png" alt=""></div>
+                <div class="avatar col-md-2"><img id="avatar21" src="0-imgs/usuarios/perfil/napoleon.png" alt=""></div>
+                <div class="avatar col-md-2"><img id="avatar22" src="0-imgs/usuarios/perfil/pessoa1.png" alt=""></div>
+                <div class="avatar col-md-2"><img id="avatar23" src="0-imgs/usuarios/perfil/pessoa2.png" alt=""></div>
+                <div class="avatar col-md-2"><img id="avatar24" src="0-imgs/usuarios/perfil/pessoa3.png" alt=""></div>
+                <div class="avatar col-md-2"><img id="avatar25" src="0-imgs/usuarios/perfil/pessoa5.png" alt=""></div>
+                <div class="avatar col-md-2"><img id="avatar26" src="0-imgs/usuarios/perfil/pessoa6.png" alt=""></div>
+                <div class="avatar col-md-2"><img id="avatar27" src="0-imgs/usuarios/perfil/punk-1.png" alt=""></div>
+                <div class="avatar col-md-2"><img id="avatar28" src="0-imgs/usuarios/perfil/punk.png" alt=""></div>
+                <div class="avatar col-md-2"><img id="avatar29" src="0-imgs/usuarios/perfil/samurai.png" alt=""></div>
+                <div class="avatar col-md-2"><img id="avatar30" src="0-imgs/usuarios/perfil/santa-claus.png" alt=""></div>
+                <div class="avatar col-md-2"><img id="avatar31" src="0-imgs/usuarios/perfil/woman-1.png" alt=""></div>
+                <div class="avatar col-md-2"><img id="avatar32" src="0-imgs/usuarios/perfil/woman-2.png" alt=""></div>
+                <div class="avatar col-md-2"><img id="avatar33" src="0-imgs/usuarios/perfil/woman-3.png" alt=""></div>
+                <div class="avatar col-md-2"><img id="avatar34" src="0-imgs/usuarios/perfil/woman-4.png" alt=""></div>
+                <div class="avatar col-md-2"><img id="avatar35" src="0-imgs/usuarios/perfil/woman-5.png" alt=""></div>
+                <div class="avatar col-md-2"><img id="avatar36" src="0-imgs/usuarios/perfil/woman-6.png" alt=""></div>
+                <div class="avatar col-md-2"><img id="avatar37" src="0-imgs/usuarios/perfil/woman-7.png" alt=""></div>
+                <div class="avatar col-md-2"><img id="avatar38" src="0-imgs/usuarios/perfil/woman-8.png" alt=""></div>
+                <div class="avatar col-md-2"><img id="avatar39" src="0-imgs/usuarios/perfil/woman-9.png" alt=""></div>
+                <div class="avatar col-md-2"><img id="avatar40" src="0-imgs/usuarios/perfil/woman-11.png" alt=""></div>
+                <div class="avatar col-md-2"><img id="avatar41" src="0-imgs/usuarios/perfil/woman-12.png" alt=""></div>
+                <div class="avatar col-md-2"><img id="avatar42" src="0-imgs/usuarios/perfil/woman-13.png" alt=""></div>
+                <div class="avatar col-md-2"><img id="avatar43" src="0-imgs/usuarios/perfil/woman-14.png" alt=""></div>
+                <div class="avatar col-md-2"><img id="avatar44" src="0-imgs/usuarios/perfil/woman-15.png" alt=""></div>
+                <div class="avatar col-md-2"><img id="avatar45" src="0-imgs/usuarios/perfil/woman-16.png" alt=""></div>
+                <div class="avatar col-md-2"><img id="avatar46" src="0-imgs/usuarios/perfil/woman-17.png" alt=""></div>
+                <div class="avatar col-md-2"><img id="avatar47" src="0-imgs/usuarios/perfil/woman-18.png" alt=""></div>
+                <div class="avatar col-md-2"><img id="avatar48" src="0-imgs/usuarios/perfil/woman-19.png" alt=""></div>
+                <div class="avatar col-md-2"><img id="avatar49" src="0-imgs/usuarios/perfil/woman.png" alt=""></div>
+                <div class="avatar col-md-2"><img id="avatar50" src="0-imgs/usuarios/perfil/wood-cutter.png" alt=""></div>
+            </div>
+        </div>
+    </div>
+
     <main class="container">
         <div class="conteudo">
             <div class="row">
-                <div class="perfil-img  rounded-circle">
-                    <img src="/build/0-imgs/icont/perfil-img.jpg" class="rounded-circle" alt="">
+                <div class="perfil-img rounded-circle">
+                    <img id="perfilAvatar" src="" class="rounded-circle" alt="">
                 </div>
                 <div class="col-7 col-md-9 col-lg-10 inf-icon">
                     <p class="evento-hora">Perfil do cliente</p>
                     <p>Aqui você poderá visualizar e editar suas informações pessoais.</p>
-
                 </div>
-
-                <!-- Exemplo para poder adicionar imagens -->
-                <div>
-                    <div class="file-upload">
-                        <input type="file" id="upload-1">
-                        <p class="file-name">Please select a file.</p>
-                    </div>
-                </div>
+            
+            <div class="col-md-3">
+                <button id="imageBtn" class="imageBtn">Trocar avatar</button>
             </div>
-
-            <!-- Fim do exemplo -->
 
             <section class="row">
                 <div class="col-md-6 informacoes">
@@ -75,14 +142,13 @@
                         <div class="col-md-12">
                             <div class="row">
                                 <div class="col-md-12 mt-md-2">
-                                    <p>Email:</p>
+                                    <p class="nome-campo">Email:</p>
                                 </div>
                             </div>
 
                             <div class="row">
                                 <div class="col-md-10 pr-0">
-                                    <input type="email" class="form-control a" id="nome" name="nome"
-                                        placeholder="joaosilva@gmail.com" disabled>
+                                    <input type="email" class="form-control a" id="email" name="nome" disabled>
                                 </div>
                             </div>
                         </div>
@@ -92,18 +158,38 @@
                         <div class="col-md-12">
                             <div class="row">
                                 <div class="col-md-12 mt-md-2">
-                                    <p>Nome:</p>
+                                    <p class="nome-campo">Nome:</p>
                                 </div>
                             </div>
 
                             <div class="row">
                                 <div class="col-md-10 pr-0">
-                                    <input type="text" class="form-control a" id="nome" name="nome" placeholder="João"
-                                        disabled>
+                                    <input type="text" class="form-control a" id="nome" name="nome" disabled>
                                 </div>
                                 <div class="col-md-2">
-                                    <button id="clicavel" class="clicavel">
-                                        <img src="0-imgs/icont/editar.png">
+                                    <button id="btnNome" class="clicavel">
+                                        <img id="btnNomeImg" src="0-imgs/icont/editar.png">
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row campo">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-12 mt-md-2">
+                                    <p class="nome-campo">Sobrenome:</p>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-10 pr-0">
+                                    <input type="text" class="form-control a" id="sobrenome" name="nome" disabled>
+                                </div>
+                                <div class="col-md-2">
+                                    <button id="btnSobrenome" class="clicavel">
+                                        <img id="btnSobrenomeImg" src="0-imgs/icont/editar.png">
 
                                     </button>
                                 </div>
@@ -115,19 +201,17 @@
                         <div class="col-md-12">
                             <div class="row">
                                 <div class="col-md-12 mt-md-2">
-                                    <p>Sobrenome:</p>
+                                    <p class="nome-campo"p>Telefone:</p>
                                 </div>
                             </div>
-
                             <div class="row">
                                 <div class="col-md-10 pr-0">
-                                    <input type="text" class="form-control a" id="nome" name="nome" placeholder="Silva"
-                                        disabled>
+                                    <input type="text" class="form-control a" id="telefone" name="telefone" disabled>
                                 </div>
-                                <div class="col-md-2">
-                                    <button id="clicavel" class="clicavel">
-                                        <img src="0-imgs/icont/editar.png">
 
+                                <div class="col-md-2">
+                                    <button id="btnTelefone" class="clicavel">
+                                        <img id="btnTelefoneImg" src="0-imgs/icont/editar.png">
                                     </button>
                                 </div>
                             </div>
@@ -138,19 +222,17 @@
                         <div class="col-md-12">
                             <div class="row">
                                 <div class="col-md-12 mt-md-2">
-                                    <p>Telefone:</p>
+                                    <p class="nome-campo">Senha:</p>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-10 pr-0">
-                                    <input type="text" class="form-control a" id="nome" name="nome"
-                                        placeholder="(31) 99999-9999" disabled>
+                                    <input type="password" class="form-control a" id="senha" name="nome" disabled>
                                 </div>
 
                                 <div class="col-md-2">
-                                    <button id="clicavel" class="clicavel">
-                                        <img src="0-imgs/icont/editar.png">
-
+                                    <button id="btnSenha" class="clicavel">
+                                        <img id="btnSenhaImg" src="0-imgs/icont/editar.png">
                                     </button>
                                 </div>
                             </div>
@@ -161,19 +243,17 @@
                         <div class="col-md-12">
                             <div class="row">
                                 <div class="col-md-12 mt-md-2">
-                                    <p>Senha:</p>
+                                    <p class="nome-campo">Data de nascimento:</p>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-10 pr-0">
-                                    <input type="password" class="form-control a" id="nome" name="nome"
-                                        placeholder="*******" disabled>
+                                    <input type="text" class="form-control a" id="anonascimento" name="nome"
+                                        onfocus="(this.type='date')" disabled>
                                 </div>
-
                                 <div class="col-md-2">
-                                    <button id="clicavel" class="clicavel">
-                                        <img src="0-imgs/icont/editar.png">
-
+                                    <button id="btnNascimento" class="clicavel">
+                                        <img id="btnNascimentoImg" src="0-imgs/icont/editar.png">
                                     </button>
                                 </div>
                             </div>
@@ -184,18 +264,16 @@
                         <div class="col-md-12">
                             <div class="row">
                                 <div class="col-md-12 mt-md-2">
-                                    <p>Data de nascimento:</p>
+                                    <p class="nome-campo">Endereço:</p>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-10 pr-0">
-                                    <input type="text" class="form-control a" id="nome" name="nome"
-                                        placeholder="10/05/2002" onfocus="(this.type='date')" disabled>
+                                    <input type="text" class="form-control a" id="endereco" name="nome" disabled>
                                 </div>
                                 <div class="col-md-2">
-                                    <button id="clicavel" class="clicavel">
-                                        <img src="0-imgs/icont/editar.png">
-
+                                    <button id="btnEndereco" class="clicavel">
+                                        <img id="btnEnderecoImg" src="0-imgs/icont/editar.png">
                                     </button>
                                 </div>
                             </div>
@@ -206,19 +284,16 @@
                         <div class="col-md-12">
                             <div class="row">
                                 <div class="col-md-12 mt-md-2">
-                                    <p>Endereço:</p>
+                                    <p class="nome-campo">Cidade:</p>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-10 pr-0">
-                                    <input type="text" class="form-control a" id="nome" name="nome"
-                                        placeholder="Rua Albuquerque de Almeida, 2260" onfocus="(this.type='date')"
-                                        disabled>
+                                    <input type="text" class="form-control a" id="cidade" name="nome" disabled>
                                 </div>
                                 <div class="col-md-2">
-                                    <button id="clicavel" class="clicavel">
-                                        <img src="0-imgs/icont/editar.png">
-
+                                    <button id="btnCidade" class="clicavel">
+                                        <img id="btnCidadeImg" src="0-imgs/icont/editar.png">
                                     </button>
                                 </div>
                             </div>
@@ -229,40 +304,16 @@
                         <div class="col-md-12">
                             <div class="row">
                                 <div class="col-md-12 mt-md-2">
-                                    <p>Cidade:</p>
+                                    <p class="nome-campo">Estado:</p>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-10 pr-0">
-                                    <input type="text" class="form-control a" id="nome" name="nome"
-                                        placeholder="Belo Horizonte" onfocus="(this.type='date')" disabled>
+                                    <input type="text" class="form-control a" id="estado" name="nome" disabled>
                                 </div>
                                 <div class="col-md-2">
-                                    <button id="clicavel" class="clicavel">
-                                        <img src="0-imgs/icont/editar.png">
-
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row campo">
-                        <div class="col-md-12">
-                            <div class="row">
-                                <div class="col-md-12 mt-md-2">
-                                    <p>Estado:</p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-10 pr-0">
-                                    <input type="text" class="form-control a" id="nome" name="nome"
-                                        placeholder="Minas Gerais" onfocus="(this.type='date')" disabled>
-                                </div>
-                                <div class="col-md-2">
-                                    <button id="clicavel" class="clicavel">
-                                        <img src="0-imgs/icont/editar.png">
-
+                                    <button id="btnEstado" class="clicavel">
+                                        <img id="btnEstadoImg" src="0-imgs/icont/editar.png">
                                     </button>
                                 </div>
                             </div>
@@ -271,131 +322,106 @@
                 </div>
 
                 <div class="col-md-6">
-                    <div class="row">
-                        <div class="col-md-6 pr-md-4 cards-cliente">
+                    <div class="row menu-lateral">
+                        <div class="col-md-6 pb-md-4 pt-md-4 pr-md-4 cards-cliente">
                             <div class="row">
                                 <div class="col-md-12 card">
-                                    <div class="row card-header">
-                                        Eventos disponíveis:
-                                    </div>
-                                    <div class="row card-body">
-                                        <div class="col-md-6 card-imagens">
-                                            <img src="0-imgs/bar/bar01.jpg" alt="">
-                                            <a href="">Evento A</a>
-                                        </div>
-                                        <div class="col-md-6 card-imagens">
-                                            <img src="0-imgs/bar/bar02.jpg" alt="">
-                                            <a href="">Evento B</a>
-                                        </div>
-                                        <div class="col-md-6 card-imagens">
-                                            <img src="0-imgs/bar/bar03.jpg" alt="">
-                                            <a href="">Evento C</a>
-                                        </div>
-                                        <div class="col-md-6 card-imagens">
-                                            <img src="0-imgs/bar/bar05.jpg" alt="">
-                                            <a href="">Evento D</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div class="col-md-6 pl-md-4 cards-cliente">
-                            <div class="row">
-                                <div class="col-md-12 card">
-                                    <div class="row card-header">
-                                        Favoritos:
-                                    </div>
-                                    <div class="row card-body">
-                                        <div class="col-md-6 card-imagens">
-                                            <img src="0-imgs/bar/bar01.jpg">
-                                            <a href="">Bar1</a>
-                                        </div>
-                                        <div class="col-md-6 card-imagens">
-                                            <img src="0-imgs/bar/bar02.jpg">
-                                            <a href="">Bar2</a>
-                                        </div>
-                                        <div class="col-md-6 card-imagens">
-                                            <img src="0-imgs/bar/bar01.jpg">
-                                            <a href="">Bar3</a>
-                                        </div>
-                                        <div class="col-md-6 card-imagens">
-                                            <img src="0-imgs/bar/bar02.jpg">
-                                            <a href="">Bar4</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-12 pt-md-4 cards-cliente">
-                            <div class="row">
-                                <div class="col-md-12 card">
-                                    <div class="row card-header">Preferências:</div>
-
+                                    <div class="row card-header">Categorias preferidas:</div>
                                     <div class="col-md-6">
                                         <div class="custom-control custom-checkbox pt-md-2">
-                                            <input type="checkbox" class="custom-control-input pt-md-2" id="categoria1">
-                                            <label class="custom-control-label" for="categoria1">Boate</label>
+                                            <input type="checkbox" class="custom-control-input" id="boate">
+                                            <label class="custom-control-label" for="boate">Boate</label>
                                         </div>
                                         <div class="custom-control custom-checkbox pt-md-2">
-                                            <input type="checkbox" class="custom-control-input" id="categoria2">
-                                            <label class="custom-control-label" for="categoria2">Buteco</label>
+                                            <input type="checkbox" class="custom-control-input" id="buteco">
+                                            <label class="custom-control-label" for="buteco">Buteco</label>
                                         </div>
                                         <div class="custom-control custom-checkbox pt-md-2">
-                                            <input type="checkbox" class="custom-control-input" id="categoria3">
-                                            <label class="custom-control-label" for="categoria3">Churrascaria</label>
+                                            <input type="checkbox" class="custom-control-input" id="churrascaria">
+                                            <label class="custom-control-label" for="churrascaria">Churrascaria</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox pt-md-2">
+                                            <input type="checkbox" class="custom-control-input" id="restaurante">
+                                            <label class="custom-control-label" for="restaurante">Restaurante</label>
                                         </div>
                                         <div class="custom-control custom-checkbox pt-md-2 pb-md-2">
-                                            <input type="checkbox" class="custom-control-input" id="categoria4">
-                                            <label class="custom-control-label" for="categoria4">Restaurante</label>
+                                            <input type="checkbox" class="custom-control-input" id="burgueria">
+                                            <label class="custom-control-label" for="burgueria">Burgueria</label>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </section>
 
-            <div class="row">
-                <div class="amigos col-md-12 card">
-                    <div class="card-header">
-                        <h4>Amigos</h4>
-                    </div>
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-md-2">
-                                <img src="0-imgs/usuarios/perfil/pessoa1.png" alt="">
-                                <span>Roberta</span>
-                            </div>
-
-                            <div class="col-md-2">
-                                <img src="0-imgs/usuarios/perfil/pessoa2.png" alt="">
-                                <span>Larissa</span>
-                            </div>
-
-                            <div class="col-md-2">
-                                <img src="0-imgs/usuarios/perfil/pessoa1.png" alt="">
-                                <span>Pedro</span>
-                            </div>
-
-                            <div class="col-md-2">
-                                <img src="0-imgs/usuarios/perfil/pessoa5.png" alt="">
-                                <span>Augusto</span>
-                            </div>
-
-                            <div class="col-md-2">
-                                <img src="0-imgs/usuarios/perfil/pessoa6.png" alt="">
-                                <span>Vanessa</span>
+                        <div class="col-md-6 pb-md-4 pt-md-4 pl-md-4 cards-cliente">
+                            <div class="row">
+                                <div class="col-md-12 card">
+                                    <div class="row card-header">Culinárias preferidas:</div>
+                                    <div class="col-md-6">
+                                        <div class="custom-control custom-checkbox pt-md-2">
+                                            <input type="checkbox" class="custom-control-input" value="0" id="brasileira">
+                                            <label class="custom-control-label" for="brasileira">Brasileira</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox pt-md-2">
+                                            <input type="checkbox" class="custom-control-input" value="1" id="italiana">
+                                            <label class="custom-control-label" for="italiana">Italiana</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox pt-md-2">
+                                            <input type="checkbox" class="custom-control-input" value="2" id="alema">
+                                            <label class="custom-control-label" for="alema">Alemã</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox pt-md-2">
+                                            <input type="checkbox" class="custom-control-input" value="3" id="japonesa">
+                                            <label class="custom-control-label" for="japonesa">Japonesa</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox pt-md-2 pb-md-2">
+                                            <input type="checkbox" class="custom-control-input" value="4" id="pizza">
+                                            <label class="custom-control-label" for="pizza">Pizza</label>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="amigos col-md-12 card">
+                                    <div class="row card-header">
+                                        <h5>Amigos:</h5>
+                                    </div>
+                                    <div class="row card-body">
+                                        <div class="col-md-3">
+                                            <img src="0-imgs/usuarios/perfil/pessoa1.png" alt="">
+                                            <span>Roberta</span>
+                                        </div>
+            
+                                        <div class="col-md-3">
+                                            <img src="0-imgs/usuarios/perfil/woman-18.png" alt="">
+                                            <span>Larissa</span>
+                                        </div>
+            
+                                        <div class="col-md-3">
+                                            <img src="0-imgs/usuarios/perfil/woman-4.png" alt="">
+                                            <span>Vanessa</span>
+                                        </div>
+            
+                                        <div class="col-md-3">
+                                            <img src="0-imgs/usuarios/perfil/pessoa5.png" alt="">
+                                            <span>Marcos</span>
+                                        </div>
+            
+                                        <div class="col-md-3">
+                                            <img src="0-imgs/usuarios/perfil/man-4.png" alt="">
+                                            <span>Pedro</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                     </div>
+                </div>
+            </section>
+        </div>
     </main>
 
     <div class="container event-description">
@@ -408,5 +434,13 @@
     <footer class="container">
         Copyright 2020 - Todos os direitos reservados - Pub2go
     </footer>
+
+
+
+    <script>
+        $(document).ready(function () {
+		    $('#telefone').mask('(00) 00000-0000');
+	    })
+    </script>
 </body>
 </html>
