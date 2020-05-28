@@ -2,35 +2,24 @@
 
 window.onload = () => {
     cadastro.onsubmit = (evento) => {
-        localStorage.setItem('nome', nome.value);
-        localStorage.setItem('sobrenome', sobrenome.value);
-        localStorage.setItem('senha', senha.value);
-        localStorage.setItem('confirmesenha', confirmesenha.value);
-        localStorage.setItem('email', email.value);
-        localStorage.setItem('confirmemail', confirmemail.value)
-        localStorage.setItem('telefone', telefone.value);
-        localStorage.setItem('anonascimento', anonascimento.value);
+        let cadastro = {nome: nome.value,
+                        sobrenome: sobrenome.value,
+                        senha: senha.value,
+                        email: email.value,
+                        telefone: telefone.value,
+                        anonascimento: anonascimento.value,
+                        endereco: "",
+                        cidade: "",
+                        estado: "",
+                        avatar: "/build/0-imgs/usuarios/perfil/placeholder.png"}
 
+        localStorage.setItem('cadastro', JSON.stringify(cadastro));
 
-        /* Limpar os Campos do formulário */
+        let preferencias = {categorias: {boate: false, buteco: false, churrascaria: false, restaurante: false, burgueria: false},
+                            culinarias: {brasileira: false, italiana: false, alema: false, japonesa: false, pizza: false}}
 
-        /*
-                nome.value = '';
-                sobrenome.value = '';
-                senha.value = '';
-                confirmsenha.value = '';
-                email.value = '';
-                telefone.value = '';
-                ddd.value = '';
-                anonascimento = '';
-                */
-
+        localStorage.setItem('preferencias', JSON.stringify(preferencias));
     };
-
-
-    /* Função para validar se campos estão corretos */
-
-
 };
 
 function validar() {
