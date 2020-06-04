@@ -172,6 +172,9 @@ header {
     position: absolute;
     left: 60%;
 }
+.link-criarevento{
+    margin-left: 230px;
+}
 
 .clicavel {
     background: none;
