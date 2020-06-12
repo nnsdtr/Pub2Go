@@ -33,6 +33,7 @@ window.onload = () => {
 	document.getElementById("endereco").value = cadastro.endereco;
 	document.getElementById("cidade").value = cadastro.cidade;
 	document.getElementById("estado").value = cadastro.estado;
+	document.getElementById("cep").value = cadastro.cep;
 	document.getElementById("perfilAvatar").src = cadastro.avatar;
 
 	btnNome.onclick = () => {
@@ -127,6 +128,18 @@ window.onload = () => {
 			estado.disabled = true;
 			document.getElementById("btnEstadoImg").src = "0-imgs/icont/editar.png";
 			cadastro.estado = estado.value;
+			localStorage.setItem("cadastro", JSON.stringify(cadastro))
+		};
+	};
+
+	btnCep.onclick = () => {
+		if(cep.disabled) {
+			cep.disabled = false;
+			document.getElementById("btnCepImg").src = "0-imgs/icont/confirmar.png";
+		} else {
+			cep.disabled = true;
+			document.getElementById("btnCepImg").src = "0-imgs/icont/editar.png";
+			cadastro.cep = cep.value;
 			localStorage.setItem("cadastro", JSON.stringify(cadastro))
 		};
 	};

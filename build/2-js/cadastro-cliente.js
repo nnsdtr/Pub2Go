@@ -20,7 +20,7 @@ window.onload = () => {
                                                      churrascaria: false,
                                                      restaurante: false,
                                                      burgueria: false},
-                                                     
+
                                         culinarias: {brasileira: false,
                                                      italiana: false,
                                                      alema: false,
