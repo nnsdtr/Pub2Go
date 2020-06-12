@@ -8,6 +8,7 @@ window.onload = () => {
                         email: email.value,
                         telefone: telefone.value,
                         anonascimento: anonascimento.value,
+                        cep: cep.value,
                         endereco: "",
                         cidade: "",
                         estado: "",
