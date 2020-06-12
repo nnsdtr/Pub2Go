@@ -2,16 +2,18 @@
 
 window.onload = () => {
     cadastro.onsubmit = (evento) => {
-        localStorage.setItem('nome', nome.value);
-        localStorage.setItem('cnpj', cnpj.value);
-        localStorage.setItem('telefone', telefone.value);
-        localStorage.setItem('email', email.value);
-        localStorage.setItem('confirmemail', confirmemail.value);
-        localStorage.setItem('senha', senha.value);
-        localStorage.setItem('confirmesenha', confirmesenha.value);
-        localStorage.setItem('cidade', cidade.value);
-        localStorage.setItem('estado', estado.value);
-        localStorage.setItem('cep', cep.value);
+        let cadastroBarLocal = {nome: nome.value,
+                                cnpj: cnpj.value,
+                                telefone: telefone.value,
+                                email: email.value,
+                                senha: senha.value,
+                                cidade: cidade.value,
+                                estado: estado.value,
+                                cep: cep.value,
+                                logo: logoPath.value};
+
+        localStorage.setItem('cadastroBarLocal', JSON.stringify(cadastroBarLocal));
+
     };
 
     /* Função para validar se campos estão corretos */

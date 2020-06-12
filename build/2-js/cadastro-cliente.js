@@ -2,23 +2,32 @@
 
 window.onload = () => {
     cadastro.onsubmit = (evento) => {
-        let cadastro = {nome: nome.value,
-                        sobrenome: sobrenome.value,
-                        senha: senha.value,
-                        email: email.value,
-                        telefone: telefone.value,
-                        anonascimento: anonascimento.value,
-                        endereco: "",
-                        cidade: "",
-                        estado: "",
-                        avatar: "/build/0-imgs/usuarios/perfil/placeholder.png"}
+        let cadastroClienteLocal = {nome: nome.value,
+                                    sobrenome: sobrenome.value,
+                                    senha: senha.value,
+                                    email: email.value,
+                                    telefone: telefone.value,
+                                    anonascimento: anonascimento.value,
+                                    endereco: "",
+                                    cidade: "",
+                                    estado: "",
+                                    avatar: "/build/0-imgs/usuarios/perfil/placeholder.png"}
 
-        localStorage.setItem('cadastro', JSON.stringify(cadastro));
+        localStorage.setItem('cadastroClienteLocal', JSON.stringify(cadastroClienteLocal));
 
-        let preferencias = {categorias: {boate: false, buteco: false, churrascaria: false, restaurante: false, burgueria: false},
-                            culinarias: {brasileira: false, italiana: false, alema: false, japonesa: false, pizza: false}}
+        let preferenciasClienteLocal = {categorias: {boate: false,
+                                                     buteco: false,
+                                                     churrascaria: false,
+                                                     restaurante: false,
+                                                     burgueria: false},
+                                                     
+                                        culinarias: {brasileira: false,
+                                                     italiana: false,
+                                                     alema: false,
+                                                     japonesa: false,
+                                                     pizza: false}}
 
-        localStorage.setItem('preferencias', JSON.stringify(preferencias));
+        localStorage.setItem('preferenciasClienteLocal', JSON.stringify(preferenciasClienteLocal));
     };
 };
 
