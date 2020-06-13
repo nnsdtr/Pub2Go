@@ -2,35 +2,80 @@
 
 window.onload = () => {
     cadastro.onsubmit = (evento) => {
-        let cadastroClienteLocal = {nome: nome.value,
-                                    sobrenome: sobrenome.value,
-                                    senha: senha.value,
-                                    email: email.value,
-                                    telefone: telefone.value,
-                                    anonascimento: anonascimento.value,
-                                    cep: cep.value,
-                                    endereco: "",
-                                    cidade: "",
-                                    estado: "",
-                                    avatar: "/build/0-imgs/usuarios/perfil/placeholder.png"}
+        let cadastroClienteLocal = {
+            nome: nome.value,
+            sobrenome: sobrenome.value,
+            senha: senha.value,
+            email: email.value,
+            telefone: telefone.value,
+            anonascimento: anonascimento.value,
+            cep: cep.value,
+            logradouro: logradouro.value,
+            numeroLocal: numeroLocal.value,
+            complemento: complemento.value,
+            bairro: bairro.value,
+            cidade: cidade.value,
+            estado: estado.value,
+            avatar: "/build/0-imgs/usuarios/perfil/placeholder.png"
+        }
 
         localStorage.setItem('cadastroClienteLocal', JSON.stringify(cadastroClienteLocal));
 
-        let preferenciasClienteLocal = {categorias: {boate: false,
-                                                     buteco: false,
-                                                     churrascaria: false,
-                                                     restaurante: false,
-                                                     burgueria: false},
+        let preferenciasClienteLocal = {
+            categorias: {
+                boate: false,
+                buteco: false,
+                churrascaria: false,
+                restaurante: false,
+                burgueria: false
+            },
 
-                                        culinarias: {brasileira: false,
-                                                     italiana: false,
-                                                     alema: false,
-                                                     japonesa: false,
-                                                     pizza: false}}
+            culinarias: {
+                brasileira: false,
+                italiana: false,
+                alema: false,
+                japonesa: false,
+                pizza: false
+            }
+        }
 
         localStorage.setItem('preferenciasClienteLocal', JSON.stringify(preferenciasClienteLocal));
     };
+
+
+    // Coletar informações de Endereço
+    cep.onchange = () => {
+        function success() {
+            let objEndereco = JSON.parse(this.responseText);
+
+            if (objEndereco.erro == true) {
+                alert("O CEP digitado não existe!");
+                btn_submit.disabled = true;
+
+            } else {
+                btn_submit.disabled = false;
+                logradouro.value = objEndereco.logradouro;
+                complemento.value = objEndereco.complemento;
+                bairro.value = objEndereco.bairro;
+                cidade.value = objEndereco.localidade;
+                estado.value = objEndereco.uf;
+            };
+        };
+
+        function error(err) {
+            console.log('Erro:', err);
+        };
+
+        var xhr = new XMLHttpRequest();
+        xhr.onload = success;
+        xhr.onerror = error;
+        xhr.open('GET', `https://viacep.com.br/ws/${cep.value}/json/`);
+        xhr.send();
+    };
+
+
 };
+
 
 function validar() {
     var nome = cadastro.nome.value;
@@ -174,7 +219,7 @@ function validar() {
         alerta.style.textAlign = 'left';
         cadastro.anonascimento.focus();
         return false;
-    } else if (anonascimento.length < 10){
+    } else if (anonascimento.length < 10) {
         alerta.innerHTML = '* Data de nascimento inválida!';
         alerta.style.color = '#D01';
         alerta.style.display = 'block';

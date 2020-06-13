@@ -76,74 +76,141 @@
                                     placeholder="Insira sua data de nascimento">
                             </div>
                             <div class="col-md-4">
-                                <input type="text" class="form-control a" id="cep" name="cep"
-                                    placeholder="CEP">
+                                <input type="text" class="form-control a" id="cep" name="cep" placeholder="CEP">
                             </div>
-                        </section>
-                        <span id="alerta"></span>
 
-                        <section class="row d-flex justify-content-center finalpage">
-                            <div class="col-md-12 termos">
-                                <label>Ao se cadastrar você aceita nossos</label>
-                                <label class="destaque"><a href="#">Termos de uso </a></label>
-                                <label>e</label>
-                                <label class="destaque"><a href="">Política de Privacidade.</a></label>
+                            <div class="form-group col-md-4">
+                                <label for="inputStreet"></label>
+                                <input type="text" class="form-controll" id="logradouro" name="logradouro"
+                                    placeholder="Logradouro" pattern="[a-zA-Záãâéêíîóôõú\s]+$">
                             </div>
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck"
-                                            required>
-                                        <label class="form-check-label" for="invalidCheck">
-                                            Concordo com os termos e condições
-                                        </label>
-                                        <div class="invalid-feedback">
-                                            Você deve concordar, antes de continuar.
-                                        </div>
-                                    </div>
+
+                            <div class="form-group col-md-2">
+                                <label for="inputNumber"></label>
+                                <input type="number" class="form-controll" id="numeroLocal" name="numeroLocal"
+                                    placeholder="Número" pattern="[0-9]+$">
+                            </div>
+
+                            <div class="form-group col-md-4">
+                                <label for="inputStreet"></label>
+                                <input type="text" class="form-controll" id="complemento" name="complemento"
+                                    placeholder="Complemento" pattern="[a-zA-Záãâéêíîóôõú\s]+$">
+                            </div>
+
+                                <div class="form-group col-md-3">
+                                    <label for="inputNeighbor"></label>
+                                    <input type="text" class="form-controll" id="bairro" name="bairro" placeholder="Bairro"
+                                        pattern="[a-zA-Záãâéêíîóôõú\s]+$">
                                 </div>
-                            </div>
-
-                            <div class="col-md-12">
-                                <button id="btn_submit" onclick="return validar()" class="btn" type="submit">Cadastrar e
-                                    Continuar</button>
-                            </div>
-                        </section>
-
-                    </form>
+            
+                                <div class="form-group col-md-3">
+                                    <label for="inputCity"></label>
+                                    <input type="text" class="form-controll" id="cidade" name="cidade" placeholder="Cidade"
+                                        pattern="[a-zA-Záãâéêíîóôõú\s]+$">
+                                </div>
+            
+                                <div class="form-group col-md-2">
+                                    <label for="inputState"></label>
+                                    <select id="estado" name="estado" class="form-controll">
+                                        <option selected>Estado</option>
+                                        <option>AC</option>
+                                        <option>AL</option>
+                                        <option>AP</option>
+                                        <option>AM</option>
+                                        <option>BA</option>
+                                        <option>CE</option>
+                                        <option>ES</option>
+                                        <option>GO</option>
+                                        <option>MA</option>
+                                        <option>MT</option>
+                                        <option>MS</option>
+                                        <option>MG</option>
+                                        <option>PA</option>
+                                        <option>PB</option>
+                                        <option>PR</option>
+                                        <option>PE</option>
+                                        <option>PI</option>
+                                        <option>RJ</option>
+                                        <option>RN</option>
+                                        <option>RS</option>
+                                        <option>RO</option>
+                                        <option>RR</option>
+                                        <option>SC</option>
+                                        <option>SP</option>
+                                        <option>SE</option>
+                                        <option>TO</option>
+                                        <option>DF</option>
+                                    </select>
+                                </div>
 
                 </div>
 
-            </main>
-
-            <footer class="container">
 
 
+                </section>
+                <span id="alerta"></span>
 
-            </footer>
+                <section class="row d-flex justify-content-center finalpage">
+                    <div class="col-md-12 termos">
+                        <label>Ao se cadastrar você aceita nossos</label>
+                        <label class="destaque"><a href="#">Termos de uso </a></label>
+                        <label>e</label>
+                        <label class="destaque"><a href="">Política de Privacidade.</a></label>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                                <label class="form-check-label" for="invalidCheck">
+                                    Concordo com os termos e condições
+                                </label>
+                                <div class="invalid-feedback">
+                                    Você deve concordar, antes de continuar.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <button id="btn_submit" onclick="return validar()" class="btn" type="submit">Cadastrar e
+                            Continuar</button>
+                    </div>
+                </section>
+
         </form>
 
-        <!-- Optional JavaScript -->
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-        </script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-        </script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-        </script>
-        <script src="2-js/jquery.mask.min.js"></script>
+    </div>
 
-        <!-- Máscara do formulário -->
-        <script>
-            $(document).ready(function () {
-                $('#anonascimento').mask('00/00/0000');
-                $('#telefone').mask('(00) 00000-0000');
-                $('#cep').mask('00000-000');
-            })
+    </main>
+
+    <footer class="container">
+
+
+
+    </footer>
+    </form>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
         </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+        </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+        </script>
+    <script src="2-js/jquery.mask.min.js"></script>
+
+    <!-- Máscara do formulário -->
+    <script>
+        $(document).ready(function () {
+            $('#anonascimento').mask('00/00/0000');
+            $('#telefone').mask('(00) 00000-0000');
+            $('#cep').mask('00000-000');
+        })
+    </script>
 </body>
 
 </html>

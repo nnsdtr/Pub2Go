@@ -11,6 +11,11 @@ body {
     margin-right: auto;
 }
 
+.form-controll{
+    display: none;
+}
+
+
 /*Cabecalho*/
 
 a {

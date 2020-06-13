@@ -30,7 +30,7 @@ window.onload = () => {
 	document.getElementById("telefone").value = cadastroClienteLocal.telefone;
 	document.getElementById("senha").value = cadastroClienteLocal.senha;
 	document.getElementById("anonascimento").value = cadastroClienteLocal.anonascimento;
-	document.getElementById("endereco").value = cadastroClienteLocal.endereco;
+	document.getElementById("logradouro").value = cadastroClienteLocal.logradouro;
 	document.getElementById("cidade").value = cadastroClienteLocal.cidade;
 	document.getElementById("estado").value = cadastroClienteLocal.estado;
 	document.getElementById("cep").value = cadastroClienteLocal.cep;
@@ -96,18 +96,6 @@ window.onload = () => {
 		};
 	};
 
-	btnEndereco.onclick = () => {
-		if(endereco.disabled) {
-			endereco.disabled = false;
-			document.getElementById("btnEnderecoImg").src = "0-imgs/icont/confirmar.png";
-		} else {
-			endereco.disabled = true;
-			document.getElementById("btnEnderecoImg").src = "0-imgs/icont/editar.png";
-			cadastroClienteLocal.endereco = endereco.value;
-			localStorage.setItem("cadastroClienteLocal", JSON.stringify(cadastroClienteLocal))
-		};
-	};
-
 	btnCidade.onclick = () => {
 		if(cidade.disabled) {
 			cidade.disabled = false;
@@ -146,68 +134,68 @@ window.onload = () => {
 
 
 	/* Editar preferências */
-	let preferencias = JSON.parse(localStorage.getItem("preferencias"));
+	let preferenciasClienteLocal = JSON.parse(localStorage.getItem("preferenciasClienteLocal"));
 
 	/* categorias de estabelecimentos */
-	document.getElementById("boate").checked = preferencias.categorias.boate;
-	document.getElementById("buteco").checked = preferencias.categorias.buteco;
-	document.getElementById("churrascaria").checked = preferencias.categorias.churrascaria;
-	document.getElementById("restaurante").checked = preferencias.categorias.restaurante;
-	document.getElementById("burgueria").checked = preferencias.categorias.burgueria;
+	document.getElementById("boate").checked = preferenciasClienteLocal.categorias.boate;
+	document.getElementById("buteco").checked = preferenciasClienteLocal.categorias.buteco;
+	document.getElementById("churrascaria").checked = preferenciasClienteLocal.categorias.churrascaria;
+	document.getElementById("restaurante").checked = preferenciasClienteLocal.categorias.restaurante;
+	document.getElementById("burgueria").checked = preferenciasClienteLocal.categorias.burgueria;
 
 	boate.onchange = () => {
-		preferencias.categorias.boate = document.getElementById("boate").checked;
-		localStorage.setItem("preferencias", JSON.stringify(preferencias))
+		preferenciasClienteLocal.categorias.boate = document.getElementById("boate").checked;
+		localStorage.setItem("preferenciasClienteLocal", JSON.stringify(preferenciasClienteLocal))
 	};
 	buteco.onchange = () => {
-		preferencias.categorias.buteco = document.getElementById("buteco").checked;
-		localStorage.setItem("preferencias", JSON.stringify(preferencias))
+		preferenciasClienteLocal.categorias.buteco = document.getElementById("buteco").checked;
+		localStorage.setItem("preferenciasClienteLocal", JSON.stringify(preferenciasClienteLocal))
 	};
 	churrascaria.onchange = () => {
-		preferencias.categorias.churrascaria = document.getElementById("churrascaria").checked;
-		localStorage.setItem("preferencias", JSON.stringify(preferencias))
+		preferenciasClienteLocal.categorias.churrascaria = document.getElementById("churrascaria").checked;
+		localStorage.setItem("preferenciasClienteLocal", JSON.stringify(preferenciasClienteLocal))
 	};
 	restaurante.onchange = () => {
-		preferencias.categorias.restaurante = document.getElementById("restaurante").checked;
-		localStorage.setItem("preferencias", JSON.stringify(preferencias))
+		preferenciasClienteLocal.categorias.restaurante = document.getElementById("restaurante").checked;
+		localStorage.setItem("preferenciasClienteLocal", JSON.stringify(preferenciasClienteLocal))
 	};
 	burgueria.onchange = () => {
-		preferencias.categorias.burgueria = document.getElementById("burgueria").checked;
-		localStorage.setItem("preferencias", JSON.stringify(preferencias))
+		preferenciasClienteLocal.categorias.burgueria = document.getElementById("burgueria").checked;
+		localStorage.setItem("preferenciasClienteLocal", JSON.stringify(preferenciasClienteLocal))
 	};
 
 
 
 	/* culinárias */
-	document.getElementById("brasileira").checked = preferencias.culinarias.brasileira;
-	document.getElementById("italiana").checked = preferencias.culinarias.italiana;
-	document.getElementById("alema").checked = preferencias.culinarias.alema;
-	document.getElementById("japonesa").checked = preferencias.culinarias.japonesa;
-	document.getElementById("pizza").checked = preferencias.culinarias.pizza;
+	document.getElementById("brasileira").checked = preferenciasClienteLocal.culinarias.brasileira;
+	document.getElementById("italiana").checked = preferenciasClienteLocal.culinarias.italiana;
+	document.getElementById("alema").checked = preferenciasClienteLocal.culinarias.alema;
+	document.getElementById("japonesa").checked = preferenciasClienteLocal.culinarias.japonesa;
+	document.getElementById("pizza").checked = preferenciasClienteLocal.culinarias.pizza;
 
 	brasileira.onchange = () => {
-		preferencias.culinarias.brasileira = document.getElementById("brasileira").checked;
-		localStorage.setItem("preferencias", JSON.stringify(preferencias))
+		preferenciasClienteLocal.culinarias.brasileira = document.getElementById("brasileira").checked;
+		localStorage.setItem("preferenciasClienteLocal", JSON.stringify(preferenciasClienteLocal))
 	};
 
 	italiana.onchange = () => {
-		preferencias.culinarias.italiana = document.getElementById("italiana").checked;
-		localStorage.setItem("preferencias", JSON.stringify(preferencias))
+		preferenciasClienteLocal.culinarias.italiana = document.getElementById("italiana").checked;
+		localStorage.setItem("preferenciasClienteLocal", JSON.stringify(preferenciasClienteLocal))
 	};
 
 	alema.onchange = () => {
-		preferencias.culinarias.alema = document.getElementById("alema").checked;
-		localStorage.setItem("preferencias", JSON.stringify(preferencias))
+		preferenciasClienteLocal.culinarias.alema = document.getElementById("alema").checked;
+		localStorage.setItem("preferenciasClienteLocal", JSON.stringify(preferenciasClienteLocal))
 	};
 
 	japonesa.onchange = () => {
-		preferencias.culinarias.japonesa = document.getElementById("japonesa").checked;
-		localStorage.setItem("preferencias", JSON.stringify(preferencias))
+		preferenciasClienteLocal.culinarias.japonesa = document.getElementById("japonesa").checked;
+		localStorage.setItem("preferenciasClienteLocal", JSON.stringify(preferenciasClienteLocal))
 	};
 
 	pizza.onchange = () => {
-		preferencias.culinarias.pizza = document.getElementById("pizza").checked;
-		localStorage.setItem("preferencias", JSON.stringify(preferencias))
+		preferenciasClienteLocal.culinarias.pizza = document.getElementById("pizza").checked;
+		localStorage.setItem("preferenciasClienteLocal", JSON.stringify(preferenciasClienteLocal))
 	};
 
 

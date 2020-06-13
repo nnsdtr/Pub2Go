@@ -3,29 +3,31 @@
 window.onload = () => {
     // Realizar cadastro
     cadastro.onsubmit = (evento) => {
-        let cadastroBarLocal = {nome: nome.value,
-                                cnpj: cnpj.value,
-                                email: email.value,
-                                senha: senha.value,
-                                cep: cep.value,
-                                logradouro: logradouro.value,
-                                numeroLocal: numeroLocal.value,
-                                complemento: complemento.value,
-                                bairro: bairro.value,
-                                cidade: cidade.value,
-                                estado: estado.value,
-                                telefone: telefone.value,
-                                logo: ""};
+        let cadastroBarLocal = {
+            nome: nome.value,
+            cnpj: cnpj.value,
+            email: email.value,
+            senha: senha.value,
+            cep: cep.value,
+            logradouro: logradouro.value,
+            numeroLocal: numeroLocal.value,
+            complemento: complemento.value,
+            bairro: bairro.value,
+            cidade: cidade.value,
+            estado: estado.value,
+            telefone: telefone.value,
+            logo: ""
+        };
 
         localStorage.setItem('cadastroBarLocal', JSON.stringify(cadastroBarLocal));
     };
 
     // Coletar informações de Endereço
     cep.onchange = () => {
-        function success () {
+        function success() {
             let objEndereco = JSON.parse(this.responseText);
 
-            if(objEndereco.erro == true) {
+            if (objEndereco.erro == true) {
                 alert("O CEP digitado não existe!");
                 btn_submit.disabled = true;
 
@@ -38,11 +40,11 @@ window.onload = () => {
                 estado.value = objEndereco.uf;
             };
         };
-        
-        function error (err) {
+
+        function error(err) {
             console.log('Erro:', err);
         };
-        
+
         var xhr = new XMLHttpRequest();
         xhr.onload = success;
         xhr.onerror = error;
@@ -51,7 +53,7 @@ window.onload = () => {
     };
 
     cep.oninput = () => {
-        if(cep.value.length < 9) {
+        if (cep.value.length < 9) {
             logradouro.disabled = false;
             bairro.disabled = false;
             cidade.disabled = false;
@@ -201,7 +203,7 @@ function validar() {
         alerta.style.textAlign = 'left';
         cadastro.numeroLocal.focus();
         return false;
-    } else if(!numeroLocalRE.test(numeroLocal)) {
+    } else if (!numeroLocalRE.test(numeroLocal)) {
         alerta.innerHTML = '* Número inválido!';
         alerta.style.color = '#D01';
         alerta.style.display = 'block';
@@ -247,7 +249,7 @@ function validar() {
     } else {
         alerta.innerHTML = '';
     }
-    
+
     var telefone = cadastro.telefone.value;
     if (telefone == "" || telefone == null) {
         alerta.innerHTML = '* Digite um telefone!';
