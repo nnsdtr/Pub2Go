@@ -18,6 +18,8 @@
     <link rel="stylesheet" href="1-css/global.css">
     <link rel="stylesheet" href="1-css/fontes.css">
     <link rel="stylesheet" href="1-css/cadastro-comercio.css">
+
+    <!-- JavaScript -->
     <script src="2-js/cadastro-comercio.js"></script>
     <script src="2-js/jquery.mask.min.js"></script>
 
@@ -52,7 +54,7 @@
             <form class="col-md-12" id="cadastro" method="post" action="https://postman-echo.com/post">
 
                 <div class="form-row">
-                    <div class="form-group col-md-12">
+                    <div class="form-group col-md-6">
                         <label for="inputName"></label>
                         <input type="text" class="form-control " id="nome" name="nome"
                             placeholder="Nome do estabelecimento">
@@ -60,11 +62,6 @@
                     <div class="form-group col-md-6">
                         <label for="inputLastname"></label>
                         <input type="text" class="form-control" id="cnpj" name="cnpj" placeholder="CNPJ">
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="inputTelefone"></label>
-                        <input type="tel" class="form-control" id="telefone" name="telefone"
-                            placeholder="Telefone para contato">
                     </div>
                     <div class="form-group col-md-6">
                         <label for="inputCNPJ"></label>
@@ -86,49 +83,86 @@
                         <input type="password" class="form-control" id="confirmesenha" name="confirmesenha"
                             placeholder="Confirme sua senha">
                     </div>
+
                 </div>
+
                 <div class="form-row">
-                    <div class="form-group col-md-6">
+                    <div class="form-group col-md-2">
+                        <label for="inputCEP"></label>
+                        <input type="text" class="form-control" id="cep" name="cep" placeholder="CEP">
+                    </div>
+
+                    <div class="form-group col-md-4">
+                        <label for="inputStreet"></label>
+                        <input type="text" class="form-control" id="logradouro" name="logradouro" placeholder="Logradouro"
+                            pattern="[a-zA-Záãâéêíîóôõú\s]+$">
+                    </div>
+
+                    <div class="form-group col-md-2">
+                        <label for="inputNumber"></label>
+                        <input type="number" class="form-control" id="numeroLocal" name="numeroLocal" placeholder="Número"
+                            pattern="[0-9]+$">
+                    </div>
+
+                    <div class="form-group col-md-4">
+                        <label for="inputStreet"></label>
+                        <input type="text" class="form-control" id="complemento" name="complemento" placeholder="Complemento"
+                            pattern="[a-zA-Záãâéêíîóôõú\s]+$">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-3">
+                        <label for="inputNeighbor"></label>
+                        <input type="text" class="form-control" id="bairro" name="bairro" placeholder="Bairro"
+                            pattern="[a-zA-Záãâéêíîóôõú\s]+$">
+                    </div>
+
+                    <div class="form-group col-md-3">
                         <label for="inputCity"></label>
                         <input type="text" class="form-control" id="cidade" name="cidade" placeholder="Cidade"
                             pattern="[a-zA-Záãâéêíîóôõú\s]+$">
                     </div>
-                    <div class="form-group col-md-4">
+
+                    <div class="form-group col-md-2">
                         <label for="inputState"></label>
                         <select id="estado" name="estado" class="form-control">
                             <option selected>Estado</option>
-                            <option>Acre</option>
-                            <option>Alagoas</option>
-                            <option>Amapá</option>
-                            <option>Amazonas</option>
-                            <option>Bahia</option>
-                            <option>Ceará</option>
-                            <option>Espírito Santo</option>
-                            <option>Goiás</option>
-                            <option>Maranhão</option>
-                            <option>Mato Grosso</option>
-                            <option>Mato Grosso do Sul</option>
-                            <option>Minas Gerais</option>
-                            <option>Pará</option>
-                            <option>Paraíba</option>
-                            <option>Paraná</option>
-                            <option>Pernambuco</option>
-                            <option>Piauí</option>
-                            <option>Rio de Janeiro</option>
-                            <option>Rio Grande do Norte</option>
-                            <option>Rio Grande do Sul</option>
-                            <option>Rondônia</option>
-                            <option>Roraima</option>
-                            <option>Santa Catarina</option>
-                            <option>São Paulo</option>
-                            <option>Sergipe</option>
-                            <option>Tocatins</option>
-                            <option>Distrito Federal</option>
+                            <option>AC</option>
+                            <option>AL</option>
+                            <option>AP</option>
+                            <option>AM</option>
+                            <option>BA</option>
+                            <option>CE</option>
+                            <option>ES</option>
+                            <option>GO</option>
+                            <option>MA</option>
+                            <option>MT</option>
+                            <option>MS</option>
+                            <option>MG</option>
+                            <option>PA</option>
+                            <option>PB</option>
+                            <option>PR</option>
+                            <option>PE</option>
+                            <option>PI</option>
+                            <option>RJ</option>
+                            <option>RN</option>
+                            <option>RS</option>
+                            <option>RO</option>
+                            <option>RR</option>
+                            <option>SC</option>
+                            <option>SP</option>
+                            <option>SE</option>
+                            <option>TO</option>
+                            <option>DF</option>
                         </select>
                     </div>
-                    <div class="form-group col-md-2">
-                        <label for="inputCEP"></label>
-                        <input type="text" class="form-control" id="cep" name="cep" placeholder="CEP">
+
+
+                    <div class="form-group col-md-4">
+                        <label for="inputTelefone"></label>
+                        <input type="tel" class="form-control" id="telefone" name="telefone"
+                            placeholder="Telefone para contato">
                     </div>
                     <span id="alerta"></span>
                 </div>
