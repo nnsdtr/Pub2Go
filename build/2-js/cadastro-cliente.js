@@ -1,6 +1,7 @@
 /* Recolher dados do formulário */
 
 window.onload = () => {
+
     cadastro.onsubmit = (evento) => {
         let cadastroClienteLocal = {
             nome: nome.value,
@@ -228,6 +229,64 @@ function validar() {
         return false;
     } else {
         alerta.innerHTML = '';
+
+        // Obtém a data/hora atual
+        var data = new Date();
+
+        // Guarda cada pedaço em uma variável
+        var dia     = data.getDate();           // 1-31
+        var mes     = data.getMonth();          // 0-11 (zero=janeiro)
+        var ano    = data.getFullYear();       // 4 dígitos
+
+        if(mes <= 10){ //conserta o mês (janeiro = 01)
+            mes += 1;
+            if(mes < 10){
+                mes = '0' + mes;
+            }
+        }
+
+        var cadDia = anonascimento[0] + anonascimento[1];
+        var cadMes = anonascimento[3] + anonascimento[4];
+        var cadAno = anonascimento[6] + anonascimento[7] + anonascimento[8] + anonascimento[9];
+
+        if((ano - cadAno) == 18){
+            if(mes == cadMes){
+                if(cadDia <= dia){
+                    alerta.innerHTML = '';
+                }
+                else{
+                    alerta.innerHTML = '* É necessário ter mais de 18 anos para se cadastrar.';
+                    alerta.style.color = '#D01';
+                    alerta.style.display = 'block';
+                    alerta.style.textAlign = 'left';
+                    cadastro.anonascimento.focus();
+                    return false;
+                }
+            }
+            else if(mes < cadMes){
+                alerta.innerHTML = '* É necessário ter mais de 18 anos para se cadastrar.';
+                alerta.style.color = '#D01';
+                alerta.style.display = 'block';
+                alerta.style.textAlign = 'left';
+                cadastro.anonascimento.focus();
+                return false;
+            }
+            else{
+                alerta.innerHTML = '';
+            }
+        }
+        else if((ano - cadAno) < 18){
+            alerta.innerHTML = '* É necessário ter mais de 18 anos para se cadastrar.';
+            alerta.style.color = '#D01';
+            alerta.style.display = 'block';
+            alerta.style.textAlign = 'left';
+            cadastro.anonascimento.focus();
+            return false;
+        }
+        else{
+            alerta.innerHTML = '';
+        }
+
     }
 
 };

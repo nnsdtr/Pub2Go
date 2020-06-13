@@ -84,43 +84,8 @@ window.onload = () => {
 		};
 	};
 
-	btnNascimento.onclick = () => {
-		if(anonascimento.disabled) {
-			anonascimento.disabled = false;
-			document.getElementById("btnNascimentoImg").src = "0-imgs/icont/confirmar.png";
-		} else {
-			anonascimento.disabled = true;
-			document.getElementById("btnNascimentoImg").src = "0-imgs/icont/editar.png";
-			cadastroClienteLocal.anonascimento = anonascimento.value;
-			localStorage.setItem("cadastroClienteLocal", JSON.stringify(cadastroClienteLocal))
-		};
-	};
 
-	btnCidade.onclick = () => {
-		if(cidade.disabled) {
-			cidade.disabled = false;
-			document.getElementById("btnCidadeImg").src = "0-imgs/icont/confirmar.png";
-		} else {
-			cidade.disabled = true;
-			document.getElementById("btnCidadeImg").src = "0-imgs/icont/editar.png";
-			cadastroClienteLocal.cidade = cidade.value;
-			localStorage.setItem("cadastroClienteLocal", JSON.stringify(cadastroClienteLocal))
-		};
-	};
-
-	btnEstado.onclick = () => {
-		if(estado.disabled) {
-			estado.disabled = false;
-			document.getElementById("btnEstadoImg").src = "0-imgs/icont/confirmar.png";
-		} else {
-			estado.disabled = true;
-			document.getElementById("btnEstadoImg").src = "0-imgs/icont/editar.png";
-			cadastroClienteLocal.estado = estado.value;
-			localStorage.setItem("cadastroClienteLocal", JSON.stringify(cadastroClienteLocal))
-		};
-	};
-
-	btnCep.onclick = () => {
+	btnCep.onclick = () => { //Ainda não altera no perfil os dados do endereço
 		if(cep.disabled) {
 			cep.disabled = false;
 			document.getElementById("btnCepImg").src = "0-imgs/icont/confirmar.png";
