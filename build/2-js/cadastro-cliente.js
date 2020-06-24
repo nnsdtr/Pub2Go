@@ -1,9 +1,20 @@
-/* Recolher dados do formulário */
+
+    /* Recolher dados do localStorage para uma variavel*/
+    var db_cliente = JSON.parse(localStorage.getItem('db_users'))
+
+    /* Se nao houver dados, cria a estrutura do objeto*/
+if (!db_cliente){
+    db_cliente = {
+        "usuarios": []
+    };
+}
 
 window.onload = () => {
-
+/* Recolher dados do formulário */
     cadastro.onsubmit = (evento) => {
+        let novoID = db_cliente.usuarios.length + 1;
         let cadastroClienteLocal = {
+            id: novoID,
             nome: nome.value,
             sobrenome: sobrenome.value,
             senha: senha.value,
@@ -17,30 +28,27 @@ window.onload = () => {
             bairro: bairro.value,
             cidade: cidade.value,
             estado: estado.value,
-            avatar: "/build/0-imgs/usuarios/perfil/placeholder.png"
-        }
-
-        localStorage.setItem('cadastroClienteLocal', JSON.stringify(cadastroClienteLocal));
-
-        let preferenciasClienteLocal = {
-            categorias: {
-                boate: false,
-                buteco: false,
-                churrascaria: false,
-                restaurante: false,
-                burgueria: false
-            },
-
-            culinarias: {
-                brasileira: false,
-                italiana: false,
-                alema: false,
-                japonesa: false,
-                pizza: false
+            avatar: "/build/0-imgs/usuarios/perfil/placeholder.png",
+            preferenciasClienteLocal: {
+                categorias:{
+                    boate: false,
+                    buteco: false,
+                    churrascaria: false,
+                    restaurante: false,
+                    burgueria: false
+                },
+                culinarias:{
+                    brasileira: false,
+                    italiana: false,
+                    alema: false,
+                    japonesa: false,
+                    pizza: false
+                }
             }
         }
-
-        localStorage.setItem('preferenciasClienteLocal', JSON.stringify(preferenciasClienteLocal));
+        /*atribui ao array e o seta no localStorage*/
+        db_cliente.usuarios.push(cadastroClienteLocal);
+        localStorage.setItem('db_users', JSON.stringify(db_cliente));
     };
 
 

@@ -23,7 +23,8 @@ $('#clicavel').click(function () {
 window.onload = () => {
 
 	/* Editar cadastroClienteLocal */
-	let cadastroClienteLocal = JSON.parse(localStorage.getItem("cadastroClienteLocal"));
+	let cadastroClienteLocal = JSON.parse(localStorage.getItem("db_user.usuarios"));
+	
 	document.getElementById("email").value = cadastroClienteLocal.email;
 	document.getElementById("nome").value = cadastroClienteLocal.nome;
 	document.getElementById("sobrenome").value = cadastroClienteLocal.sobrenome;
