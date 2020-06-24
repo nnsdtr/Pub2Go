@@ -19,5 +19,9 @@ SPRINT 5
 Para a próxima sprint, pretendemos adicionar um banco de dados (em objetos JSON) para múltiplos clientes e um para múltiplos
 estabelecimentos. A razão disso é possibilitar que tenhamos informações estruturadas dos clientes e estabelecimentos para
 possibilitar um acesso centralizado e facilitado de suas informações. Isso será fundamental, pois é a base de outras funcionalidades
-que pretendemos começar a entregar, como filtragem de estabelecimentos (por categoria, por exemplo), buscas dos amigos do cliente,
-estabelecimentos favoritos, eventos disponíveis, entre outros.
+que pretendemos começar a entregar nessa mesma SPRINT, como filtragem de estabelecimentos (por categoria, por exemplo), buscas dos
+amigos do cliente, base para estabelecimentos favoritos, eventos disponíveis, entre outros.
+
+
+- perfil do estabelecimento (similar ao perfil do cliente)
+- 

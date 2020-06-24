@@ -54,13 +54,15 @@ window.onload = () => {
     };
 
     loginForm.onsubmit = () => {
-        let user = {email: email.value, senha: senha.value};
-        localStorage.setItem('user', JSON.stringify(user));
+        let usuarioCorrente = {email: email.value, senha: senha.value};
+        localStorage.setItem('usuarioCorrente', JSON.stringify(usuarioCorrente));
     };
 
-    if(localStorage.getItem('user')){
-        user = JSON.parse(localStorage.getItem('user'));
-        email.value = user.email;
+
+    usuarioCorrenteJSON = localStorage.getItem('usuarioCorrente');
+    if(usuarioCorrenteJSON) {
+        usuarioCorrente = JSON.parse(usuarioCorrenteJSON);
+        email.value = usuarioCorrente.email;
     };
 };
 

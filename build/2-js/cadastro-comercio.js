@@ -20,6 +20,21 @@ window.onload = () => {
         };
 
         localStorage.setItem('cadastroBarLocal', JSON.stringify(cadastroBarLocal));
+
+
+        if(localStorage.getItem("cadastrosBares") === null) {
+            let cadastrosBares = [];
+            cadastrosBares.push(cadastroBarLocal);
+
+            localStorage.setItem('cadastrosBares', JSON.stringify(cadastrosBares));
+
+        } else {
+            let cadastrosBares = [];
+            cadastrosBares = localStorage.getItem("cadastrosBares");
+            cadastrosBares.push(cadastroBarLocal);
+
+            localStorage.setItem('cadastrosBares', JSON.stringify(cadastrosBares));
+        }
     };
 
     // Coletar informações de Endereço
