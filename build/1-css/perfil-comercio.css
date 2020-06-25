@@ -59,8 +59,8 @@ header {
       color: black;
       margin-bottom: 40px;
   }
-  .evento-hora{
-      margin-top: -20px;
+  .funcionamento-hora{
+      margin-top: -10px;
       color: #ffa64c;
       font-weight: bold;
   }
@@ -74,7 +74,7 @@ header {
       border-width: 0.5px;
       border-color: rgb(204, 195, 195);
   }
-  
+
   
   .card-imagens {
       padding: 0px 5px 10px 5px;
