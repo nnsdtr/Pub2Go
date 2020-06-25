@@ -22,7 +22,6 @@ function validateForm() {
 window.onload = () => {
 
     email.oninput = () => {
-
         validateForm();
 
         if( !validateEmail(email.value) ) {
