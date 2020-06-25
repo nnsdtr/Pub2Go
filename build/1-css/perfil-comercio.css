@@ -1,0 +1,95 @@
+/* gerais */
+body {
+    background-color: rgb(49, 49, 49);
+}
+
+/* Cabecalho */
+header {
+    margin-bottom: 10px;
+}
+.menu-cab li{
+    margin-top: 10px;
+    margin-right: 2px;
+}
+
+.pesquisa {
+    margin-top: 10px;
+}
+.logo {
+    display:block;
+    margin: 0 auto;
+    max-width: 100px;
+}
+.menu-cab a{
+    color: #ffa64c;
+    background-color:rgb(68, 67, 67);
+}
+.menu-cab a:hover{
+    color:  rgb(49, 49, 49);
+    background-color: #ffa64c ;
+}
+
+/* main*/
+.conteudo{
+    border-radius: 10px;
+    background-color: #fff;
+    padding: 30px;
+    position: relative;
+    box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.5);
+}
+
+.informacoes button img{
+    max-width: 30px;
+}
+
+.imagem-center img{
+    max-width: 100%;
+      display: block;
+      margin: 0 auto ;
+      border-radius: 10px;
+      background-color: black;
+  }
+  .imagem-center{
+      background-color:rgb(243, 241, 241);
+      border-radius: 10px;
+  }
+  .inf-icon{
+      text-align: left;
+      margin-top: 10px;
+      color: black;
+      margin-bottom: 40px;
+  }
+  .evento-hora{
+      margin-top: -20px;
+      color: #ffa64c;
+      font-weight: bold;
+  }
+  
+  #icon img {
+      margin-top: -20px;
+      max-width: 120px;
+      background-color:white;
+      margin-bottom: 0px;
+      border-style: solid;
+      border-width: 0.5px;
+      border-color: rgb(204, 195, 195);
+  }
+  
+  
+  .card-imagens {
+      padding: 0px 5px 10px 5px;
+  }
+  
+  .cards-cliente  img{
+      max-width: 100%;
+  }
+
+
+    
+
+/* footer */
+footer{
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
