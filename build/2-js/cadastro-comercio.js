@@ -37,26 +37,56 @@ function addComercios(nome, cnpj, email, senha, cep, logradouro, numeroLocal, co
 /* Recolher dados do formulário */
 
 window.onload = () => {
-    // Realizar cadastro
-    cadastro.onsubmit = (evento) => {
-        let cadastroBarLocal = {
-            nome: nome.value,
-            cnpj: cnpj.value,
-            email: email.value,
-            senha: senha.value,
-            cep: cep.value,
-            logradouro: logradouro.value,
-            numeroLocal: numeroLocal.value,
-            complemento: complemento.value,
-            bairro: bairro.value,
-            cidade: cidade.value,
-            estado: estado.value,
-            telefone: telefone.value,
-            logo: ""
-        };
+    // Inicializar Database
+    var db_bares_JSON = localStorage.getItem('db_bares');
 
-        localStorage.setItem('cadastroBarLocal', JSON.stringify(cadastroBarLocal));
+    if(db_bares_JSON) { // Somente roda se db existir no localStorage
+        var db_bares = JSON.parse(db_bares_JSON);
+    } else {
+        var db_bares = {"data": []};
+        localStorage.setItem('db_bares', JSON.stringify(db_bares))
     };
+
+    // Validar formulário
+    btn_submit.disabled = true;
+    cadastro.oninput = () => { // A cada input o formulário é validado
+        validar();
+
+        if($("#cadastro")[0].checkValidity()) { // Checa validade do formulário e libera o botão submit se verdadeiro
+            btn_submit.disabled = false;
+        } else {
+            btn_submit.disabled = true;
+        };
+    };
+
+    // Realizar cadastro
+    $("#btn_submit").click( function () {
+        let novoBar = {
+            "email": email.value,
+            "nome": nome.value,
+            "cnpj": cnpj.value,
+            "senha": senha.value,
+            "cep": cep.value,
+            "logradouro": logradouro.value,
+            "numeroLocal": numeroLocal.value,
+            "complemento": complemento.value,
+            "bairro": bairro.value,
+            "cidade": cidade.value,
+            "estado": estado.value,
+            "telefone": telefone.value,
+            "logo": ""
+        };
+        
+        db_bares.data.push(novoBar);    
+        localStorage.setItem('db_bares', JSON.stringify(db_bares));
+        alert("Cadastro inserido com sucesso");
+    });
+
+    cadastro.onsubmit = (evento) => {
+        evento.preventDefault();
+        window.location = "login.html";
+    };
+    
 
     // Coletar informações de Endereço
     cep.onchange = () => {
@@ -65,10 +95,8 @@ window.onload = () => {
 
             if (objEndereco.erro == true) {
                 alert("O CEP digitado não existe!");
-                btn_submit.disabled = true;
 
             } else {
-                btn_submit.disabled = false;
                 logradouro.value = objEndereco.logradouro;
                 complemento.value = objEndereco.complemento;
                 bairro.value = objEndereco.bairro;
@@ -87,13 +115,154 @@ window.onload = () => {
         xhr.open('GET', `https://viacep.com.br/ws/${cep.value}/json/`);
         xhr.send();
     };
+};
 
-    cep.oninput = () => {
-        if (cep.value.length < 9) {
+
+
+function validar() {
+    cadastro.nome.onchange = () => {
+        var checarNome = cadastro.nome.value;
+        if (checarNome == "" || checarNome == null) {
+            alerta.innerHTML = '* Digite o nome do seu estabelecimento!';
+            alerta.style.color = '#ff8080';
+            alerta.style.display = 'block';
+            alerta.style.textAlign = 'left';
+            cadastro.nome.focus();
+            return false;
+        } else if (checarNome.length < 3) {
+            alerta.innerHTML = '* Digite um nome válido!';
+            alerta.style.color = '#ff8080';
+            alerta.style.display = 'block';
+            alerta.style.textAlign = 'left';
+            cadastro.nome.focus();
+            return false;
+        } else {
+            alerta.innerHTML = '';
+        };
+    };
+
+
+    cadastro.cnpj.onchange = () => {
+        var checarCNPJ = cadastro.cnpj.value;
+        if (checarCNPJ == "" || checarCNPJ == null) {
+            alerta.innerHTML = '* Digite um CNPJ!';
+            alerta.style.color = '#ff8080';
+            alerta.style.display = 'block';
+            alerta.style.textAlign = 'left';
+            cadastro.cnpj.focus();
+            return false;
+        } else if (checarCNPJ.length < 18) {
+            alerta.innerHTML = '* Digite um CNPJ válido!';
+            alerta.style.color = '#ff8080';
+            alerta.style.display = 'block';
+            alerta.style.textAlign = 'left';
+            cadastro.cnpj.focus();
+            return false;
+        } else {
+            alerta.innerHTML = '';
+        };
+    };
+
+
+    cadastro.email.onchange = () => {
+        var checarEmail = cadastro.email.value;
+        if (checarEmail == "" || checarEmail == null) {
+            alerta.innerHTML = '* Digite um e-mail!';
+            alerta.style.color = '#ff8080';
+            alerta.style.display = 'block';
+            alerta.style.textAlign = 'left';
+            cadastro.email.focus();
+            return false;
+        } else if (checarEmail.length < 8 || checarEmail.indexOf('@') == -1 || checarEmail.indexOf('.') == -1) {
+            alerta.innerHTML = '* Digite um e-mail válido!';
+            alerta.style.color = '#ff8080';
+            alerta.style.display = 'block';
+            alerta.style.textAlign = 'left';
+            cadastro.email.focus();
+            return false;
+        } else {
+            alerta.innerHTML = '';
+        };
+    };
+
+
+    cadastro.confirmemail.onchange = () => {
+        var checarEmail = cadastro.email.value;
+        var checarConfirmemail = cadastro.confirmemail.value;
+        if (checarEmail != checarConfirmemail) {
+            alerta.innerHTML = '* Os e-mails devem ser iguais!';
+            alerta.style.color = '#ff8080';
+            alerta.style.display = 'block';
+            alerta.style.textAlign = 'left';
+            cadastro.confirmemail.focus();
+            return false;
+        } else {
+            alerta.innerHTML = '';
+        };
+    };
+
+
+    cadastro.senha.onchange = () => {
+        var checarSenha = cadastro.senha.value;
+        if (checarSenha == "" || checarSenha == null) {
+            alerta.innerHTML = '* Digite uma senha!';
+            alerta.style.color = '#ff8080';
+            alerta.style.display = 'block';
+            alerta.style.textAlign = 'left';
+            cadastro.senha.focus();
+            return false;
+        } else if (checarSenha.length < 8) {
+            alerta.innerHTML = '* A senha deve conter 8 ou mais caractéres!';
+            alerta.style.color = '#ff8080';
+            alerta.style.display = 'block';
+            alerta.style.textAlign = 'left';
+            cadastro.senha.focus();
+            return false;
+        } else {
+            alerta.innerHTML = '';
+        };
+    };
+
+
+    cadastro.confirmesenha.onchange = () => {
+        var checarSenha = cadastro.senha.value;
+        var checarConfirmesenha = cadastro.confirmesenha.value;
+        if (checarSenha != checarConfirmesenha) {
+            alerta.innerHTML = '* As senhas devem ser iguais!';
+            alerta.style.color = '#ff8080';
+            alerta.style.display = 'block';
+            alerta.style.textAlign = 'left';
+            cadastro.confirmesenha.focus();
+            return false;
+        } else {
+            alerta.innerHTML = '';
+        };
+    };
+
+
+    cadastro.cep.oninput = () => {
+        var checarCEP = cadastro.cep.value;
+        if (checarCEP == "" || checarCEP == null) {
+            alerta.innerHTML = '* O campo CEP não pode ficar vazio!';
+            alerta.style.color = '#ff8080';
+            alerta.style.display = 'block';
+            alerta.style.textAlign = 'left';
+            cadastro.cep.focus();
+            return false;
+        } else {
+            alerta.innerHTML = '';
+        };
+
+        if (checarCEP.length < 9) {
             logradouro.disabled = false;
             bairro.disabled = false;
             cidade.disabled = false;
             estado.disabled = false;
+
+            logradouro.value = "";
+            bairro.value = "";
+            cidade.value = "";
+            estado.value = "";
         } else {
             logradouro.disabled = true;
             bairro.disabled = true;
@@ -101,208 +270,109 @@ window.onload = () => {
             estado.disabled = true;
         };
     };
-};
 
 
+    cadastro.logradouro.onchange = () => {
+        var checarLogradouro = cadastro.logradouro.value;
+        if (checarLogradouro == "" || checarLogradouro == null) {
+            alerta.innerHTML = '* O campo de logragouro não pode ficar vazio!';
+            alerta.style.color = '#ff8080';
+            alerta.style.display = 'block';
+            alerta.style.textAlign = 'left';
+            cadastro.logradouro.focus();
+            return false;
+        } else {
+            alerta.innerHTML = '';
+        };
+    };
 
-function validar() {
-    var nome = cadastro.nome.value;
-    if (nome == "" || nome == null) {
-        alerta.innerHTML = '* Digite o nome do seu estabelecimento!';
-        alerta.style.color = '#D01';
-        alerta.style.display = 'block';
-        alerta.style.textAlign = 'left';
-        cadastro.nome.focus();
-        return false;
-    } else if (nome.length < 3) {
-        alerta.innerHTML = '* Digite um nome válido!';
-        alerta.style.color = '#D01';
-        alerta.style.display = 'block';
-        alerta.style.textAlign = 'left';
-        cadastro.nome.focus();
-        return false;
-    } else {
-        alerta.innerHTML = '';
-    }
 
-    var cnpj = cadastro.cnpj.value;
-    if (cnpj == "" || cnpj == null) {
-        alerta.innerHTML = '* Digite um CNPJ!';
-        alerta.style.color = '#D01';
-        alerta.style.display = 'block';
-        alerta.style.textAlign = 'left';
-        cadastro.cnpj.focus();
-        return false;
-    } else if (cnpj.length < 5) {
-        alerta.innerHTML = '* Digite um CNPJ válido!';
-        alerta.style.color = '#D01';
-        alerta.style.display = 'block';
-        alerta.style.textAlign = 'left';
-        cadastro.cnpj.focus();
-        return false;
-    } else {
-        alerta.innerHTML = '';
-    }
+    cadastro.numeroLocal.onchange = () => {
+        var checarNumeroLocal = cadastro.numeroLocal.value;
+        var numeroLocalRE = /\d+/;
+        if (checarNumeroLocal == "" || checarNumeroLocal == null) {
+            alerta.innerHTML = '* O campo de número não pode ficar vazio!';
+            alerta.style.color = '#ff8080';
+            alerta.style.display = 'block';
+            alerta.style.textAlign = 'left';
+            cadastro.numeroLocal.focus();
+            return false;
+        } else if (!numeroLocalRE.test(checarNumeroLocal)) {
+            alerta.innerHTML = '* Número inválido!';
+            alerta.style.color = '#ff8080';
+            alerta.style.display = 'block';
+            alerta.style.textAlign = 'left';
+            cadastro.numeroLocal.focus();
+            return false;
+        } else {
+            alerta.innerHTML = '';
+        };
+    };
 
-    var email = cadastro.email.value;
-    if (email == "" || email == null) {
-        alerta.innerHTML = '* Digite um e-mail!';
-        alerta.style.color = '#D01';
-        alerta.style.display = 'block';
-        alerta.style.textAlign = 'left';
-        cadastro.email.focus();
-        return false;
-    } else if (email.length < 8 || email.indexOf('@') == -1 || email.indexOf('.') == -1) {
-        alerta.innerHTML = '* Digite um e-mail válido!';
-        alerta.style.color = '#D01';
-        alerta.style.display = 'block';
-        alerta.style.textAlign = 'left';
-        cadastro.email.focus();
-        return false;
-    } else {
-        alerta.innerHTML = '';
-    }
 
-    var confirmemail = cadastro.confirmemail.value;
-    if (email != confirmemail) {
-        alerta.innerHTML = '* Os e-mails devem ser iguais!';
-        alerta.style.color = '#D01';
-        alerta.style.display = 'block';
-        alerta.style.textAlign = 'left';
-        cadastro.confirmemail.focus();
-        return false;
-    } else {
-        alerta.innerHTML = '';
-    }
+    cadastro.bairro.onchange = () => {
+        var checarBairro = cadastro.bairro.value;
+        if (checarBairro == "" || checarBairro == null) {
+            alerta.innerHTML = '* Preencha o campo Bairro!';
+            alerta.style.color = '#ff8080';
+            alerta.style.display = 'block';
+            alerta.style.textAlign = 'left';
+            cadastro.bairro.focus();
+            return false;
+        } else {
+            alerta.innerHTML = '';
+        };
+    };
 
-    var senha = cadastro.senha.value;
-    if (senha == "" || senha == null) {
-        alerta.innerHTML = '* Digite uma senha!';
-        alerta.style.color = '#D01';
-        alerta.style.display = 'block';
-        alerta.style.textAlign = 'left';
-        cadastro.senha.focus();
-        return false;
-    } else if (senha.length < 8) {
-        alerta.innerHTML = '* A senha deve conter 8 ou mais caractéres!';
-        alerta.style.color = '#D01';
-        alerta.style.display = 'block';
-        alerta.style.textAlign = 'left';
-        cadastro.senha.focus();
-        return false;
-    } else {
-        alerta.innerHTML = '';
-    }
 
-    var confirmesenha = cadastro.confirmesenha.value;
-    if (confirmesenha != senha) {
-        alerta.innerHTML = '* As senhas devem ser iguais!';
-        alerta.style.color = '#D01';
-        alerta.style.display = 'block';
-        alerta.style.textAlign = 'left';
-        cadastro.confirmesenha.focus();
-        return false;
-    } else {
-        alerta.innerHTML = '';
-    }
+    cadastro.cidade.onchange = () => {
+        var checarCidade = cadastro.cidade.value;
+        if (checarCidade == "" || checarCidade == null) {
+            alerta.innerHTML = '* Preencha o campo Cidade!';
+            alerta.style.color = '#ff8080';
+            alerta.style.display = 'block';
+            alerta.style.textAlign = 'left';
+            cadastro.cidade.focus();
+            return false;
+        } else {
+            alerta.innerHTML = '';
+        };
+    };
 
-    var cep = cadastro.cep.value;
-    if (cep == "" || cep == null) {
-        alerta.innerHTML = '* O campo CEP não pode ficar vazio!';
-        alerta.style.color = '#D01';
-        alerta.style.display = 'block';
-        alerta.style.textAlign = 'left';
-        cadastro.cep.focus();
-        return false;
-    } else {
-        alerta.innerHTML = '';
-    }
 
-    var logradouro = cadastro.logradouro.value;
-    if (logradouro == "" || logradouro == null) {
-        alerta.innerHTML = '* O campo de logragouro não pode ficar vazio!';
-        alerta.style.color = '#D01';
-        alerta.style.display = 'block';
-        alerta.style.textAlign = 'left';
-        cadastro.logradouro.focus();
-        return false;
-    } else {
-        alerta.innerHTML = '';
-    }
+    cadastro.estado.onchange = () => {
+        var checarEstado = cadastro.estado.value;
+        if (checarEstado == "" || checarEstado == null || checarEstado == "Estado") {
+            alerta.innerHTML = '* Preencha o campo Estado!';
+            alerta.style.color = '#ff8080';
+            alerta.style.display = 'block';
+            alerta.style.textAlign = 'left';
+            cadastro.estado.focus();
+            return false;
+        } else {
+            alerta.innerHTML = '';
+        };
+    };
 
-    var numeroLocal = cadastro.numeroLocal.value;
-    var numeroLocalRE = /\d+/;
-    if (numeroLocal == "" || numeroLocal == null) {
-        alerta.innerHTML = '* O campo de número não pode ficar vazio!';
-        alerta.style.color = '#D01';
-        alerta.style.display = 'block';
-        alerta.style.textAlign = 'left';
-        cadastro.numeroLocal.focus();
-        return false;
-    } else if (!numeroLocalRE.test(numeroLocal)) {
-        alerta.innerHTML = '* Número inválido!';
-        alerta.style.color = '#D01';
-        alerta.style.display = 'block';
-        alerta.style.textAlign = 'left';
-        cadastro.numeroLocal.focus();
-        return false;
-    } else {
-        alerta.innerHTML = '';
-    }
 
-    var bairro = cadastro.bairro.value;
-    if (bairro == "" || bairro == null) {
-        alerta.innerHTML = '* Preencha o campo Bairro!';
-        alerta.style.color = '#D01';
-        alerta.style.display = 'block';
-        alerta.style.textAlign = 'left';
-        cadastro.bairro.focus();
-        return false;
-    } else {
-        alerta.innerHTML = '';
-    }
-
-    var cidade = cadastro.cidade.value;
-    if (cidade == "" || cidade == null) {
-        alerta.innerHTML = '* Preencha o campo Cidade!';
-        alerta.style.color = '#D01';
-        alerta.style.display = 'block';
-        alerta.style.textAlign = 'left';
-        cadastro.cidade.focus();
-        return false;
-    } else {
-        alerta.innerHTML = '';
-    }
-
-    var estado = cadastro.estado.value;
-    if (estado == "" || estado == null || estado == "Estado") {
-        alerta.innerHTML = '* Preencha o campo Estado!';
-        alerta.style.color = '#D01';
-        alerta.style.display = 'block';
-        alerta.style.textAlign = 'left';
-        cadastro.estado.focus();
-        return false;
-    } else {
-        alerta.innerHTML = '';
-    }
-
-    var telefone = cadastro.telefone.value;
-    if (telefone == "" || telefone == null) {
-        alerta.innerHTML = '* Digite um telefone!';
-        alerta.style.color = '#D01';
-        alerta.style.display = 'block';
-        alerta.style.textAlign = 'left';
-        cadastro.telefone.focus();
-        return false;
-    } else if (telefone.length <= 7) {
-        alerta.innerHTML = '* Digite um telefone válido';
-        alerta.style.color = '#D01';
-        alerta.style.display = 'block';
-        alerta.style.textAlign = 'left';
-        cadastro.telefone.focus();
-        return false;
-    } else {
-        alerta.innerHTML = '';
-    }
-
+    cadastro.telefone.onchange = () => {
+        var checarTelefone = cadastro.telefone.value;
+        if (checarTelefone == "" || checarTelefone == null) {
+            alerta.innerHTML = '* Digite um telefone!';
+            alerta.style.color = '#ff8080';
+            alerta.style.display = 'block';
+            alerta.style.textAlign = 'left';
+            cadastro.telefone.focus();
+            return false;
+        } else if (checarTelefone.length <= 7) {
+            alerta.innerHTML = '* Digite um telefone válido';
+            alerta.style.color = '#ff8080';
+            alerta.style.display = 'block';
+            alerta.style.textAlign = 'left';
+            cadastro.telefone.focus();
+            return false;
+        } else {
+            alerta.innerHTML = '';
+        };
+    };
 };
