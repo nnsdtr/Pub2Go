@@ -15,16 +15,29 @@ $('#clicavel').click(function () {
 	console.log("Clicked");
 });
 
-/**/
-
-
-
 
 window.onload = () => {
 
 	/* Editar cadastroClienteLocal */
-	let cadastroClienteLocal = JSON.parse(localStorage.getItem("db_user.usuarios"));
-	
+	var cadastroClienteLocal = JSON.parse(sessionStorage.getItem("usuarioCorrente"));
+
+	/* Pegar a referencia do array usuarios no db */
+	let db_cliente = JSON.parse(localStorage.getItem('db_users'));
+	var posicaoArray;
+	for (i=0; i<db_cliente.usuarios.length;i++){
+		if (cadastroClienteLocal.email == db_cliente.usuarios[i].email){
+			posicaoArray = i;
+			break;
+		}
+}
+	function updateContato(){
+		db_cliente.usuarios[posicaoArray] = cadastroClienteLocal;
+		sessionStorage.setItem('usuarioCorrente', JSON.stringify(cadastroClienteLocal));
+		localStorage.setItem(`db_users`, JSON.stringify(db_cliente));
+		console.log(db_cliente, cadastroClienteLocal)
+	}
+
+
 	document.getElementById("email").value = cadastroClienteLocal.email;
 	document.getElementById("nome").value = cadastroClienteLocal.nome;
 	document.getElementById("sobrenome").value = cadastroClienteLocal.sobrenome;
@@ -45,7 +58,7 @@ window.onload = () => {
 			nome.disabled = true;
 			document.getElementById("btnNomeImg").src = "0-imgs/icont/editar.png";
 			cadastroClienteLocal.nome = nome.value;
-			localStorage.setItem("cadastroClienteLocal", JSON.stringify(cadastroClienteLocal))
+			updateContato();
 		};
 	};
 
@@ -57,7 +70,7 @@ window.onload = () => {
 			sobrenome.disabled = true;
 			document.getElementById("btnSobrenomeImg").src = "0-imgs/icont/editar.png";
 			cadastroClienteLocal.sobrenome = sobrenome.value;
-			localStorage.setItem("cadastroClienteLocal", JSON.stringify(cadastroClienteLocal))
+			updateContato();
 		};
 	};
 
@@ -69,7 +82,7 @@ window.onload = () => {
 			telefone.disabled = true;
 			document.getElementById("btnTelefoneImg").src = "0-imgs/icont/editar.png";
 			cadastroClienteLocal.telefone = telefone.value;
-			localStorage.setItem("cadastroClienteLocal", JSON.stringify(cadastroClienteLocal))
+			updateContato();
 		};
 	};
 
@@ -81,7 +94,7 @@ window.onload = () => {
 			senha.disabled = true;
 			document.getElementById("btnSenhaImg").src = "0-imgs/icont/editar.png";
 			cadastroClienteLocal.senha = senha.value;
-			localStorage.setItem("cadastroClienteLocal", JSON.stringify(cadastroClienteLocal))
+			updateContato();
 		};
 	};
 
@@ -94,13 +107,13 @@ window.onload = () => {
 			cep.disabled = true;
 			document.getElementById("btnCepImg").src = "0-imgs/icont/editar.png";
 			cadastroClienteLocal.cep = cep.value;
-			localStorage.setItem("cadastroClienteLocal", JSON.stringify(cadastroClienteLocal))
+			updateContato();
 		};
 	};
 
 
 	/* Editar preferências */
-	let preferenciasClienteLocal = JSON.parse(localStorage.getItem("preferenciasClienteLocal"));
+	let preferenciasClienteLocal = cadastroClienteLocal.preferenciasClienteLocal;
 
 	/* categorias de estabelecimentos */
 	document.getElementById("boate").checked = preferenciasClienteLocal.categorias.boate;
@@ -111,23 +124,28 @@ window.onload = () => {
 
 	boate.onchange = () => {
 		preferenciasClienteLocal.categorias.boate = document.getElementById("boate").checked;
-		localStorage.setItem("preferenciasClienteLocal", JSON.stringify(preferenciasClienteLocal))
+		cadastroClienteLocal.preferenciasClienteLocal = preferenciasClienteLocal;
+		updateContato();
 	};
 	buteco.onchange = () => {
 		preferenciasClienteLocal.categorias.buteco = document.getElementById("buteco").checked;
-		localStorage.setItem("preferenciasClienteLocal", JSON.stringify(preferenciasClienteLocal))
+		cadastroClienteLocal.preferenciasClienteLocal = preferenciasClienteLocal;
+		updateContato();
 	};
 	churrascaria.onchange = () => {
 		preferenciasClienteLocal.categorias.churrascaria = document.getElementById("churrascaria").checked;
-		localStorage.setItem("preferenciasClienteLocal", JSON.stringify(preferenciasClienteLocal))
+		cadastroClienteLocal.preferenciasClienteLocal = preferenciasClienteLocal;
+		updateContato();
 	};
 	restaurante.onchange = () => {
 		preferenciasClienteLocal.categorias.restaurante = document.getElementById("restaurante").checked;
-		localStorage.setItem("preferenciasClienteLocal", JSON.stringify(preferenciasClienteLocal))
+		cadastroClienteLocal.preferenciasClienteLocal = preferenciasClienteLocal;
+		updateContato();
 	};
 	burgueria.onchange = () => {
 		preferenciasClienteLocal.categorias.burgueria = document.getElementById("burgueria").checked;
-		localStorage.setItem("preferenciasClienteLocal", JSON.stringify(preferenciasClienteLocal))
+		cadastroClienteLocal.preferenciasClienteLocal = preferenciasClienteLocal;
+		updateContato();
 	};
 
 
@@ -141,27 +159,32 @@ window.onload = () => {
 
 	brasileira.onchange = () => {
 		preferenciasClienteLocal.culinarias.brasileira = document.getElementById("brasileira").checked;
-		localStorage.setItem("preferenciasClienteLocal", JSON.stringify(preferenciasClienteLocal))
+		cadastroClienteLocal.preferenciasClienteLocal = preferenciasClienteLocal;
+		updateContato();
 	};
 
 	italiana.onchange = () => {
 		preferenciasClienteLocal.culinarias.italiana = document.getElementById("italiana").checked;
-		localStorage.setItem("preferenciasClienteLocal", JSON.stringify(preferenciasClienteLocal))
+		cadastroClienteLocal.preferenciasClienteLocal = preferenciasClienteLocal;
+		updateContato();
 	};
 
 	alema.onchange = () => {
 		preferenciasClienteLocal.culinarias.alema = document.getElementById("alema").checked;
-		localStorage.setItem("preferenciasClienteLocal", JSON.stringify(preferenciasClienteLocal))
+		cadastroClienteLocal.preferenciasClienteLocal = preferenciasClienteLocal;
+		updateContato();
 	};
 
 	japonesa.onchange = () => {
 		preferenciasClienteLocal.culinarias.japonesa = document.getElementById("japonesa").checked;
-		localStorage.setItem("preferenciasClienteLocal", JSON.stringify(preferenciasClienteLocal))
+		cadastroClienteLocal.preferenciasClienteLocal = preferenciasClienteLocal;
+		updateContato();
 	};
 
 	pizza.onchange = () => {
 		preferenciasClienteLocal.culinarias.pizza = document.getElementById("pizza").checked;
-		localStorage.setItem("preferenciasClienteLocal", JSON.stringify(preferenciasClienteLocal))
+		cadastroClienteLocal.preferenciasClienteLocal = preferenciasClienteLocal;
+		updateContato();
 	};
 
 
@@ -185,56 +208,56 @@ window.onload = () => {
 		}
 	}
 
-	avatar01.onclick = () => {let srcIMG = document.getElementById("avatar01").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; localStorage.setItem("cadastroClienteLocal", JSON.stringify(cadastroClienteLocal))};
-	avatar02.onclick = () => {let srcIMG = document.getElementById("avatar02").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; localStorage.setItem("cadastroClienteLocal", JSON.stringify(cadastroClienteLocal))};
-	avatar03.onclick = () => {let srcIMG = document.getElementById("avatar03").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; localStorage.setItem("cadastroClienteLocal", JSON.stringify(cadastroClienteLocal))};
-	avatar04.onclick = () => {let srcIMG = document.getElementById("avatar04").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; localStorage.setItem("cadastroClienteLocal", JSON.stringify(cadastroClienteLocal))};
-	avatar05.onclick = () => {let srcIMG = document.getElementById("avatar05").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; localStorage.setItem("cadastroClienteLocal", JSON.stringify(cadastroClienteLocal))};
-	avatar06.onclick = () => {let srcIMG = document.getElementById("avatar06").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; localStorage.setItem("cadastroClienteLocal", JSON.stringify(cadastroClienteLocal))};
-	avatar07.onclick = () => {let srcIMG = document.getElementById("avatar07").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; localStorage.setItem("cadastroClienteLocal", JSON.stringify(cadastroClienteLocal))};
-	avatar08.onclick = () => {let srcIMG = document.getElementById("avatar08").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; localStorage.setItem("cadastroClienteLocal", JSON.stringify(cadastroClienteLocal))};
-	avatar09.onclick = () => {let srcIMG = document.getElementById("avatar09").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; localStorage.setItem("cadastroClienteLocal", JSON.stringify(cadastroClienteLocal))};
-	avatar10.onclick = () => {let srcIMG = document.getElementById("avatar10").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; localStorage.setItem("cadastroClienteLocal", JSON.stringify(cadastroClienteLocal))};
-	avatar11.onclick = () => {let srcIMG = document.getElementById("avatar11").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; localStorage.setItem("cadastroClienteLocal", JSON.stringify(cadastroClienteLocal))};
-	avatar12.onclick = () => {let srcIMG = document.getElementById("avatar12").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; localStorage.setItem("cadastroClienteLocal", JSON.stringify(cadastroClienteLocal))};
-	avatar13.onclick = () => {let srcIMG = document.getElementById("avatar13").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; localStorage.setItem("cadastroClienteLocal", JSON.stringify(cadastroClienteLocal))};
-	avatar14.onclick = () => {let srcIMG = document.getElementById("avatar14").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; localStorage.setItem("cadastroClienteLocal", JSON.stringify(cadastroClienteLocal))};
-	avatar15.onclick = () => {let srcIMG = document.getElementById("avatar15").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; localStorage.setItem("cadastroClienteLocal", JSON.stringify(cadastroClienteLocal))};
-	avatar16.onclick = () => {let srcIMG = document.getElementById("avatar16").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; localStorage.setItem("cadastroClienteLocal", JSON.stringify(cadastroClienteLocal))};
-	avatar17.onclick = () => {let srcIMG = document.getElementById("avatar17").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; localStorage.setItem("cadastroClienteLocal", JSON.stringify(cadastroClienteLocal))};
-	avatar18.onclick = () => {let srcIMG = document.getElementById("avatar18").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; localStorage.setItem("cadastroClienteLocal", JSON.stringify(cadastroClienteLocal))};
-	avatar19.onclick = () => {let srcIMG = document.getElementById("avatar19").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; localStorage.setItem("cadastroClienteLocal", JSON.stringify(cadastroClienteLocal))};
-	avatar20.onclick = () => {let srcIMG = document.getElementById("avatar20").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; localStorage.setItem("cadastroClienteLocal", JSON.stringify(cadastroClienteLocal))};
-	avatar21.onclick = () => {let srcIMG = document.getElementById("avatar21").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; localStorage.setItem("cadastroClienteLocal", JSON.stringify(cadastroClienteLocal))};
-	avatar22.onclick = () => {let srcIMG = document.getElementById("avatar22").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; localStorage.setItem("cadastroClienteLocal", JSON.stringify(cadastroClienteLocal))};
-	avatar23.onclick = () => {let srcIMG = document.getElementById("avatar23").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; localStorage.setItem("cadastroClienteLocal", JSON.stringify(cadastroClienteLocal))};
-	avatar24.onclick = () => {let srcIMG = document.getElementById("avatar24").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; localStorage.setItem("cadastroClienteLocal", JSON.stringify(cadastroClienteLocal))};
-	avatar25.onclick = () => {let srcIMG = document.getElementById("avatar25").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; localStorage.setItem("cadastroClienteLocal", JSON.stringify(cadastroClienteLocal))};
-	avatar26.onclick = () => {let srcIMG = document.getElementById("avatar26").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; localStorage.setItem("cadastroClienteLocal", JSON.stringify(cadastroClienteLocal))};
-	avatar27.onclick = () => {let srcIMG = document.getElementById("avatar27").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; localStorage.setItem("cadastroClienteLocal", JSON.stringify(cadastroClienteLocal))};
-	avatar28.onclick = () => {let srcIMG = document.getElementById("avatar28").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; localStorage.setItem("cadastroClienteLocal", JSON.stringify(cadastroClienteLocal))};
-	avatar29.onclick = () => {let srcIMG = document.getElementById("avatar29").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; localStorage.setItem("cadastroClienteLocal", JSON.stringify(cadastroClienteLocal))};
-	avatar30.onclick = () => {let srcIMG = document.getElementById("avatar30").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; localStorage.setItem("cadastroClienteLocal", JSON.stringify(cadastroClienteLocal))};
-	avatar31.onclick = () => {let srcIMG = document.getElementById("avatar31").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; localStorage.setItem("cadastroClienteLocal", JSON.stringify(cadastroClienteLocal))};
-	avatar32.onclick = () => {let srcIMG = document.getElementById("avatar32").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; localStorage.setItem("cadastroClienteLocal", JSON.stringify(cadastroClienteLocal))};
-	avatar33.onclick = () => {let srcIMG = document.getElementById("avatar33").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; localStorage.setItem("cadastroClienteLocal", JSON.stringify(cadastroClienteLocal))};
-	avatar34.onclick = () => {let srcIMG = document.getElementById("avatar34").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; localStorage.setItem("cadastroClienteLocal", JSON.stringify(cadastroClienteLocal))};
-	avatar35.onclick = () => {let srcIMG = document.getElementById("avatar35").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; localStorage.setItem("cadastroClienteLocal", JSON.stringify(cadastroClienteLocal))};
-	avatar36.onclick = () => {let srcIMG = document.getElementById("avatar36").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; localStorage.setItem("cadastroClienteLocal", JSON.stringify(cadastroClienteLocal))};
-	avatar37.onclick = () => {let srcIMG = document.getElementById("avatar37").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; localStorage.setItem("cadastroClienteLocal", JSON.stringify(cadastroClienteLocal))};
-	avatar38.onclick = () => {let srcIMG = document.getElementById("avatar38").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; localStorage.setItem("cadastroClienteLocal", JSON.stringify(cadastroClienteLocal))};
-	avatar39.onclick = () => {let srcIMG = document.getElementById("avatar39").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; localStorage.setItem("cadastroClienteLocal", JSON.stringify(cadastroClienteLocal))};
-	avatar40.onclick = () => {let srcIMG = document.getElementById("avatar40").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; localStorage.setItem("cadastroClienteLocal", JSON.stringify(cadastroClienteLocal))};
-	avatar41.onclick = () => {let srcIMG = document.getElementById("avatar41").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; localStorage.setItem("cadastroClienteLocal", JSON.stringify(cadastroClienteLocal))};
-	avatar42.onclick = () => {let srcIMG = document.getElementById("avatar42").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; localStorage.setItem("cadastroClienteLocal", JSON.stringify(cadastroClienteLocal))};
-	avatar43.onclick = () => {let srcIMG = document.getElementById("avatar43").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; localStorage.setItem("cadastroClienteLocal", JSON.stringify(cadastroClienteLocal))};
-	avatar44.onclick = () => {let srcIMG = document.getElementById("avatar44").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; localStorage.setItem("cadastroClienteLocal", JSON.stringify(cadastroClienteLocal))};
-	avatar45.onclick = () => {let srcIMG = document.getElementById("avatar45").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; localStorage.setItem("cadastroClienteLocal", JSON.stringify(cadastroClienteLocal))};
-	avatar46.onclick = () => {let srcIMG = document.getElementById("avatar46").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; localStorage.setItem("cadastroClienteLocal", JSON.stringify(cadastroClienteLocal))};
-	avatar47.onclick = () => {let srcIMG = document.getElementById("avatar47").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; localStorage.setItem("cadastroClienteLocal", JSON.stringify(cadastroClienteLocal))};
-	avatar48.onclick = () => {let srcIMG = document.getElementById("avatar48").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; localStorage.setItem("cadastroClienteLocal", JSON.stringify(cadastroClienteLocal))};
-	avatar49.onclick = () => {let srcIMG = document.getElementById("avatar49").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; localStorage.setItem("cadastroClienteLocal", JSON.stringify(cadastroClienteLocal))};
-	avatar50.onclick = () => {let srcIMG = document.getElementById("avatar50").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; localStorage.setItem("cadastroClienteLocal", JSON.stringify(cadastroClienteLocal))};
+	avatar01.onclick = () => {let srcIMG = document.getElementById("avatar01").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; updateContato()};
+	avatar02.onclick = () => {let srcIMG = document.getElementById("avatar02").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; updateContato()};
+	avatar03.onclick = () => {let srcIMG = document.getElementById("avatar03").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; updateContato()};
+	avatar04.onclick = () => {let srcIMG = document.getElementById("avatar04").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; updateContato()};
+	avatar05.onclick = () => {let srcIMG = document.getElementById("avatar05").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; updateContato()};
+	avatar06.onclick = () => {let srcIMG = document.getElementById("avatar06").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; updateContato()};
+	avatar07.onclick = () => {let srcIMG = document.getElementById("avatar07").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; updateContato()};
+	avatar08.onclick = () => {let srcIMG = document.getElementById("avatar08").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; updateContato()};
+	avatar09.onclick = () => {let srcIMG = document.getElementById("avatar09").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; updateContato()};
+	avatar10.onclick = () => {let srcIMG = document.getElementById("avatar10").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; updateContato()};
+	avatar11.onclick = () => {let srcIMG = document.getElementById("avatar11").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; updateContato()};
+	avatar12.onclick = () => {let srcIMG = document.getElementById("avatar12").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; updateContato()};
+	avatar13.onclick = () => {let srcIMG = document.getElementById("avatar13").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; updateContato()};
+	avatar14.onclick = () => {let srcIMG = document.getElementById("avatar14").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; updateContato()};
+	avatar15.onclick = () => {let srcIMG = document.getElementById("avatar15").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; updateContato()};
+	avatar16.onclick = () => {let srcIMG = document.getElementById("avatar16").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; updateContato()};
+	avatar17.onclick = () => {let srcIMG = document.getElementById("avatar17").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; updateContato()};
+	avatar18.onclick = () => {let srcIMG = document.getElementById("avatar18").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; updateContato()};
+	avatar19.onclick = () => {let srcIMG = document.getElementById("avatar19").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; updateContato()};
+	avatar20.onclick = () => {let srcIMG = document.getElementById("avatar20").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; updateContato()};
+	avatar21.onclick = () => {let srcIMG = document.getElementById("avatar21").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; updateContato()};
+	avatar22.onclick = () => {let srcIMG = document.getElementById("avatar22").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; updateContato()};
+	avatar23.onclick = () => {let srcIMG = document.getElementById("avatar23").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; updateContato()};
+	avatar24.onclick = () => {let srcIMG = document.getElementById("avatar24").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; updateContato()};
+	avatar25.onclick = () => {let srcIMG = document.getElementById("avatar25").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; updateContato()};
+	avatar26.onclick = () => {let srcIMG = document.getElementById("avatar26").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; updateContato()};
+	avatar27.onclick = () => {let srcIMG = document.getElementById("avatar27").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; updateContato()};
+	avatar28.onclick = () => {let srcIMG = document.getElementById("avatar28").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; updateContato()};
+	avatar29.onclick = () => {let srcIMG = document.getElementById("avatar29").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; updateContato()};
+	avatar30.onclick = () => {let srcIMG = document.getElementById("avatar30").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; updateContato()};
+	avatar31.onclick = () => {let srcIMG = document.getElementById("avatar31").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; updateContato()};
+	avatar32.onclick = () => {let srcIMG = document.getElementById("avatar32").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; updateContato()};
+	avatar33.onclick = () => {let srcIMG = document.getElementById("avatar33").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; updateContato()};
+	avatar34.onclick = () => {let srcIMG = document.getElementById("avatar34").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; updateContato()};
+	avatar35.onclick = () => {let srcIMG = document.getElementById("avatar35").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; updateContato()};
+	avatar36.onclick = () => {let srcIMG = document.getElementById("avatar36").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; updateContato()};
+	avatar37.onclick = () => {let srcIMG = document.getElementById("avatar37").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; updateContato()};
+	avatar38.onclick = () => {let srcIMG = document.getElementById("avatar38").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; updateContato()};
+	avatar39.onclick = () => {let srcIMG = document.getElementById("avatar39").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; updateContato()};
+	avatar40.onclick = () => {let srcIMG = document.getElementById("avatar40").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; updateContato()};
+	avatar41.onclick = () => {let srcIMG = document.getElementById("avatar41").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; updateContato()};
+	avatar42.onclick = () => {let srcIMG = document.getElementById("avatar42").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; updateContato()};
+	avatar43.onclick = () => {let srcIMG = document.getElementById("avatar43").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; updateContato()};
+	avatar44.onclick = () => {let srcIMG = document.getElementById("avatar44").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; updateContato()};
+	avatar45.onclick = () => {let srcIMG = document.getElementById("avatar45").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; updateContato()};
+	avatar46.onclick = () => {let srcIMG = document.getElementById("avatar46").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; updateContato()};
+	avatar47.onclick = () => {let srcIMG = document.getElementById("avatar47").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; updateContato()};
+	avatar48.onclick = () => {let srcIMG = document.getElementById("avatar48").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; updateContato()};
+	avatar49.onclick = () => {let srcIMG = document.getElementById("avatar49").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; updateContato()};
+	avatar50.onclick = () => {let srcIMG = document.getElementById("avatar50").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; updateContato()};
 };
 
 

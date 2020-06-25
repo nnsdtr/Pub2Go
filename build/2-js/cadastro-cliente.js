@@ -12,6 +12,7 @@ if (!db_cliente){
 window.onload = () => {
 /* Recolher dados do formulário */
     cadastro.onsubmit = (evento) => {
+        evento.preventDefault();
         let novoID = db_cliente.usuarios.length + 1;
         let cadastroClienteLocal = {
             id: novoID,
@@ -49,6 +50,7 @@ window.onload = () => {
         /*atribui ao array e o seta no localStorage*/
         db_cliente.usuarios.push(cadastroClienteLocal);
         localStorage.setItem('db_users', JSON.stringify(db_cliente));
+        window.location.href = "login.html"
     };
 
 

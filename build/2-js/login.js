@@ -1,3 +1,5 @@
+var usuarioCorrente = {};
+
 function validateEmail(email) {
     var re = /\S+@\S+\.\S+/;
     return re.test(email);
@@ -20,6 +22,10 @@ function validateForm() {
 };
 
 window.onload = () => {
+    /* Recolher dados do localStorage para uma variavel*/
+    var db_cliente = JSON.parse(localStorage.getItem('db_users'))
+
+
 
     email.oninput = () => {
 
@@ -53,14 +59,26 @@ window.onload = () => {
         };
     };
 
-    loginForm.onsubmit = () => {
-        let user = {email: email.value, senha: senha.value};
-        localStorage.setItem('user', JSON.stringify(user));
-    };
-
-    if(localStorage.getItem('user')){
-        user = JSON.parse(localStorage.getItem('user'));
-        email.value = user.email;
+    /*Verifica dados no "DB" */
+    loginForm.onsubmit = (evento) => {
+        evento.preventDefault();
+        let emailUser = email.value;
+        let senhaUser = senha.value;
+        for (i=0; i<db_cliente.usuarios.length; i++){
+            var usuario = db_cliente.usuarios[i];
+            if (emailUser == usuario.email && senhaUser==usuario.senha){
+                usuarioCorrente = usuario;
+                sessionStorage.setItem ('usuarioCorrente', JSON.stringify(usuarioCorrente));
+                window.location.href = "pagina-cliente.html"
+                return true;
+            }
+        }
+        instrucaoSenha.innerHTML = '* Email ou senha incorretos';
+        instrucaoSenha.style.color = '#D01';
+        instrucaoSenha.style.display = 'block';
+        instrucaoSenha.style.textAlign = 'left';
+        senha.style.background = '#fcfaf9';
+        return false;
     };
 };
 
