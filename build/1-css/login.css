@@ -30,6 +30,10 @@ h2 {
 
 /* STRUCTURE */
 
+.trocarlogin {
+    color: blue;
+}
+
 .text-login {
     margin-right: 250px;
 }
