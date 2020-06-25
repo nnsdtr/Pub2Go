@@ -23,7 +23,7 @@ function validateForm() {
 
 window.onload = () => {
     /* Recolher dados do localStorage para uma variavel*/
-    var db_comercios = JSON.parse(localStorage.getItem('db_comercios'))
+    var db_comercios = JSON.parse(localStorage.getItem('db_bares'))
 
 
 
@@ -63,8 +63,8 @@ window.onload = () => {
         evento.preventDefault();
         let emailUser = email.value;
         let senhaUser = senha.value;
-        for (i = 0; i < db_comercios.comercio.length; i++) {
-            var usuario = db_comercios.comercio[i];
+        for (i = 0; i < db_comercios.data.length; i++) {
+            var usuario = db_comercios.data[i];
             if (emailUser == usuario.email && senhaUser == usuario.senha) {
                 usuarioCorrente = usuario;
                 sessionStorage.setItem('usuarioCorrente', JSON.stringify(usuarioCorrente));
