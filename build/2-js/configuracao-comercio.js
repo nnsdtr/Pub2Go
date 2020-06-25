@@ -236,6 +236,3 @@ window.onload = () => {
 	avatar49.onclick = () => {let srcIMG = document.getElementById("avatar49").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; localStorage.setItem("cadastroClienteLocal", JSON.stringify(cadastroClienteLocal))};
 	avatar50.onclick = () => {let srcIMG = document.getElementById("avatar50").src; document.getElementById("perfilAvatar").src = srcIMG; cadastroClienteLocal.avatar = srcIMG; localStorage.setItem("cadastroClienteLocal", JSON.stringify(cadastroClienteLocal))};
 };
-
-
-

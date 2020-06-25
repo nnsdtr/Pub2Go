@@ -7,8 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!--Bootstrap CSS-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
     <!--Font-awesome CSS-->
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -25,6 +24,40 @@
     <link rel="shortcut icon" href="0-imgs/favicon3.png" />
 
     <title>Pub2Go - Cadastro Comércio</title>
+
+    <!-- Implementação do banco de dados comercio -->
+    <script>
+        function salvaLogin(event) {
+
+            // Obtem os dados do formulário
+            let nome = document.getElementById('nome').value;
+            let cnpj = document.getElementById('cnpj').value;
+            let email = document.getElementById('email').value;
+            let senha = document.getElementById('senha').value;
+            let cep = document.getElementById('cep').value;
+            let logradouro = document.getElementById('logradouro').value;
+            let bairro = document.getElementById('bairro').value;
+            let cidade = document.getElementById('cidade').value;
+            let estado = document.getElementById('estado').value;
+            let telefone = document.getElementById('telefone').value;
+
+            // Adiciona o usuário no banco de dados
+            addUser(nome, cnpj, email, senha, cep, logradouro, bairro, cidade, estado, telefone);
+
+            alert('Usuário salvo com sucesso. Proceda com o login para ');
+
+        }
+
+        // Associa a funçao processaFormLogin  formulário adicionado um manipulador do evento submit
+        document.getElementById('login-form').addEventListener('submit', processaFormLogin);
+
+
+        // Associar salvamento ao botao
+        document.getElementById('btn_salvar').addEventListener('click', salvaLogin);
+    </script>
+
+    <!-- Fim implementação do banco de dados comercio -->
+
 </head>
 
 <body>
@@ -203,20 +236,17 @@
 
 
     <!--Bootstrap JavaScript-->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
     </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
     </script>
     <script src="2-js/jquery.mask.min.js"></script>
 
     <!-- Máscara do formulário -->
     <script>
-        $(document).ready(function () {
+        $(document).ready(function() {
 
             $('#cnpj').mask('00.000.000/0000-00', {
                 reverse: true
