@@ -84,7 +84,7 @@ window.onload = () => {
 
     cadastro.onsubmit = (evento) => {
         evento.preventDefault();
-        window.location = "login.html";
+        window.location = "login-comercio.html";
     };
     
 
