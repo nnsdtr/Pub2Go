@@ -104,12 +104,40 @@ window.onload = () => {
 			cep.disabled = false;
 			document.getElementById("btnCepImg").src = "0-imgs/icont/confirmar.png";
 		} else {
+			function success() {
+				let objEndereco = JSON.parse(this.responseText);
+	
+				if (objEndereco.erro == true) {
+					alert("O CEP digitado não existe!");
+	
+				} else {
+					logradouro.value = objEndereco.logradouro;
+					cidade.value = objEndereco.localidade;
+					estado.value = objEndereco.uf;
+
+					cadastroClienteLocal.cep = cep.value;
+					cadastroClienteLocal.logradouro = logradouro.value
+					cadastroClienteLocal.cidade = cidade.value
+					cadastroClienteLocal.estado = estado.value
+					
+				updateContato();
+				};
+			};
+	
+			function error(err) {
+				console.log('Erro:', err);
+			};
+
 			cep.disabled = true;
 			document.getElementById("btnCepImg").src = "0-imgs/icont/editar.png";
-			cadastroClienteLocal.cep = cep.value;
-			updateContato();
+			var xhr = new XMLHttpRequest();
+			xhr.onload = success;
+			xhr.onerror = error;
+			xhr.open('GET', `https://viacep.com.br/ws/${cep.value}/json/`);
+			xhr.send();
 		};
 	};
+
 
 
 	/* Editar preferências */
