@@ -67,7 +67,7 @@ window.onload = () => {
             var usuario = db_comercios.data[i];
             if (emailUser == usuario.email && senhaUser == usuario.senha) {
                 usuarioCorrente = usuario;
-                sessionStorage.setItem('usuarioCorrente', JSON.stringify(usuarioCorrente));
+                sessionStorage.setItem('estabelecimentoCorrente', JSON.stringify(usuarioCorrente));
                 window.location.href = "perfil-comercio.html"
                 return true;
             }
