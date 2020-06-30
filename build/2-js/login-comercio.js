@@ -1,4 +1,4 @@
-var usuarioCorrente = {};
+var estabelecimentoCorrente = {};
 
 function validateEmail(email) {
     var re = /\S+@\S+\.\S+/;
