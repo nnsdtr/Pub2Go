@@ -68,7 +68,7 @@ window.onload = () => {
             if (emailUser == usuario.email && senhaUser == usuario.senha) {
                 usuarioCorrente = usuario;
                 sessionStorage.setItem('estabelecimentoCorrente', JSON.stringify(usuarioCorrente));
-                window.location.href = "perfil-comercio.html"
+                window.location.href = "configuracao-comercio.html"
                 return true;
             }
         }
