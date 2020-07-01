@@ -77,7 +77,7 @@ window.onload = () => {
             "logo": ""
         };
         
-        db_bares.data.push(novoBar);    
+        db_bares.data.push(novoBar);
         localStorage.setItem('db_bares', JSON.stringify(db_bares));
         alert("Cadastro inserido com sucesso");
     });

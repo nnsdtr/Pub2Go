@@ -1,4 +1,4 @@
-var usuarioCorrente = {};
+var estabelecimentoCorrente = {};
 
 function validateEmail(email) {
     var re = /\S+@\S+\.\S+/;
@@ -58,16 +58,16 @@ window.onload = () => {
         };
     };
 
-    /*Verifica dados no "DB" */
+    /* Verifica dados no "DB" */
     loginForm.onsubmit = (evento) => {
         evento.preventDefault();
         let emailUser = email.value;
         let senhaUser = senha.value;
         for (i = 0; i < db_comercios.data.length; i++) {
-            var usuario = db_comercios.data[i];
-            if (emailUser == usuario.email && senhaUser == usuario.senha) {
-                usuarioCorrente = usuario;
-                sessionStorage.setItem('usuarioCorrente', JSON.stringify(usuarioCorrente));
+            var estabelecimento = db_comercios.data[i];
+            if (emailUser == estabelecimento.email && senhaUser == estabelecimento.senha) {
+                estabelecimentoCorrente = estabelecimento;
+                sessionStorage.setItem('estabelecimentoCorrente', JSON.stringify(estabelecimentoCorrente));
                 window.location.href = "perfil-comercio.html"
                 return true;
             }
