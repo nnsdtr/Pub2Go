@@ -30,11 +30,11 @@ window.onload = () => {
 			break;
 		}
 }
+	
 	function updateContato(){
 		db_cliente.usuarios[posicaoArray] = cadastroClienteLocal;
 		sessionStorage.setItem('usuarioCorrente', JSON.stringify(cadastroClienteLocal));
 		localStorage.setItem(`db_users`, JSON.stringify(db_cliente));
-		console.log(db_cliente, cadastroClienteLocal)
 	}
 
 

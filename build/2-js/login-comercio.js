@@ -64,11 +64,11 @@ window.onload = () => {
         let emailUser = email.value;
         let senhaUser = senha.value;
         for (i = 0; i < db_comercios.data.length; i++) {
-            var estabelecimento = db_comercios.data[i];
-            if (emailUser == estabelecimento.email && senhaUser == estabelecimento.senha) {
-                estabelecimentoCorrente = estabelecimento;
-                sessionStorage.setItem('estabelecimentoCorrente', JSON.stringify(estabelecimentoCorrente));
-                window.location.href = "perfil-comercio.html"
+            var usuario = db_comercios.data[i];
+            if (emailUser == usuario.email && senhaUser == usuario.senha) {
+                usuarioCorrente = usuario;
+                sessionStorage.setItem('estabelecimentoCorrente', JSON.stringify(usuarioCorrente));
+                window.location.href = "configuracao-comercio.html"
                 return true;
             }
         }
