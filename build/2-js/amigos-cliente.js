@@ -3,6 +3,21 @@ window.onload = () => {
     let db_users = JSON.parse(localStorage.getItem('db_users'));
     let cadastroClienteLocal = JSON.parse(sessionStorage.getItem('usuarioCorrente'));
 
+    if (cadastroClienteLocal.amigos.conviteRecebido){
+        let divTela = document.getElementById('telaSolicitAmz')
+        let texto ='';
+        let item =''
+        for (i=0;i<cadastroClienteLocal.amigos.conviteRecebido.length;i++){
+            item = cadastroClienteLocal.amigos.conviteRecebido[i];
+            texto +=`<tr>
+            <td>${item}</td>
+            <td><button>aceitar</button></td>
+            <td><button>x</button></td>
+        </tr>` 
+        }
+        divTela.innerHTML = texto
+    }
+
     /*Pegar referência do usuario no array*/
     var posicaoArray;
     for (i = 0; i < db_users.usuarios.length; i++) {
