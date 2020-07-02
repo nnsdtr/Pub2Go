@@ -30,7 +30,16 @@ window.onload = () => {
             cidade: cidade.value,
             estado: estado.value,
             avatar: "/build/0-imgs/usuarios/perfil/placeholder.png",
-            amigos:[],
+            amigos: {
+                conviteEnviado: [],
+                conviteRecebido: [],
+                amigosCadastrados: []
+            },
+            eventos: {
+                conviteEnviado: [],
+                conviteRecebido: [],
+                eventosCadastrados: []
+            },
             preferenciasClienteLocal: {
                 categorias:{
                     boate: false,

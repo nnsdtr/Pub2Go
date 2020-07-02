@@ -24,7 +24,21 @@ function addComercios(nome, cnpj, email, senha, cep, logradouro, numeroLocal, co
 
     // Cria um objeto de usuario para o novo usuario 
     let newId = generateUUID();
-    let comercio = { "id": newId, "nome": nome, "cnpj": cnpj, "email": email, "senha": senha, "cep": cep, "logradouro": logradouro, "numeroLocal": numeroLocal, "complemento": complemento, "bairro": bairro, "cidade": cidade, "estado": estado, "telefone": telefone };
+    let comercio = {
+        "id": newId,
+        "nome": nome,
+        "cnpj": cnpj,
+        "email": email,
+        "senha": senha,
+        "cep": cep,
+        "logradouro": logradouro,
+        "numeroLocal": numeroLocal,
+        "complemento": complemento,
+        "bairro": bairro,
+        "cidade": cidade,
+        "estado": estado,
+        "telefone": telefone
+    };
 
     // Inclui o novo usuario no banco de dados baseado em JSON
     db_comercios.comercio.push(comercio);
@@ -74,7 +88,23 @@ window.onload = () => {
             "cidade": cidade.value,
             "estado": estado.value,
             "telefone": telefone.value,
-            "logo": ""
+            "logo": "",
+            "caracteristicas": {
+                "tipoDoBar": {
+                    "boate": false,
+                    "buteco": false,
+                    "churrascaria": false,
+                    "restaurante": false,
+                    "burgueria": false
+                },
+                "culinarias": {
+                    "brasileira": false,
+                    "italiana": false,
+                    "alema": false,
+                    "japonesa": false,
+                    "pizza": false
+                }
+            }
         };
         
         db_bares.data.push(novoBar);
