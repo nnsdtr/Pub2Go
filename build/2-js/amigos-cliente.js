@@ -1,19 +1,22 @@
-window.onload = () =>{
+window.onload = () => {
     /*Pegando dados do db*/
     let db_users = JSON.parse(localStorage.getItem('db_users'));
-    let usuarioCorrente =JSON.parse(sessionStorage.getItem('db_users'));
-    
+    let usuarioCorrente = JSON.parse(sessionStorage.getItem('db_users'));
+
     /*Função para executar pesquisa*/
-    campoPesquisa.onkeyup = () =>{
+    campoPesquisa.onkeyup = () => {
         let valor = campoPesquisa.value.toLowerCase();
         let divTela = document.getElementById('telaPesquisa');
-        let texto ='';
+        let texto = '';
         let usuario = '';
-        for (i=0; i< db_users.usuarios.length; i++){
+        for (i = 0; i < db_users.usuarios.length; i++) {
             usuario = db_users.usuarios[i];
-            nomeSobrenome= usuario.nome+" "+usuario.sobrenome;
-            if(usuario.nome.toLowerCase().indexOf(valor)!=-1 || usuario.sobrenome.toLowerCase().indexOf(valor)!=-1 || usuario.email.toLowerCase().indexOf(valor)!=-1 || nomeSobrenome.toLowerCase().indexOf(valor)!=-1){
-                texto+= `  <div class="row card-PesquisaAmigos">
+            nomeSobrenome = usuario.nome + " " + usuario.sobrenome;
+            if (valor ==''){
+                valor=' '
+            }
+            if (usuario.nome.toLowerCase().indexOf(valor) != -1 || usuario.sobrenome.toLowerCase().indexOf(valor) != -1 || usuario.email.toLowerCase().indexOf(valor) != -1 || nomeSobrenome.toLowerCase().indexOf(valor) != -1 && valor!=' ') {
+                texto += `  <div class="row card-PesquisaAmigos">
                 <div class="col-3">
                     <img src="${usuario.avatar}" alt="">
                 </div>
@@ -25,9 +28,11 @@ window.onload = () =>{
                     <button id='${usuario.id}'>Adicionar</button>
                 </div>
             </div>`
-            
+            }
+            else{
+                texto=" "
+            }
         }
         divTela.innerHTML = texto;
-        }
     }
 }
