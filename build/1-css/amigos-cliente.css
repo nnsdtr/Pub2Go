@@ -50,6 +50,15 @@ header {
 .informacoes button img {
     max-width: 30px;
 }
+.card-PesquisaAmigos{
+    padding: 20px;
+    margin-bottom: 5px;
+    border: solid rgb(221, 209, 209) 0.2px;
+    border-radius: 5px;
+}
+.card-PesquisaAmigos img{
+    max-width: 100%;
+}
 
 
 /*Img, icone e nome do evento*/
@@ -76,7 +85,6 @@ header {
 
 .evento-hora {
     font-size: 30px;
-    margin-top: -20px;
     color: #ffa64c;
     font-weight: bold;
 }
