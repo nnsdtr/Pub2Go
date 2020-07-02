@@ -3,7 +3,9 @@ window.onload = () => {
     let db_users = JSON.parse(localStorage.getItem('db_users'));
     let cadastroClienteLocal = JSON.parse(sessionStorage.getItem('usuarioCorrente'));
 
-    if (cadastroClienteLocal.amigos.conviteRecebido){
+    /*Tela de solicitações de amizade*/
+    if (cadastroClienteLocal.amigos.conviteRecebido.length>0){
+        console.log('e')
         let divTela = document.getElementById('telaSolicitAmz')
         let texto ='';
         let item =''
@@ -15,7 +17,7 @@ window.onload = () => {
             <td><button>x</button></td>
         </tr>` 
         }
-        divTela.innerHTML = texto
+        divTela.innerHTML = texto;
     }
 
     /*Pegar referência do usuario no array*/
