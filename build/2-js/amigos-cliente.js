@@ -5,7 +5,6 @@ window.onload = () => {
 
     /*Tela de solicitações de amizade*/
     if (cadastroClienteLocal.amigos.conviteRecebido.length > 0) {
-        console.log('e')
         let divTela = document.getElementById('telaSolicitAmz')
         let texto = '';
         let item = ''
