@@ -12,9 +12,6 @@ window.onload = () => {
         for (i = 0; i < db_users.usuarios.length; i++) {
             usuario = db_users.usuarios[i];
             nomeSobrenome = usuario.nome + " " + usuario.sobrenome;
-            if (valor ==''){
-                valor=' '
-            }
             if (usuario.nome.toLowerCase().indexOf(valor) != -1 || usuario.sobrenome.toLowerCase().indexOf(valor) != -1 || usuario.email.toLowerCase().indexOf(valor) != -1 || nomeSobrenome.toLowerCase().indexOf(valor) != -1 && valor!=' ') {
                 texto += `  <div class="row card-PesquisaAmigos">
                 <div class="col-3">
@@ -27,11 +24,11 @@ window.onload = () => {
                 <div class="col-3">
                     <button id='${usuario.id}'>Adicionar</button>
                 </div>
-            </div>`
+            </div>`;
             }
-            else{
-                texto=" "
-            }
+        }
+        if (valor ==''){
+            texto= ' '
         }
         divTela.innerHTML = texto;
     }
