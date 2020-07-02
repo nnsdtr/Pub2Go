@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Amigos</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!--Font-awesome CSS-->
+    <script src="https://kit.fontawesome.com/73b02df156.js" crossorigin="anonymous"></script>
+
+    <!--Custom CSS-->
+    <link rel="stylesheet" href="1-css/perfil-cliente.css">
+
+    <!-- jQuery -->
+    <script src="../ext-source/scripts/jquery.3.5.0.min.js"></script>
+    <script src="2-js/jquery.mask.min.js"></script>
+
+    <!--Custom JavaScript-->
+    <script src="2-js/perfil-cliente.js"></script>
+
+
+    <link rel="shortcut icon" href="0-imgs/favicon3.png" />
+</head>
+
+<body>
+    <header class="container">
+        <div class="row">
+            <div class="col-12 col-md-2">
+                <img class="logo" src="/build/0-imgs/comp-pub2go-logo.png" alt="logo">
+            </div>
+            <div class="menu-cab col-md-7 col-12">
+                <ul class="nav nav-pills nav-fill">
+                    <li class="nav-item">
+                        <a class="nav-link" href="pagina-cliente.html">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="perfil-cliente.html">Perfil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Amigos</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-3 col-12 pesquisa">
+                <div class="input-group">
+                    <input class="form-control" type="search" placeholder="Pesquisar..." aria-label="Search">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="conteudo">
+            <div class="row">
+                <p class="evento-hora">Amigos</p>
+            </div>
+
+            <section class="row">
+                <div class="col-md-8 informacoes">
+                    <div class="row campo">
+                        <div class="col-md-5">
+                            <p class="nome-campo">Adicionar novos amigos:</p>
+                        </div>
+
+                        <div class="col-md-4">
+                            <input type="email" class="form-control a" id="email" name="nome">
+                        </div>
+
+                        <div class="col-md-3">
+                            <input id="btnSubmit" type="submit" class="fadeIn fourth" value="Adicionar">
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="amigos col-md-12 card">
+                                <div class="row card-header">
+                                    <h5>Amigos:</h5>
+                                </div>
+                                <div class="row card-body">
+                                    <div class="col-md-3">
+                                        <img src="0-imgs/usuarios/perfil/pessoa1.png" alt="">
+                                        <span>Roberta</span>
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <img src="0-imgs/usuarios/perfil/woman-18.png" alt="">
+                                        <span>Larissa</span>
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <img src="0-imgs/usuarios/perfil/woman-4.png" alt="">
+                                        <span>Vanessa</span>
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <img src="0-imgs/usuarios/perfil/pessoa5.png" alt="">
+                                        <span>Marcos</span>
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <img src="0-imgs/usuarios/perfil/man-4.png" alt="">
+                                        <span>Pedro</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="col-md-4 solicitacoes">
+                    <div class="solicitacoes">
+
+
+                        <p class="evento-hora">Solicitações</p>
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Nome</th>
+                                    <th scope="col">Opções</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>roberto@gmail.com</td>
+                                    <td><button>aceitar</button></td>
+                                    <td><button>x</button></td>
+                                </tr>
+                                <tr>
+                                    <td>octavio@gmail.com</td>
+                                    <td><button>aceitar</button></td>
+                                    <td><button>x</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Julio12@gmail.com</td>
+                                    <td><button>aceitar</button></td>
+                                    <td><button>x</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="container">
+        Copyright 2020 - Todos os direitos reservados - Pub2go
+    </footer>
+
+</body>
+
+</html>
