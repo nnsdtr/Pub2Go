@@ -33,12 +33,12 @@ window.onload = () => {
             amigos: {
                 conviteEnviado: [],
                 conviteRecebido: [],
-                amigosCadastrados: []
+                cadastrados: []
             },
             eventos: {
                 conviteEnviado: [],
                 conviteRecebido: [],
-                eventosCadastrados: []
+                cadastrados: []
             },
             preferenciasClienteLocal: {
                 categorias:{
