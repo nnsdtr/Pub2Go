@@ -4,18 +4,18 @@ window.onload = () => {
     let cadastroClienteLocal = JSON.parse(sessionStorage.getItem('usuarioCorrente'));
 
     /*Tela de solicitações de amizade*/
-    if (cadastroClienteLocal.amigos.conviteRecebido.length>0){
+    if (cadastroClienteLocal.amigos.conviteRecebido.length > 0) {
         console.log('e')
         let divTela = document.getElementById('telaSolicitAmz')
-        let texto ='';
-        let item =''
-        for (i=0;i<cadastroClienteLocal.amigos.conviteRecebido.length;i++){
+        let texto = '';
+        let item = ''
+        for (i = 0; i < cadastroClienteLocal.amigos.conviteRecebido.length; i++) {
             item = cadastroClienteLocal.amigos.conviteRecebido[i];
-            texto +=`<tr>
+            texto += `<tr>
             <td>${item}</td>
             <td><button>aceitar</button></td>
             <td><button>x</button></td>
-        </tr>` 
+        </tr>`
         }
         divTela.innerHTML = texto;
     }
@@ -100,13 +100,45 @@ window.onload = () => {
 
     /*Event Delegation*/
     addAmigo = (evento) => {
-        let idAddAmigo
+        let idAddAmigo;
         if (evento.target.matches('button')) {
             console.log(evento.target)
             idAddAmigo = evento.target.id;
             enviarConviteAmizade(idAddAmigo);
         }
     }
+
+
+
+
+    aceitarConvite = (emailAcc) => {
+        let usuario;
+        for (i = 0; i < db_users.usuarios.length; i++) {
+            usuario = db_users.usuarios[i];
+            if (emailAcc = usuario.email) {
+                console.log('adicionar ao array')
+            }
+        }
+    }
+    recusarConvite = () =>{ 
+        console.log('recusar');
+    }
+
+    respSolicit = (evento) => {
+        let emailAcc;
+        if (evento.target.matches('button')) {
+            if (evento.target.textContent == 'aceitar') {
+                emailAcc = evento.target.id;
+                aceitarConvite(emailAcc)
+            }
+            else {
+                recusarConvite()
+            }
+        }
+    }
+
+
+    telaSolicitAmz.onclick = respSolicit;
     telaPesquisa.onclick = addAmigo;
 }
 
