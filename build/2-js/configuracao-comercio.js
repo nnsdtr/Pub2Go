@@ -260,10 +260,6 @@ btnTelefone.onclick = () => {
 	var modal = document.getElementById("myModal");
 	var span = document.getElementById("closeBtn");
 
-	btn.onclick = () => {
-		modal.style.display = "block";
-	}
-
 	span.onclick = () => {
 		modal.style.display = "none";
 	}
