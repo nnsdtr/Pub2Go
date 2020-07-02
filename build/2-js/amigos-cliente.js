@@ -13,11 +13,11 @@ window.onload = () => {
     }
 
     /*Funçao de Update*/
-    function updateContato(){
-		db_users.usuarios[posicaoArray] = cadastroClienteLocal;
-		sessionStorage.setItem('usuarioCorrente', JSON.stringify(cadastroClienteLocal));
-		localStorage.setItem(`db_users`, JSON.stringify(db_users));
-	}
+    function updateContato() {
+        db_users.usuarios[posicaoArray] = cadastroClienteLocal;
+        sessionStorage.setItem('usuarioCorrente', JSON.stringify(cadastroClienteLocal));
+        localStorage.setItem(`db_users`, JSON.stringify(db_users));
+    }
 
 
     /*Função para executar pesquisa*/
@@ -30,8 +30,8 @@ window.onload = () => {
             usuario = db_users.usuarios[i];
             nomeSobrenome = usuario.nome + " " + usuario.sobrenome;
             if (usuario.nome.toLowerCase().indexOf(valor) != -1 || usuario.sobrenome.toLowerCase().indexOf(valor) != -1 || usuario.email.toLowerCase().indexOf(valor) != -1 || nomeSobrenome.toLowerCase().indexOf(valor) != -1) {
-                if (i!=posicaoArray){
-                texto += `  <div class="row card-PesquisaAmigos">
+                if (i != posicaoArray) {
+                    texto += `  <div class="row card-PesquisaAmigos">
                 <div class="col-3">
                     <img src="${usuario.avatar}" alt="">
                 </div>
@@ -43,8 +43,8 @@ window.onload = () => {
                     <button id='${usuario.id}'>Adicionar</button>
                 </div>
             </div>`;
+                }
             }
-        }
         }
         if (valor == '') {
             texto = ' '
@@ -54,34 +54,47 @@ window.onload = () => {
 
 
     /*Enviando convite no LocalStorage*/
-    enviarConviteAmizade = (idAmigo) =>{
+    enviarConviteAmizade = (idAmigo) => {
         let usuario;
-        for(i = 0; i < db_users.usuarios.length; i++){
-            usuario=db_users.usuarios[i];
-            if(idAmigo==usuario.id){
-                db_users.usuarios[i].amigos.conviteRecebido.push(cadastroClienteLocal.email)
-                cadastroClienteLocal.amigos.conviteEnviado.push(usuario.email)
-                alert('Convite Enviado')
-                updateContato();
+        for (i = 0; i < db_users.usuarios.length; i++) {
+            usuario = db_users.usuarios[i];
+            if (idAmigo == usuario.id) {
+                let valor = true;
+                valor = verificaEmail(usuario);
+                if (valor) {
+                    db_users.usuarios[i].amigos.conviteRecebido.push(cadastroClienteLocal.email)
+                    cadastroClienteLocal.amigos.conviteEnviado.push(usuario.email)
+                    alert('Convite Enviado')
+                    updateContato();
+                }
             }
         }
     }
-        
-    
+    verificaEmail = (usuario) => {
+        for (j = 0; j < cadastroClienteLocal.amigos.conviteEnviado.length; j++) {
+            console.log(cadastroClienteLocal.amigos.conviteEnviado[j])
+            if (cadastroClienteLocal.amigos.conviteEnviado[j] == usuario.email) {
+                alert('O convite já foi enviado')
+                return false
+            }
+        }
+        return true;
+    }
+
     /*Event Delegation*/
-    addAmigo = (evento) =>{
+    addAmigo = (evento) => {
         let idAddAmigo
-       if(evento.target.matches('button')){
-           console.log(evento.target)
-           idAddAmigo = evento.target.id;
-           enviarConviteAmizade(idAddAmigo);
-       }
+        if (evento.target.matches('button')) {
+            console.log(evento.target)
+            idAddAmigo = evento.target.id;
+            enviarConviteAmizade(idAddAmigo);
+        }
     }
     telaPesquisa.onclick = addAmigo;
 }
-    
-    
-    
+
+
+
 
 
 
