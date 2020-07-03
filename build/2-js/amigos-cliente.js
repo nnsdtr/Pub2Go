@@ -14,7 +14,7 @@ window.onload = () => {
                 texto += `<tr>
             <td>${item}</td>
             <td><button id= '${item}'>aceitar</button></td>
-            <td><button id='${item}>x</button></td>
+            <td><button id='${item}'>x</button></td>
         </tr>`
             }
             divTela.innerHTML = texto;
@@ -134,19 +134,18 @@ window.onload = () => {
     addAmigo = (evento) => {
         let idAddAmigo;
         if (evento.target.matches('button')) {
-            console.log(evento.target)
+
             idAddAmigo = evento.target.id;
             enviarConviteAmizade(idAddAmigo);
         }
     }
-    console.log(cadastroClienteLocal)
     // Aceitar e recusar convites de amizade
     aceitarConvite = (emailAcc) => {
         let amigoCorrente;
         for (i = 0; i < db_users.usuarios.length; i++) {
             amigoCorrente = db_users.usuarios[i];
             if (emailAcc == amigoCorrente.email) {
-                console.log('deu')
+
                 for (j = 0; j < cadastroClienteLocal.amigos.conviteRecebido.length; j++) {
                     if (amigoCorrente.email == cadastroClienteLocal.amigos.conviteRecebido[j]) {
                         cadastroClienteLocal.amigos.conviteRecebido.splice(j, 1)
@@ -172,7 +171,7 @@ window.onload = () => {
                 cadastroClienteLocal.amigos.cadastrados.push(amigoCorrente.email);
                 amigoCorrente.amigos.cadastrados.push(cadastroClienteLocal.email);
                 db_users.usuarios[i].amigos = amigoCorrente.amigos;
-                console.log(db_users.usuarios[i].amigos);
+
                 alert('Amigo cadastrado');
                 updateContato();
                 document.location.reload(true);
@@ -180,6 +179,7 @@ window.onload = () => {
         }
     }
     recusarConvite = (emailRec) => {
+
         for (i =0 ; i<cadastroClienteLocal.amigos.conviteRecebido.length; i++){
             if (emailRec == cadastroClienteLocal.amigos.conviteRecebido[i]){
                 cadastroClienteLocal.amigos.conviteRecebido.splice(i, 1)
@@ -189,8 +189,8 @@ window.onload = () => {
         for(i=0; i<db_users.usuarios.length;i++){
             contaRec = db_users.usuarios[i];
             if (contaRec.email == emailRec){
-                for(j=0;j<contaRec.amigos.conviteEnviado.length;i++){
-                    if (contaRec.amigos.conviteEnviado[j]==emailRec){
+                for(j=0;j<contaRec.amigos.conviteEnviado.length;j++){
+                    if (contaRec.amigos.conviteEnviado[j]==cadastroClienteLocal.email){
                         contaRec.amigos.conviteEnviado.splice(j,1);
                         db_users.usuarios[i]=contaRec;
                     }
@@ -198,7 +198,7 @@ window.onload = () => {
             }
         }
         updateContato();
-        mostrarSolicitacoes();
+        document.location.reload(true);
     }
 
     //event delegation, aceitar e recusar amizade
@@ -207,7 +207,6 @@ window.onload = () => {
         if (evento.target.matches('button')) {
             emailAcc = evento.target.id;
             if (evento.target.textContent == 'aceitar') {
-                console.log(emailAcc)
                 aceitarConvite(emailAcc)
             }
             else {
