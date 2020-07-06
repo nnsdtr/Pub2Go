@@ -30,6 +30,25 @@ window.onload = () => {
 			break;
 		}
 }
+
+  // Tela de amigos cadastrados
+  if(cadastroClienteLocal.amigos.cadastrados.length>0){
+	let telaAmigos = document.getElementById('telaAmigos');
+	let texto = '';
+	let amigo = ''
+	for (i=0; i<cadastroClienteLocal.amigos.cadastrados.length; i++){
+		amigo = cadastroClienteLocal.amigos.cadastrados[i];
+		for(j=0; j<db_cliente.usuarios.length;j++){
+			if (amigo == db_cliente.usuarios[j].email){
+				texto +=`  <div class="col-md-3">
+				<img src="${db_cliente.usuarios[j].avatar}" alt="">
+				<span>${db_cliente.usuarios[j].nome} ${db_cliente.usuarios[j].sobrenome}</span>
+			</div>`
+			}
+		}
+	}
+	telaAmigos.innerHTML=texto;
+}
 	
 	function updateContato(){
 		db_cliente.usuarios[posicaoArray] = cadastroClienteLocal;
