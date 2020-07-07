@@ -28,8 +28,8 @@ window.onload = () => {
                     amigo = db_cliente.usuarios[j];
                     texto +=` 
                     <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input convidados" id="${amigo.id}">
-                    <label class="custom-control-label" for="${amigo.id}">${amigo.nome} ${amigo.sobrenome}</label>
+                    <input type="checkbox" class="custom-control-input convidados" id="${amigo.email}">
+                    <label class="custom-control-label" for="${amigo.email}">${amigo.nome} ${amigo.sobrenome}</label>
                 </div>`;
                 }
             }
@@ -60,12 +60,76 @@ window.onload = () => {
         }
     }
 
+    /* Trocar de iconEventos */
+	var btn = document.getElementById("imageBtn");
+	var modal = document.getElementById("myModal");
+	var span = document.getElementById("closeBtn");
+
+	btn.onclick = () => {
+		modal.style.display = "block";
+	}
+
+	span.onclick = () => {
+		modal.style.display = "none";
+	}
+
+	window.onclick = (event) => {
+		if(event.target == modal) {
+			modal.style.display = "none";
+		}
+    }
+    var iconEvento="0-imgs/eventos/049-bar.png";
+    iconEvento01.onclick = () => {let srcIMG = document.getElementById("iconEvento01").src; document.getElementById("iconEvento").src = srcIMG; iconEvento = srcIMG; };
+	iconEvento02.onclick = () => {let srcIMG = document.getElementById("iconEvento02").src; document.getElementById("iconEvento").src = srcIMG; iconEvento = srcIMG; };
+	iconEvento03.onclick = () => {let srcIMG = document.getElementById("iconEvento03").src; document.getElementById("iconEvento").src = srcIMG; iconEvento = srcIMG; };
+	iconEvento04.onclick = () => {let srcIMG = document.getElementById("iconEvento04").src; document.getElementById("iconEvento").src = srcIMG; iconEvento = srcIMG; };
+	iconEvento05.onclick = () => {let srcIMG = document.getElementById("iconEvento05").src; document.getElementById("iconEvento").src = srcIMG; iconEvento = srcIMG; };
+	iconEvento06.onclick = () => {let srcIMG = document.getElementById("iconEvento06").src; document.getElementById("iconEvento").src = srcIMG; iconEvento = srcIMG; };
+	iconEvento07.onclick = () => {let srcIMG = document.getElementById("iconEvento07").src; document.getElementById("iconEvento").src = srcIMG; iconEvento = srcIMG; };
+	iconEvento08.onclick = () => {let srcIMG = document.getElementById("iconEvento08").src; document.getElementById("iconEvento").src = srcIMG; iconEvento = srcIMG; };
+	iconEvento09.onclick = () => {let srcIMG = document.getElementById("iconEvento09").src; document.getElementById("iconEvento").src = srcIMG; iconEvento = srcIMG; };
+	iconEvento10.onclick = () => {let srcIMG = document.getElementById("iconEvento10").src; document.getElementById("iconEvento").src = srcIMG; iconEvento = srcIMG; };
+	iconEvento11.onclick = () => {let srcIMG = document.getElementById("iconEvento11").src; document.getElementById("iconEvento").src = srcIMG; iconEvento = srcIMG; };
+	iconEvento12.onclick = () => {let srcIMG = document.getElementById("iconEvento12").src; document.getElementById("iconEvento").src = srcIMG; iconEvento = srcIMG; };
+	iconEvento13.onclick = () => {let srcIMG = document.getElementById("iconEvento13").src; document.getElementById("iconEvento").src = srcIMG; iconEvento = srcIMG; };
+	iconEvento14.onclick = () => {let srcIMG = document.getElementById("iconEvento14").src; document.getElementById("iconEvento").src = srcIMG; iconEvento = srcIMG; };
+	iconEvento15.onclick = () => {let srcIMG = document.getElementById("iconEvento15").src; document.getElementById("iconEvento").src = srcIMG; iconEvento = srcIMG; };
+	iconEvento16.onclick = () => {let srcIMG = document.getElementById("iconEvento16").src; document.getElementById("iconEvento").src = srcIMG; iconEvento = srcIMG; };
+	iconEvento17.onclick = () => {let srcIMG = document.getElementById("iconEvento17").src; document.getElementById("iconEvento").src = srcIMG; iconEvento = srcIMG; };
+	iconEvento18.onclick = () => {let srcIMG = document.getElementById("iconEvento18").src; document.getElementById("iconEvento").src = srcIMG; iconEvento = srcIMG; };
+	iconEvento19.onclick = () => {let srcIMG = document.getElementById("iconEvento19").src; document.getElementById("iconEvento").src = srcIMG; iconEvento = srcIMG; };
+	iconEvento20.onclick = () => {let srcIMG = document.getElementById("iconEvento20").src; document.getElementById("iconEvento").src = srcIMG; iconEvento = srcIMG; };
+	iconEvento21.onclick = () => {let srcIMG = document.getElementById("iconEvento21").src; document.getElementById("iconEvento").src = srcIMG; iconEvento = srcIMG; };
+	iconEvento22.onclick = () => {let srcIMG = document.getElementById("iconEvento22").src; document.getElementById("iconEvento").src = srcIMG; iconEvento = srcIMG; };
+	iconEvento23.onclick = () => {let srcIMG = document.getElementById("iconEvento23").src; document.getElementById("iconEvento").src = srcIMG; iconEvento = srcIMG; };
+	iconEvento24.onclick = () => {let srcIMG = document.getElementById("iconEvento24").src; document.getElementById("iconEvento").src = srcIMG; iconEvento = srcIMG; };
+	iconEvento25.onclick = () => {let srcIMG = document.getElementById("iconEvento25").src; document.getElementById("iconEvento").src = srcIMG; iconEvento = srcIMG; };
+	iconEvento26.onclick = () => {let srcIMG = document.getElementById("iconEvento26").src; document.getElementById("iconEvento").src = srcIMG; iconEvento = srcIMG; };
+	iconEvento27.onclick = () => {let srcIMG = document.getElementById("iconEvento27").src; document.getElementById("iconEvento").src = srcIMG; iconEvento = srcIMG; };
+	iconEvento28.onclick = () => {let srcIMG = document.getElementById("iconEvento28").src; document.getElementById("iconEvento").src = srcIMG; iconEvento = srcIMG; };
+	iconEvento29.onclick = () => {let srcIMG = document.getElementById("iconEvento29").src; document.getElementById("iconEvento").src = srcIMG; iconEvento = srcIMG; };
+	iconEvento30.onclick = () => {let srcIMG = document.getElementById("iconEvento30").src; document.getElementById("iconEvento").src = srcIMG; iconEvento = srcIMG; };
+	iconEvento31.onclick = () => {let srcIMG = document.getElementById("iconEvento31").src; document.getElementById("iconEvento").src = srcIMG; iconEvento = srcIMG; };
+	iconEvento32.onclick = () => {let srcIMG = document.getElementById("iconEvento32").src; document.getElementById("iconEvento").src = srcIMG; iconEvento = srcIMG; }
+
 //botao criar evento disparado
     btnCriarEvento.onclick= (evento) => {
         evento.preventDefault();
         let novoID = db_eventos.eventos.length + 1;
+        db_cliente.usuarios[posicaoArray].eventos.cadastrados.push(cadastroClienteLocal.email);
+        for(i=0; i<convidado.length;i++){
+            db_cliente.usuarios[posicaoArray].eventos.conviteEnviado.push(convidado[i]);
+        }
+        for (i=0;i<db_cliente.usuarios.length;i++){
+            for(j=0;j<convidado.length;j++){
+                if(convidado[j]==db_cliente.usuarios[i].email){
+                    db_cliente.usuarios[i].eventos.conviteRecebido.push({id:novoID, organizador:cadastroClienteLocal.email})
+                }
+            }
+        }
         let cadastroEvento = {
             id: novoID,
+            icone: iconEvento,
             organizador: cadastroClienteLocal.email,
             horario: eventoHorario.value,
             data: eventoData.value,
@@ -76,6 +140,7 @@ window.onload = () => {
         console.log(cadastroEvento)
         db_eventos.eventos.push(cadastroEvento);
         localStorage.setItem('db_eventos', JSON.stringify(db_eventos));
+        localStorage.setItem('db_users', JSON.stringify(db_cliente));
         window.location.href = "pagina-cliente.html";
     }
 }

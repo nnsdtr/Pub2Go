@@ -18,12 +18,64 @@
     <link rel="stylesheet" href="1-css/cadastro-evento.css">
     <link rel="shortcut icon" href="0-imgs/favicon3.png" />
 
-   
+
 
 
 </head>
 
 <body>
+    <div id="myModal" class="modal modalIcon">
+        <div class="container modal-content modalContent">
+            <div class="row">
+                <div class="col-md-11">
+                    <h4>Selecione um ícone</h4>
+                </div>
+                <div id="closeBtn" class="col-md-1">
+                    <span class="close closeIcon">&times;</span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="iconEvento col-md-2"><img id="iconEvento01" src="0-imgs/eventos/001-beer.png" alt=""></div>
+                <div class="iconEvento col-md-2"><img id="iconEvento02" src="0-imgs/eventos/002-cocktail.png" alt=""></div>
+                <div class="iconEvento col-md-2"><img id="iconEvento03" src="0-imgs/eventos/003-cigarette.png" alt=""></div>
+                <div class="iconEvento col-md-2"><img id="iconEvento04" src="0-imgs/eventos/004-beer.png" alt=""></div>
+                <div class="iconEvento col-md-2"><img id="iconEvento05" src="0-imgs/eventos/005-champagne.png" alt=""></div>
+                <div class="iconEvento col-md-2"><img id="iconEvento06" src="0-imgs/eventos/006-bar.png" alt=""></div>
+                <div class="iconEvento col-md-2"><img id="iconEvento07" src="0-imgs/eventos/007-menu.png" alt=""></div>
+                <div class="iconEvento col-md-2"><img id="iconEvento08" src="0-imgs/eventos/008-DJ.png" alt=""></div>
+                <div class="iconEvento col-md-2"><img id="iconEvento09" src="0-imgs/eventos/009-bar.png" alt=""></div>
+                <div class="iconEvento col-md-2"><img id="iconEvento10" src="0-imgs/eventos/010-dart.png" alt=""></div>
+                <div class="iconEvento col-md-2"><img id="iconEvento11" src="0-imgs/eventos/011-wine.png " alt=""></div>
+                <div class="iconEvento col-md-2"><img id="iconEvento12" src="0-imgs/eventos/012-champagne.png" alt=""></div>
+                <div class="iconEvento col-md-2"><img id="iconEvento13" src="0-imgs/eventos/013-cup.png" alt=""></div>
+                <div class="iconEvento col-md-2"><img id="iconEvento14" src="0-imgs/eventos/014-beer box.png" alt=""></div>
+                <div class="iconEvento col-md-2"><img id="iconEvento15" src="0-imgs/eventos/015-beer pong.png" alt=""></div>
+                <div class="iconEvento col-md-2"><img id="iconEvento16" src="0-imgs/eventos/017-mirror ball.png" alt=""></div>
+                <div class="iconEvento col-md-2"><img id="iconEvento17" src="0-imgs/eventos/018-bottle opener.png" alt=""></div>
+                <div class="iconEvento col-md-2"><img id="iconEvento18" src="0-imgs/eventos/019-cocktail.png" alt=""></div>
+                <div class="iconEvento col-md-2"><img id="iconEvento19" src="0-imgs/eventos/020-whiskey.png" alt=""></div>
+                <div class="iconEvento col-md-2"><img id="iconEvento20" src="0-imgs/eventos/022-wine glass.png" alt=""></div>
+                <div class="iconEvento col-md-2"><img id="iconEvento21" src="0-imgs/eventos/023-drink.png" alt=""></div>
+                <div class="iconEvento col-md-2"><img id="iconEvento22" src="0-imgs/eventos/025-barrel.png" alt=""></div>
+                <div class="iconEvento col-md-2"><img id="iconEvento23" src="0-imgs/eventos/028-wine shelf.png" alt=""></div>
+                <div class="iconEvento col-md-2"><img id="iconEvento24" src="0-imgs/eventos/029-beer tap.png" alt=""></div>
+                <div class="iconEvento col-md-2"><img id="iconEvento25" src="0-imgs/eventos/030-jukebox.png" alt=""></div>
+                <div class="iconEvento col-md-2"><img id="iconEvento26" src="0-imgs/eventos/031-door.png" alt=""></div>
+                <div class="iconEvento col-md-2"><img id="iconEvento27" src="0-imgs/eventos/044-beer.png" alt=""></div>
+                <div class="iconEvento col-md-2"><img id="iconEvento28" src="0-imgs/eventos/045-beer.png" alt=""></div>
+                <div class="iconEvento col-md-2"><img id="iconEvento29" src="0-imgs/eventos/047-vodka.png" alt=""></div>
+                <div class="iconEvento col-md-2"><img id="iconEvento30" src="0-imgs/eventos/048-bartender.png" alt="">
+                </div>
+                <div class="iconEvento col-md-2"><img id="iconEvento31" src="0-imgs/eventos/049-bar.png" alt=""></div>
+                <div class="iconEvento col-md-2"><img id="iconEvento32" src="0-imgs/eventos/050-vodka.png" alt=""></div>
+            </div>
+        </div>
+    </div>
+
+
+
+
     <header class="container">
         <div class="row">
             <div class="col-12 col-md-2">
@@ -56,15 +108,12 @@
                 <div class="title col-md-12">
                     <h5>CRIAR UM NOVO EVENTO</h5>
                 </div>
-                <div class="col-5 icone" id="icon">
-                    <img src="0-imgs/icont/bolo.png" alt=" icon" class="rounded-circle">
+                <div class="col-5 icone">
+                    <img id = 'iconEvento'src="0-imgs/eventos/049-bar.png" alt=" icon" class="rounded-circle">
                 </div>
                 <div class="col-12">
                     <div>
-                        <div class="file-upload">
-                            <input type="file" id="upload-1">
-                            <p class="file-name">Please select a file.</p>
-                        </div>
+                        <button id="imageBtn" class="imageBtn">Trocar icone</button>
                     </div>
                     <div class="form-group">
                         <label for="evento-nome">Nome do Evento</label>
@@ -83,109 +132,110 @@
                                 placeholder="Nome do Evento">
                         </div>
                     </div>
-            
-                    
+
+
 
                     <div class="row pl-md-3">
                         <button type="button" class="btn btn-dark bot-modal" data-toggle="modal"
-                        data-target="#lista-bares">
-                        Escolha o estabelecimento
-                    </button>
-                    <div class="modal fade" id="lista-bares" tabindex="-1" role="dialog"
-                        aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Lista de estabelecimentos</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body" id="radioBar">
-                                    <div class="custom-control custom-radio">
-                                        <input type="radio" class="custom-control-input" id="bar-1" name="bar">
-                                        <label class="custom-control-label" for="bar-1">
-                                            <div class="card mb-3 card-bar">
-                                                <div class="row no-gutters global-wrapper">
-                                                    <div class="col-4 img-square-wrapper">
-                                                        <img src="0-imgs/estabelecimentos/brahma.jpg" class="card-img"
-                                                            alt="...">
-                                                    </div>
-                                                    <div class="col-8">
-                                                        <div class="card-body">
-                                                            <h5 class="card-title">Bar Brahma</h5>
-                                                            <p class="card-text">
-                                                                <small class="text-muted">
-                                                                    ★ 4.2 • $ • 1.5km
-                                                                </small>
-                                                            </p>
+                            data-target="#lista-bares">
+                            Escolha o estabelecimento
+                        </button>
+                        <div class="modal fade" id="lista-bares" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Lista de estabelecimentos</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body" id="radioBar">
+                                        <div class="custom-control custom-radio">
+                                            <input type="radio" class="custom-control-input" id="bar-1" name="bar">
+                                            <label class="custom-control-label" for="bar-1">
+                                                <div class="card mb-3 card-bar">
+                                                    <div class="row no-gutters global-wrapper">
+                                                        <div class="col-4 img-square-wrapper">
+                                                            <img src="0-imgs/estabelecimentos/brahma.jpg"
+                                                                class="card-img" alt="...">
+                                                        </div>
+                                                        <div class="col-8">
+                                                            <div class="card-body">
+                                                                <h5 class="card-title">Bar Brahma</h5>
+                                                                <p class="card-text">
+                                                                    <small class="text-muted">
+                                                                        ★ 4.2 • $ • 1.5km
+                                                                    </small>
+                                                                </p>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </label>
-                                    </div>
-                                    <div class="custom-control custom-radio">
-                                        <input type="radio" class="custom-control-input" id="bar-2" name="bar">
-                                        <label class="custom-control-label" for="bar-2">
-                                            <div class="card mb-3 card-bar">
-                                                <div class="row no-gutters global-wrapper">
-                                                    <div class="col-4 img-square-wrapper">
-                                                        <img src="0-imgs/estabelecimentos/bar-do-zé.jpg" class="card-img"
-                                                            alt="...">
-                                                    </div>
-                                                    <div class="col-8">
-                                                        <div class="card-body">
-                                                            <h5 class="card-title">Mané Doido</h5>
-                                                            <p class="card-text">
-                                                                <small class="text-muted">
-                                                                    ★ 4.2 • $ • 1.5km
-                                                                </small>
-                                                            </p>
+                                            </label>
+                                        </div>
+                                        <div class="custom-control custom-radio">
+                                            <input type="radio" class="custom-control-input" id="bar-2" name="bar">
+                                            <label class="custom-control-label" for="bar-2">
+                                                <div class="card mb-3 card-bar">
+                                                    <div class="row no-gutters global-wrapper">
+                                                        <div class="col-4 img-square-wrapper">
+                                                            <img src="0-imgs/estabelecimentos/bar-do-zé.jpg"
+                                                                class="card-img" alt="...">
+                                                        </div>
+                                                        <div class="col-8">
+                                                            <div class="card-body">
+                                                                <h5 class="card-title">Mané Doido</h5>
+                                                                <p class="card-text">
+                                                                    <small class="text-muted">
+                                                                        ★ 4.2 • $ • 1.5km
+                                                                    </small>
+                                                                </p>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </label>
-                                    </div>
-                                    <div class="custom-control custom-radio">
-                                        <input type="radio" class="custom-control-input" id="bar-3" name="bar">
-                                        <label class="custom-control-label" for="bar-3">
-                                            <div class="card mb-3 card-bar">
-                                                <div class="row no-gutters global-wrapper">
-                                                    <div class="col-4 img-square-wrapper">
-                                                        <img src="0-imgs/estabelecimentos/hemingway1.jpeg"
-                                                            class="card-img" alt="...">
-                                                    </div>
-                                                    <div class="col-8" id="hemingway">
-                                                        <div class="card-body">
-                                                            <h5 class="card-title">Hemingway</h5>
-                                                            <p class="card-text">
-                                                                <small class="text-muted">
-                                                                    ★ 4.9 • $$$$ • 12.4km
-                                                                </small>
-                                                            </p>
+                                            </label>
+                                        </div>
+                                        <div class="custom-control custom-radio">
+                                            <input type="radio" class="custom-control-input" id="bar-3" name="bar">
+                                            <label class="custom-control-label" for="bar-3">
+                                                <div class="card mb-3 card-bar">
+                                                    <div class="row no-gutters global-wrapper">
+                                                        <div class="col-4 img-square-wrapper">
+                                                            <img src="0-imgs/estabelecimentos/hemingway1.jpeg"
+                                                                class="card-img" alt="...">
+                                                        </div>
+                                                        <div class="col-8" id="hemingway">
+                                                            <div class="card-body">
+                                                                <h5 class="card-title">Hemingway</h5>
+                                                                <p class="card-text">
+                                                                    <small class="text-muted">
+                                                                        ★ 4.9 • $$$$ • 12.4km
+                                                                    </small>
+                                                                </p>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </label>
+                                            </label>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary"
-                                        data-dismiss="modal">Fechar</button>
-                                    <button type="button" id="btnBar" class="btn btn-dark">Salvar mudanças</button>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-dismiss="modal">Fechar</button>
+                                        <button type="button" id="btnBar" class="btn btn-dark">Salvar mudanças</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    </div>
-                    
+
                     <div class="row pl-md-3 pt-md-3">
                         <!-- Lista de amigos modal -->
-                        <button type="button" class="btn btn-dark bot-modal" data-toggle="modal" data-target="#lista-amigos">
-                        Convidar seus amigos
+                        <button type="button" class="btn btn-dark bot-modal" data-toggle="modal"
+                            data-target="#lista-amigos">
+                            Convidar seus amigos
                         </button>
                         <!-- Modal -->
                         <div class="modal fade" id="lista-amigos" tabindex="-1" role="dialog"
@@ -223,14 +273,15 @@
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
                                             data-dismiss="modal">Fechar</button>
-                                        <button type="button"  id="btnConvidados" class="btn btn-dark" data-dismiss="modal">Salvar
+                                        <button type="button" id="btnConvidados" class="btn btn-dark"
+                                            data-dismiss="modal">Salvar
                                             mudanças</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="form-group pt-md-3">
                         <label for="evento-descricao">Descrição do Evento</label>
                         <textarea class="form-control" id="eventoDescricao" rows="4"
@@ -251,14 +302,14 @@
 
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-    crossorigin="anonymous"></script>
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-    crossorigin="anonymous"></script>
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
