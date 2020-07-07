@@ -1,13 +1,13 @@
 
-    /* Recolher dados do localStorage para uma variavel*/
-    var db_cliente = JSON.parse(localStorage.getItem('db_users'))
+/* Recolher dados do localStorage para uma variavel*/
+var db_cliente = JSON.parse(localStorage.getItem('db_users'))
 
-    /* Se nao houver dados, cria a estrutura do objeto*/
+/* Se nao houver dados, cria a estrutura do objeto*/
 if (!db_cliente){
     db_cliente = {
         "usuarios": []
     };
-}
+};
 
 window.onload = () => {
 /* Recolher dados do formulário */
@@ -93,8 +93,6 @@ window.onload = () => {
         xhr.open('GET', `https://viacep.com.br/ws/${cep.value}/json/`);
         xhr.send();
     };
-
-
 };
 
 
