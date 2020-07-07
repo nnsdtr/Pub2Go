@@ -68,18 +68,18 @@
                     </div>
                     <div class="form-group">
                         <label for="evento-nome">Nome do Evento</label>
-                        <input type="text" class="evento-nome form-control" id="evento-nome"
+                        <input type="text" class="evento-nome form-control" id="eventoNome"
                             placeholder="Nome do Evento">
                     </div>
                     <div class="row">
                         <div class="form-group col-6">
                             <label for="evento-data">Data</label>
-                            <input type="date" class="evento-nome form-control" id="evento-data"
+                            <input type="date" class="evento-nome form-control" id="eventoData"
                                 placeholder="Nome do Evento">
                         </div>
                         <div class="form-group col-6">
                             <label for="evento-horario">Horário</label>
-                            <input type="time" class="evento-nome form-control" id="evento-horario"
+                            <input type="time" class="evento-nome form-control" id="eventoHorario" name="evento_horario"
                                 placeholder="Nome do Evento">
                         </div>
                     </div>
@@ -101,7 +101,7 @@
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
-                                <div class="modal-body">
+                                <div class="modal-body" id="radioBar">
                                     <div class="custom-control custom-radio">
                                         <input type="radio" class="custom-control-input" id="bar-1" name="bar">
                                         <label class="custom-control-label" for="bar-1">
@@ -175,7 +175,7 @@
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary"
                                         data-dismiss="modal">Fechar</button>
-                                    <button type="button" class="btn btn-dark">Salvar mudanças</button>
+                                    <button type="button" id="btnBar" class="btn btn-dark">Salvar mudanças</button>
                                 </div>
                             </div>
                         </div>
@@ -198,7 +198,7 @@
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
-                                    <div class="modal-body">
+                                    <div class="modal-body" id="telaAmigos">
                                         <div class="custom-control custom-checkbox">
                                             <input type="checkbox" class="custom-control-input" id="amigo-1">
                                             <label class="custom-control-label" for="amigo-1">Ana Dias</label>
@@ -223,7 +223,7 @@
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
                                             data-dismiss="modal">Fechar</button>
-                                        <button type="button" class="btn btn-dark" data-dismiss="modal">Salvar
+                                        <button type="button"  id="btnConvidados" class="btn btn-dark" data-dismiss="modal">Salvar
                                             mudanças</button>
                                     </div>
                                 </div>
@@ -233,11 +233,11 @@
                     
                     <div class="form-group pt-md-3">
                         <label for="evento-descricao">Descrição do Evento</label>
-                        <textarea class="form-control" id="evento-descricao" rows="4"
+                        <textarea class="form-control" id="eventoDescricao" rows="4"
                             placeholder="Escreva uma descrição sobre o evento"></textarea>
                     </div>
                     <div class="criar-evento">
-                        <button type="button" class="btn btn-dark">Criar Evento</button>
+                        <button type="submit" id="btnCriarEvento" class="btn btn-dark">Criar Evento</button>
                     </div>
             </section>
         </div>
