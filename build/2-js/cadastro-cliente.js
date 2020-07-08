@@ -252,9 +252,9 @@ function validar() {
         var data = new Date();
 
         // Guarda cada pedaço em uma variável
-        var dia     = data.getDate();           // 1-31
-        var mes     = data.getMonth();          // 0-11 (zero=janeiro)
-        var ano    = data.getFullYear();       // 4 dígitos
+        var dia = data.getDate();           // 1-31
+        var mes = data.getMonth();          // 0-11 (zero=janeiro)
+        var ano = data.getFullYear();       // 4 dígitos
 
         if(mes <= 10){ //conserta o mês (janeiro = 01)
             mes += 1;
@@ -304,7 +304,5 @@ function validar() {
         else{
             alerta.innerHTML = '';
         }
-
     }
-
 };

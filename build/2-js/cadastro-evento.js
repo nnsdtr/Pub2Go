@@ -1,6 +1,8 @@
 window.onload = () => {
+
     /* Editar cadastroClienteLocal */
     var cadastroClienteLocal = JSON.parse(sessionStorage.getItem("usuarioCorrente"));
+
     /* Pegar a referencia do array usuarios no db */
     let db_cliente = JSON.parse(localStorage.getItem('db_users'));
     var posicaoArray;
@@ -10,12 +12,14 @@ window.onload = () => {
             break;
         }
     }
+
     let db_eventos = JSON.parse(localStorage.getItem('db_eventos'))
     if (!db_eventos) {
         db_eventos = {
             "eventos": []
         };
     }
+
     // Tela de amigos cadastrados
     if(cadastroClienteLocal.amigos.cadastrados.length>0){
         let telaAmigos = document.getElementById('telaAmigos');
@@ -28,9 +32,9 @@ window.onload = () => {
                     amigo = db_cliente.usuarios[j];
                     texto +=` 
                     <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input convidados" id="${amigo.email}">
-                    <label class="custom-control-label" for="${amigo.email}">${amigo.nome} ${amigo.sobrenome}</label>
-                </div>`;
+                        <input type="checkbox" class="custom-control-input convidados" id="${amigo.email}">
+                        <label class="custom-control-label" for="${amigo.email}">${amigo.nome} ${amigo.sobrenome}</label>
+                    </div>`;
                 }
             }
         }
@@ -43,11 +47,17 @@ window.onload = () => {
         let convidados = document.getElementsByClassName("convidados");
         for(i=0; i<convidados.length; i++){
             if(convidados[i].checked){
-                convidado.push(convidados[i].id)
+                convidado.push(convidados[i].id);
                 console.log(convidado);
             }
         }
     }
+
+
+    // Tela de bares disponíveis
+    // VAZIO: PARA IMPLEMENTAR
+
+
     //pegando bar escolhido
     var evento_bar;
     btnBar.onclick = () => {
@@ -59,6 +69,7 @@ window.onload = () => {
             }
         }
     }
+
 
     /* Trocar de iconEventos */
 	var btn = document.getElementById("imageBtn");
@@ -78,6 +89,7 @@ window.onload = () => {
 			modal.style.display = "none";
 		}
     }
+
     var iconEvento="0-imgs/eventos/049-bar.png";
     iconEvento01.onclick = () => {let srcIMG = document.getElementById("iconEvento01").src; document.getElementById("iconEvento").src = srcIMG; iconEvento = srcIMG; };
 	iconEvento02.onclick = () => {let srcIMG = document.getElementById("iconEvento02").src; document.getElementById("iconEvento").src = srcIMG; iconEvento = srcIMG; };
@@ -112,14 +124,18 @@ window.onload = () => {
 	iconEvento31.onclick = () => {let srcIMG = document.getElementById("iconEvento31").src; document.getElementById("iconEvento").src = srcIMG; iconEvento = srcIMG; };
 	iconEvento32.onclick = () => {let srcIMG = document.getElementById("iconEvento32").src; document.getElementById("iconEvento").src = srcIMG; iconEvento = srcIMG; }
 
-//botao criar evento disparado
-    btnCriarEvento.onclick= (evento) => {
+
+// Botao criar evento disparado
+    btnCriarEvento.onclick = (evento) => {
         evento.preventDefault();
         let novoID = db_eventos.eventos.length + 1;
+
         db_cliente.usuarios[posicaoArray].eventos.cadastrados.push(cadastroClienteLocal.email);
+
         for(i=0; i<convidado.length;i++){
             db_cliente.usuarios[posicaoArray].eventos.conviteEnviado.push(convidado[i]);
         }
+
         for (i=0;i<db_cliente.usuarios.length;i++){
             for(j=0;j<convidado.length;j++){
                 if(convidado[j]==db_cliente.usuarios[i].email){
@@ -127,6 +143,7 @@ window.onload = () => {
                 }
             }
         }
+
         let cadastroEvento = {
             id: novoID,
             icone: iconEvento,
@@ -137,10 +154,70 @@ window.onload = () => {
             convidados: convidado,
             bar: evento_bar,
         }
+
         console.log(cadastroEvento)
         db_eventos.eventos.push(cadastroEvento);
         localStorage.setItem('db_eventos', JSON.stringify(db_eventos));
         localStorage.setItem('db_users', JSON.stringify(db_cliente));
         window.location.href = "pagina-cliente.html";
+    }
+}
+
+
+
+// Validação do formulário
+function validarFormulario() {
+    var nomeValido = false;
+    eventoNome.oninput = () => {
+        let checarNome = eventoNome.value;
+        if(checarNome == "" || checarNome == null) {
+            nomeValido = false;
+        } else {
+            nomeValido = true;
+        }
+    }
+
+    var dataValida = false;
+    eventoData.oninput = () => {
+        let checarData = eventoData.value;
+        if(checarData == "" || checarData == null) {
+            dataValida = false;
+        } else {
+            dataValida = true;
+        }
+    }
+
+    var horaValida = false;
+    eventoHorario.oninput = () => {
+        let checarHorario = eventoHorario.value;
+        if(checarHorario == "" || checarHorario == null) {
+            horaValida = false;
+        } else {
+            horaValida = true;
+        }
+    }
+
+    var convidadoValido = false;
+    btnCloseConvidado.onclick = () => {
+        if(convidado.length == 0) {
+            convidadoValido = false;
+        } else {
+            convidadoValido = true;
+        }
+    }
+
+    var eventoBarValido = false;
+    btnCloseBar.onclick = () => {
+        if(event_bar == "") {
+            eventoBarValido = false;
+        } else {
+            eventoBarValido = true;
+        }
+    }
+
+    if(nomeValido && dataValida && horaValida && convidadoValido && eventoBarValido) {
+        btnCriarEvento.disabled = false;
+    } else {
+        btnCriarEvento.disabled = true;
     }
 }

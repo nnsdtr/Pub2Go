@@ -217,10 +217,6 @@ window.onload = () => {
     telaSolicitAmz.onclick = respSolicit;
     telaPesquisa.onclick = addAmigo;
     mostrarSolicitacoes()
-
-
-
-
 }
 
 
