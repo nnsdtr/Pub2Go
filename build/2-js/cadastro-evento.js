@@ -3,6 +3,7 @@ window.onload = () => {
     var cadastroClienteLocal = JSON.parse(sessionStorage.getItem("usuarioCorrente"));
     /* Pegar a referencia do array usuarios no db */
     let db_cliente = JSON.parse(localStorage.getItem('db_users'));
+    let db_bares = JSON.parse(localStorage.getItem('db_bares'))
     var posicaoArray;
     for (i = 0; i < db_cliente.usuarios.length; i++) {
         if (cadastroClienteLocal.email == db_cliente.usuarios[i].email) {
@@ -35,6 +36,38 @@ window.onload = () => {
             }
         }
         telaAmigos.innerHTML=texto;
+    }
+    if (db_bares.data.length) {
+        let telaBares = document.getElementById('telaEstabelecimentos');
+        let texto = '';
+        let item;
+        for (i = 0; i < db_bares.data.length; i++) {
+            item = db_bares.data[i];
+            texto += ` <div class="custom-control custom-radio">
+            <input type="radio" class="custom-control-input" id="${item.id}" name="bar">
+            <label class="custom-control-label" for="${item.id}">
+                <div class="card mb-3 card-bar">
+                    <div class="row no-gutters global-wrapper">
+                        <div class="col-4 img-square-wrapper">
+                            <img src="0-imgs/estabelecimentos/brahma.jpg"
+                                class="card-img" alt="...">
+                        </div>
+                        <div class="col-8">
+                            <div class="card-body">
+                                <h5 class="card-title">${item.nome}</h5>
+                                <p class="card-text">
+                                    <small class="text-muted">
+                                        ★ 4.2 • $ • 1.5km
+                                    </small>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </label>
+        </div>`
+        }
+        telaBares.innerHTML = texto;
     }
 
     //pegando lista de convidados

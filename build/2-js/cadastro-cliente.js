@@ -191,7 +191,7 @@ function validar() {
     } 
     else {
         for (i=0;i<db_cliente.usuarios.length; i++){
-            if (email = db_cliente.usuarios[i].email){
+            if (email == db_cliente.usuarios[i].email){
                 alerta.innerHTML = '* Este email já está cadastrado';
                 alerta.style.color = '#D01';
                 alerta.style.display = 'block';

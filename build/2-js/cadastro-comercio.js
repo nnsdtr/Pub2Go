@@ -75,7 +75,9 @@ window.onload = () => {
 
     // Realizar cadastro
     $("#btn_submit").click( function () {
+        let novoId = db_bares.data.length;
         let novoBar = {
+            "id": novoId,
             "email": email.value,
             "nome": nome.value,
             "cnpj": cnpj.value,
