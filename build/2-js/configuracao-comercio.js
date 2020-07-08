@@ -252,6 +252,83 @@ btnTelefone.onclick = () => {
 	};	
 }
 
+/* Editar preferências */
+let caracteristicas = cadastroEstabelecimento
+.caracteristicas;
+
+/* categorias de estabelecimentos */
+document.getElementById("boate").checked = caracteristicas.tipoDoBar.boate;
+document.getElementById("buteco").checked = caracteristicas.tipoDoBar.buteco;
+document.getElementById("churrascaria").checked = caracteristicas.tipoDoBar.churrascaria;
+document.getElementById("restaurante").checked = caracteristicas.tipoDoBar.restaurante;
+document.getElementById("burgueria").checked = caracteristicas.tipoDoBar.burgueria;
+
+boate.onchange = () => {
+	caracteristicas.tipoDoBar.boate = document.getElementById("boate").checked;
+	cadastroEstabelecimento.caracteristicas = caracteristicas;
+	updateEstabelecimento();
+};
+buteco.onchange = () => {
+	caracteristicas.tipoDoBar.buteco = document.getElementById("buteco").checked;
+	cadastroEstabelecimento.caracteristicas = caracteristicas;
+	updateEstabelecimento();
+};
+churrascaria.onchange = () => {
+	caracteristicas.tipoDoBar.churrascaria = document.getElementById("churrascaria").checked;
+	cadastroEstabelecimento.caracteristicas = caracteristicas;
+	updateEstabelecimento();
+};
+restaurante.onchange = () => {
+	caracteristicas.tipoDoBar.restaurante = document.getElementById("restaurante").checked;
+	cadastroEstabelecimento.caracteristicas = caracteristicas;
+	updateEstabelecimento();
+};
+burgueria.onchange = () => {
+	caracteristicas.tipoDoBar.burgueria = document.getElementById("burgueria").checked;
+	cadastroEstabelecimento.caracteristicas = caracteristicas;
+	updateEstabelecimento();
+};
+
+
+
+/* culinárias */
+document.getElementById("brasileira").checked = caracteristicas.culinarias.brasileira;
+document.getElementById("italiana").checked = caracteristicas.culinarias.italiana;
+document.getElementById("alema").checked = caracteristicas.culinarias.alema;
+document.getElementById("japonesa").checked = caracteristicas.culinarias.japonesa;
+document.getElementById("pizza").checked = caracteristicas.culinarias.pizza;
+
+brasileira.onchange = () => {
+	caracteristicas.culinarias.brasileira = document.getElementById("brasileira").checked;
+	cadastroEstabelecimento.caracteristicas = caracteristicas;
+	updateEstabelecimento();
+};
+
+italiana.onchange = () => {
+	caracteristicas.culinarias.italiana = document.getElementById("italiana").checked;
+	cadastroEstabelecimento.caracteristicas = caracteristicas;
+	updateEstabelecimento();
+};
+
+alema.onchange = () => {
+	caracteristicas.culinarias.alema = document.getElementById("alema").checked;
+	cadastroEstabelecimento.caracteristicas = caracteristicas;
+	updateEstabelecimento();
+};
+
+japonesa.onchange = () => {
+	caracteristicas.culinarias.japonesa = document.getElementById("japonesa").checked;
+	cadastroEstabelecimento.caracteristicas = caracteristicas;
+	updateEstabelecimento();
+};
+
+pizza.onchange = () => {
+	caracteristicas.culinarias.pizza = document.getElementById("pizza").checked;
+	cadastroEstabelecimento.caracteristicas = caracteristicas;
+	updateEstabelecimento();
+};
+
+
 
 
 
