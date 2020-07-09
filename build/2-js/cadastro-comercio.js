@@ -3,50 +3,7 @@
 // Objeto para o banco de dados de usuários baseado em JSON
 var db_comercios = {};
 
-function generateUUID() { // Public Domain/MIT
-    var d = new Date().getTime(); //Timestamp
-    var d2 = (performance && performance.now && (performance.now() * 1000)) || 0; //Time in microseconds since page-load or 0 if unsupported
-    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-        var r = Math.random() * 16; //random number between 0 and 16
-        if (d > 0) { //Use timestamp until depleted
-            r = (d + r) % 16 | 0;
-            d = Math.floor(d / 16);
-        } else { //Use microseconds since page-load if supported
-            r = (d2 + r) % 16 | 0;
-            d2 = Math.floor(d2 / 16);
-        }
-        return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
-    });
-}
 
-
-function addComercios(nome, cnpj, email, senha, cep, logradouro, numeroLocal, complemento, bairro, cidade, estado, telefone) {
-
-    // Cria um objeto de usuario para o novo usuario 
-    let newId = generateUUID();
-    let comercio = {
-        "id": newId,
-        "nome": nome,
-        "cnpj": cnpj,
-        "email": email,
-        "senha": senha,
-        "cep": cep,
-        "logradouro": logradouro,
-        "numeroLocal": numeroLocal,
-        "complemento": complemento,
-        "bairro": bairro,
-        "cidade": cidade,
-        "estado": estado,
-        "telefone": telefone
-    };
-
-    // Inclui o novo usuario no banco de dados baseado em JSON
-    db_comercios.comercio.push(comercio);
-
-    // Salva o novo banco de dados com o novo usuário no localStorage
-    localStorage.setItem('db_usuarios', JSON.stringify(db_comercios));
-}
-/* Fim implementação do banco de dados comercio */
 
 /* Recolher dados do formulário */
 
