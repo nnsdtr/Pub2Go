@@ -21,14 +21,30 @@ window.onload = () => {
                         <div class="img-square-wrapper">
                             <a href="/build/evento-detalhe.html?id=${item.id}"><img src="${item.icone}" alt="" ></a>
                         </div>
-                        <a class="card-footer" href="/build/evento-detalhe.html?id=${item.id}">${item.descricao}</a>
+                        <a class="card-footer" href="/build/evento-detalhe.html?id=${item.id}">${item.nome}</a>
                     </div>
                 </div>`;
                 }
             }
-            telaEventos.innerHTML = texto
         }
+        for(i=0; i< cadastroClienteLocal.eventos.cadastrados.length;i++){
+            for(j=0; j<db_eventos.eventos.length; j++){
+                if(cadastroClienteLocal.eventos.cadastrados[i].id == db_eventos.eventos[j].id){
+                    item = db_eventos.eventos[j];
+                    texto += `<div class="item">
+                    <div class="card">
+                        <div class="img-square-wrapper">
+                            <a href="/build/evento-detalhe.html?id=${item.id}"><img src="${item.icone}" alt="" ></a>
+                        </div>
+                        <a class="card-footer" href="/build/evento-detalhe.html?id=${item.id}">${item.nome}</a>
+                    </div>
+                </div>`
+                }
+            }
+        }
+        telaEventos.innerHTML = texto
     }
+
 
     //mostrar bares
 

@@ -129,12 +129,10 @@ window.onload = () => {
         }
         return true;
     }
-
     /*Event Delegation enviar convite de amizade*/
     addAmigo = (evento) => {
         let idAddAmigo;
         if (evento.target.matches('button')) {
-
             idAddAmigo = evento.target.id;
             enviarConviteAmizade(idAddAmigo);
         }
@@ -145,7 +143,6 @@ window.onload = () => {
         for (i = 0; i < db_users.usuarios.length; i++) {
             amigoCorrente = db_users.usuarios[i];
             if (emailAcc == amigoCorrente.email) {
-
                 for (j = 0; j < cadastroClienteLocal.amigos.conviteRecebido.length; j++) {
                     if (amigoCorrente.email == cadastroClienteLocal.amigos.conviteRecebido[j]) {
                         cadastroClienteLocal.amigos.conviteRecebido.splice(j, 1)
@@ -207,10 +204,10 @@ window.onload = () => {
         if (evento.target.matches('button')) {
             emailAcc = evento.target.id;
             if (evento.target.textContent == 'aceitar') {
-                aceitarConvite(emailAcc)
+                aceitarConvite(emailAcc);
             }
             else {
-                recusarConvite(emailAcc)
+                recusarConvite(emailAcc);
             }
         }
     }

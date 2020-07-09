@@ -8,9 +8,9 @@ window.onload = () => {
     var eventoBarValido = false;
     var descricaoValida = false;
 
-    eventoNome.oninput = ()      => {nomeValido = validarNome(); console.log("nomeValido: ", nomeValido)}
-    eventoData.oninput = ()      => {dataValida = validarData(); console.log("dataValida: ", dataValida);}
-    eventoHorario.oninput = ()   => {horaValida = validarHora(); console.log("horaValida: ", horaValida);}
+    eventoNome.oninput = () => {nomeValido = validarNome(); console.log("nomeValido: ", nomeValido)}
+    eventoData.oninput = () => {dataValida = validarData(); console.log("dataValida: ", dataValida);}
+    eventoHorario.oninput = ()  => {horaValida = validarHora(); console.log("horaValida: ", horaValida);}
     eventoDescricao.oninput = () => {descricaoValida = validarDescricao(); console.log("descricaoValida: ", descricaoValida);}
 
     formulario.oninput = () => {
@@ -191,12 +191,10 @@ window.onload = () => {
         evento.preventDefault();
         let novoID = db_eventos.eventos.length + 1;
 
-        db_cliente.usuarios[posicaoArray].eventos.cadastrados.push(cadastroClienteLocal.email);
-
+        db_cliente.usuarios[posicaoArray].eventos.cadastrados.push({id: novoID, organizador: cadastroClienteLocal.email});
         for(i=0; i<convidado.length;i++){
             db_cliente.usuarios[posicaoArray].eventos.conviteEnviado.push(convidado[i]);
         }
-
         for (i=0;i<db_cliente.usuarios.length;i++){
             for(j=0;j<convidado.length;j++){
                 if(convidado[j]==db_cliente.usuarios[i].email){
@@ -204,16 +202,16 @@ window.onload = () => {
                 }
             }
         }
-
         let cadastroEvento = {
-            id: novoID,
-            icone: iconEvento,
-            organizador: cadastroClienteLocal.email,
-            horario: eventoHorario.value,
-            data: eventoData.value,
-            descricao: eventoDescricao.value,
-            convidados: convidado,
-            bar: evento_bar,
+            "id": novoID,
+            "nome": eventoNome.value,
+            "icone": iconEvento,
+            "organizador": cadastroClienteLocal.email,
+            "horario": eventoHorario.value,
+            "data": eventoData.value,
+            "descricao": eventoDescricao.value,
+            "convidados": convidado,
+            "bar": evento_bar,
         }
 
         console.log(cadastroEvento)

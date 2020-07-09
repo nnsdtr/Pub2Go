@@ -1,9 +1,3 @@
-/* Implementação do banco de dados comercio */
-
-// Objeto para o banco de dados de usuários baseado em JSON
-var db_comercios = {};
-
-
 
 /* Recolher dados do formulário */
 
