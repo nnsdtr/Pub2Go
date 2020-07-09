@@ -4,11 +4,13 @@ window.onload = () => {
     var cadastroClienteLocal = JSON.parse(sessionStorage.getItem("usuarioCorrente"));
     var db_cliente = JSON.parse(localStorage.getItem('db_users'));
     var db_eventos = JSON.parse(localStorage.getItem('db_eventos'));
-    var db_bares = JSON.parse(localStorage.getItem('db_bares'))
-    console.log(cadastroClienteLocal.eventos.conviteRecebido[0])
+    var db_bares = JSON.parse(localStorage.getItem('db_bares'));
+    console.log(cadastroClienteLocal.eventos.conviteRecebido[0]);
+
+
 
     //mostrar eventos
-    if (cadastroClienteLocal.eventos.conviteRecebido.length) {
+   
         let telaEventos = document.getElementById('telaEventos');
         let texto = '';
         let item;
@@ -27,28 +29,28 @@ window.onload = () => {
                 }
             }
         }
-        for(i=0; i< cadastroClienteLocal.eventos.cadastrados.length;i++){
+        for(i=0; i<cadastroClienteLocal.eventos.cadastrados.length;i++){
+            console.log(cadastroClienteLocal.eventos.cadastrados.length)
             for(j=0; j<db_eventos.eventos.length; j++){
+               
                 if(cadastroClienteLocal.eventos.cadastrados[i].id == db_eventos.eventos[j].id){
                     item = db_eventos.eventos[j];
-                    texto += `<div class="item">
+                    texto = texto + `<div class="item">
                     <div class="card">
                         <div class="img-square-wrapper">
                             <a href="/build/evento-detalhe.html?id=${item.id}"><img src="${item.icone}" alt="" ></a>
                         </div>
                         <a class="card-footer" href="/build/evento-detalhe.html?id=${item.id}">${item.nome}</a>
                     </div>
-                </div>`
+                </div>`;
                 }
             }
         }
         telaEventos.innerHTML = texto
-    }
+    
 
 
     //mostrar bares
-
-
     if (db_bares.data.length) {
         let telaBares = document.getElementById('telaEstabelecimentos');
         let texto = '';

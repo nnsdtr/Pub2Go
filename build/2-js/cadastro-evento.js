@@ -212,12 +212,14 @@ window.onload = () => {
             "descricao": eventoDescricao.value,
             "convidados": convidado,
             "bar": evento_bar,
+            confirmados: []
         }
 
         console.log(cadastroEvento)
         db_eventos.eventos.push(cadastroEvento);
         localStorage.setItem('db_eventos', JSON.stringify(db_eventos));
         localStorage.setItem('db_users', JSON.stringify(db_cliente));
+        sessionStorage.setItem('usuarioCorrente', JSON.stringify(db_cliente.usuarios[posicaoArray]))
         window.location.href = "pagina-cliente.html";
     }
 }
