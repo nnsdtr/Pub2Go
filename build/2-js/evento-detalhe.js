@@ -15,7 +15,7 @@ window.onload = () => {
     //posicao no array db
     var posicaoArray;
     for (i = 0; i < db_cliente.usuarios.length; i++) {
-        if (cadastroClienteLocal.email == db_cliente.usuarios[i].email) {
+        if (cadastroClienteLocal.email == db_cliente.usuarios[i].email){
             posicaoArray = i;
             break;
         }
