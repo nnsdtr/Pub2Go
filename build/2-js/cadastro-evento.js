@@ -1,4 +1,28 @@
 window.onload = () => {
+    // Validação do formulário
+    btnCriarEvento.disabled = true;
+    var nomeValido = false;
+    var dataValida = false;
+    var horaValida = false;
+    var convidadoValido = false;
+    var eventoBarValido = false;
+    var descricaoValida = false;
+
+    eventoNome.oninput = ()      => {nomeValido = validarNome(); console.log("nomeValido: ", nomeValido)}
+    eventoData.oninput = ()      => {dataValida = validarData(); console.log("dataValida: ", dataValida);}
+    eventoHorario.oninput = ()   => {horaValida = validarHora(); console.log("horaValida: ", horaValida);}
+    eventoDescricao.oninput = () => {descricaoValida = validarDescricao(); console.log("descricaoValida: ", descricaoValida);}
+
+    formulario.oninput = () => {
+        if(nomeValido && dataValida && horaValida && convidadoValido && eventoBarValido && descricaoValida) {
+            console.log("BOTÃO DESABILITADO: ", false)
+            btnCriarEvento.disabled = false;
+        } else {
+            console.log("BOTÃO DESABILITADO: ", true)
+            btnCriarEvento.disabled = true;
+        }
+    }
+
 
     /* Editar cadastroClienteLocal */
     var cadastroClienteLocal = JSON.parse(sessionStorage.getItem("usuarioCorrente"));
@@ -48,9 +72,11 @@ window.onload = () => {
         for(i=0; i<convidados.length; i++){
             if(convidados[i].checked){
                 convidado.push(convidados[i].id);
-                console.log(convidado);
             }
         }
+
+        convidadoValido = validarConvidados(convidado);
+        console.log("convidadoValido: ", convidadoValido)
     }
 
 
@@ -68,6 +94,8 @@ window.onload = () => {
                 break;
             }
         }
+        eventoBarValido = validarBar(evento_bar);
+        console.log("eventoBarValido: ", eventoBarValido)
     }
 
 
@@ -166,58 +194,54 @@ window.onload = () => {
 
 
 // Validação do formulário
-function validarFormulario() {
-    var nomeValido = false;
-    eventoNome.oninput = () => {
-        let checarNome = eventoNome.value;
-        if(checarNome == "" || checarNome == null) {
-            nomeValido = false;
-        } else {
-            nomeValido = true;
-        }
-    }
-
-    var dataValida = false;
-    eventoData.oninput = () => {
-        let checarData = eventoData.value;
-        if(checarData == "" || checarData == null) {
-            dataValida = false;
-        } else {
-            dataValida = true;
-        }
-    }
-
-    var horaValida = false;
-    eventoHorario.oninput = () => {
-        let checarHorario = eventoHorario.value;
-        if(checarHorario == "" || checarHorario == null) {
-            horaValida = false;
-        } else {
-            horaValida = true;
-        }
-    }
-
-    var convidadoValido = false;
-    btnCloseConvidado.onclick = () => {
-        if(convidado.length == 0) {
-            convidadoValido = false;
-        } else {
-            convidadoValido = true;
-        }
-    }
-
-    var eventoBarValido = false;
-    btnCloseBar.onclick = () => {
-        if(event_bar == "") {
-            eventoBarValido = false;
-        } else {
-            eventoBarValido = true;
-        }
-    }
-
-    if(nomeValido && dataValida && horaValida && convidadoValido && eventoBarValido) {
-        btnCriarEvento.disabled = false;
+function validarNome() {
+    let checarNome = eventoNome.value;
+    if(checarNome == "" || checarNome == null) {
+        return false;
     } else {
-        btnCriarEvento.disabled = true;
+        return true;
+    }
+}
+
+function validarData() {
+    let checarData = eventoData.value;
+    if(checarData == "" || checarData == null) {
+        return false;
+    } else {
+        return true;
+    }
+}
+
+function validarHora() {
+    let checarHorario = eventoHorario.value;
+    if(checarHorario == "" || checarHorario == null) {
+        return false;
+    } else {
+        return true;
+    }
+}
+
+function validarConvidados(convidado) {
+    if(convidado.length == 0) {
+        return false;
+    } else {
+        return true;
+    }
+}
+   
+function validarBar(evento_bar) {
+    if(evento_bar == "") {
+        return false;
+    } else {
+        return true;
+    }
+}
+
+function validarDescricao() {
+    let descricao = eventoDescricao.value;
+    if(descricao == "") {
+        return false;
+    } else {
+        return true;
     }
 }
