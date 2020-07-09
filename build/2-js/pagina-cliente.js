@@ -10,10 +10,11 @@ window.onload = () => {
 
 
     //mostrar eventos
-   
+    
         let telaEventos = document.getElementById('telaEventos');
-        let texto = '';
+        let texto='';
         let item;
+        if (cadastroClienteLocal.eventos.conviteRecebido.length){
         for (i = 0; i < cadastroClienteLocal.eventos.conviteRecebido.length; i++) {
             for (j = 0; j < db_eventos.eventos.length; j++) {
                 if (cadastroClienteLocal.eventos.conviteRecebido[i].id == db_eventos.eventos[j].id) {
@@ -29,6 +30,8 @@ window.onload = () => {
                 }
             }
         }
+    }
+    if (cadastroClienteLocal.eventos.cadastrados.length){
         for(i=0; i<cadastroClienteLocal.eventos.cadastrados.length;i++){
             console.log(cadastroClienteLocal.eventos.cadastrados.length)
             for(j=0; j<db_eventos.eventos.length; j++){
@@ -46,8 +49,10 @@ window.onload = () => {
                 }
             }
         }
+    }
+    if (texto){
         telaEventos.innerHTML = texto
-    
+    }
 
 
     //mostrar bares
@@ -62,7 +67,7 @@ window.onload = () => {
       <a href="perfil-comercio.html?id=${item.id}">
           <div class="row no-gutters global-wrapper">
               <div class="col-4 img-square-wrapper">
-                  <img src="0-imgs/estabelecimentos/brahma.jpg" class="card-img" alt="...">
+                  <img src="https://loremflickr.com/400/300/pub,beer,party?ramdom=${item.id}" class="card-img" alt="...">
               </div>
               <div class="col-8">
                   <div class="card-body">

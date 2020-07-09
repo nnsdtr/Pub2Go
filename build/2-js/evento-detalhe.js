@@ -73,6 +73,7 @@ window.onload = () => {
         localStorage.setItem('db_users', JSON.stringify(db_cliente))
         sessionStorage.setItem('usuarioCorrente', JSON.stringify(cadastroClienteLocal));
         alert('Confirmado')
+        document.location.reload(true);
     }
 
 }
