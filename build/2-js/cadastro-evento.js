@@ -77,7 +77,7 @@ window.onload = () => {
                 <div class="card mb-3 card-bar">
                     <div class="row no-gutters global-wrapper">
                         <div class="col-4 img-square-wrapper">
-                            <img src="0-imgs/estabelecimentos/brahma.jpg"
+                            <img src="https://loremflickr.com/400/300/pub,beer,party?ramdom=${item.id}"
                                 class="card-img" alt="...">
                         </div>
                         <div class="col-8">
