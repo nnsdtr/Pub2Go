@@ -36,7 +36,7 @@ window.onload = () => {
             console.log(cadastroClienteLocal.eventos.cadastrados.length)
             for(j=0; j<db_eventos.eventos.length; j++){
                
-                if(cadastroClienteLocal.eventos.cadastrados[i].id == db_eventos.eventos[j].id && item.id !=db_eventos.eventos[j].id){
+                if(cadastroClienteLocal.eventos.cadastrados[i].id == db_eventos.eventos[j].id){
                     item = db_eventos.eventos[j];
                     texto = texto + `<div class="item">
                     <div class="card">

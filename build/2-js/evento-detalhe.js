@@ -63,8 +63,8 @@ window.onload = () => {
             }
         }
         for (i=0; i<cadastroClienteLocal.eventos.conviteRecebido.length; i++){
-            if(idEvento == cadastroClienteLocal.eventos.conviteRecebido[i]){
-                cadastroClienteLocal.eventos.conviteRecebido.splice(j, 1);
+            if(idEvento == cadastroClienteLocal.eventos.conviteRecebido[i].id){
+                cadastroClienteLocal.eventos.conviteRecebido.splice(i, 1);
             }
         }
         cadastroClienteLocal.eventos.cadastrados.push({id:idEvento})

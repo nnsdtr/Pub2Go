@@ -186,7 +186,7 @@ window.onload = () => {
 	iconEvento32.onclick = () => {let srcIMG = document.getElementById("iconEvento32").src; document.getElementById("iconEvento").src = srcIMG; iconEvento = srcIMG; }
 
 
-// Botao criar evento disparado
+// Criar evento
     btnCriarEvento.onclick = (evento) => {
         evento.preventDefault();
         let novoID = db_eventos.eventos.length + 1;
@@ -212,7 +212,7 @@ window.onload = () => {
             "descricao": eventoDescricao.value,
             "convidados": convidado,
             "bar": evento_bar,
-            confirmados: []
+            "confirmados": []
         }
 
         console.log(cadastroEvento)
